@@ -77,17 +77,6 @@ namespace Amtrack.Cache.Store
 			return null;
 		}
 
-		//TODO
-		public override IList<T> Search<T>(string pattern)
-		{
-			if(!initialized)
-				return null;
-
-			var keys = base.redisClient.SearchKeys(pattern).ToArray();
-
-			return Get<T>(keys);
-		}
-
 		public override void Set<T>(string key, T value, TimeSpan cacheTimeSpan = default(TimeSpan))
 		{
 			if(initialized)

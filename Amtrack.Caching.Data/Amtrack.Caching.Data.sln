@@ -3,29 +3,35 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Amtrack.Data", "Amtrack.Amtrack.Data\Amtrack.Amtrack.Data.csproj", "{E667F9F3-4BC0-4C63-99BC-29A459A92184}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Amtrack.Data", "Amtrack.Amtrack.Data\Amtrack.Amtrack.Data.csproj", "{E667F9F3-4BC0-4C63-99BC-29A459A92184}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Amtrack_V2.Data", "Amtrack.Amtrack_V2.Data\Amtrack.Amtrack_V2.Data.csproj", "{BDB5FED3-96A1-4466-9846-2E55819AF9E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Amtrack_V2.Data", "Amtrack.Amtrack_V2.Data\Amtrack.Amtrack_V2.Data.csproj", "{BDB5FED3-96A1-4466-9846-2E55819AF9E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Caching.Repository", "Amtrack.Caching.Repository\Amtrack.Caching.Repository.csproj", "{0E9054CE-FD7D-425A-9807-6535376D0C3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Caching.Repository", "Amtrack.Caching.Repository\Amtrack.Caching.Repository.csproj", "{0E9054CE-FD7D-425A-9807-6535376D0C3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Core.Repositories", "Amtrack.Core.Repositories\Amtrack.Core.Repositories.csproj", "{F1457BE6-BB18-495B-A4F7-F9638409FBB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Core.Repositories", "Amtrack.Core.Repositories\Amtrack.Core.Repositories.csproj", "{F1457BE6-BB18-495B-A4F7-F9638409FBB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Caching.Service", "Amtrack.Caching.Service\Amtrack.Caching.Service.csproj", "{3059F80F-49D3-43BC-B460-9D849256F80C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Caching.Service", "Amtrack.Caching.Service\Amtrack.Caching.Service.csproj", "{3059F80F-49D3-43BC-B460-9D849256F80C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Caching.Data", "Amtrack.Caching.Data\Amtrack.Caching.Data.csproj", "{B2E9A401-94FE-4226-89D9-72207A8378A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Caching.Data", "Amtrack.Caching.Data\Amtrack.Caching.Data.csproj", "{B2E9A401-94FE-4226-89D9-72207A8378A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Enumeration", "..\..\..\Projects\Amrod-Amtrack-ASPNet\src\amtrack\Amtrack.Enumeration\Amtrack.Enumeration.csproj", "{ABE51EDA-7FB8-4622-8909-7FB1681C730B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.ValueObjects", "..\..\..\Projects\Amrod-Amtrack-ASPNet\src\amtrack\Amtrack.ValueObjects\Amtrack.ValueObjects.csproj", "{CC2F6DF4-1312-42C4-91D3-D43701EF96F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Extensions", "Amtrack.Extensions\Amtrack.Extensions.csproj", "{360FB89C-DC8C-4B3C-B652-8762B7C12A8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Extensions", "Amtrack.Extensions\Amtrack.Extensions.csproj", "{360FB89C-DC8C-4B3C-B652-8762B7C12A8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Models", "Amtrack.Models\Amtrack.Models.csproj", "{73D178D8-F10E-4C48-A07F-558C91203B64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Models", "Amtrack.Models\Amtrack.Models.csproj", "{73D178D8-F10E-4C48-A07F-558C91203B64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.StockCheck.Data", "Amtrack.StockCheck.Data\Amtrack.StockCheck.Data.csproj", "{694FF756-92EA-411C-92A8-519FF605EAEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.StockCheck.Data", "Amtrack.StockCheck.Data\Amtrack.StockCheck.Data.csproj", "{694FF756-92EA-411C-92A8-519FF605EAEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Core.Services", "Amtrack.Core.Services\Amtrack.Core.Services.csproj", "{F5167C8D-9589-4B16-9F7B-6413E7309B9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Core.Services", "Amtrack.Core.Services\Amtrack.Core.Services.csproj", "{F5167C8D-9589-4B16-9F7B-6413E7309B9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Cache.Store", "Amtrack.Cache.Store\Amtrack.Cache.Store.csproj", "{7C865F43-5FA3-413D-B787-C7F5F258B26C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Background.Cache.Service", "Amtrack.Background.Cache.Service\Amtrack.Background.Cache.Service.csproj", "{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Logger", "Amtrack.Logger\Amtrack.Logger.csproj", "{F62AABA8-3271-40A3-BE82-6F55D7325489}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -131,6 +137,30 @@ Global
 		{F5167C8D-9589-4B16-9F7B-6413E7309B9E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F5167C8D-9589-4B16-9F7B-6413E7309B9E}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
 		{F5167C8D-9589-4B16-9F7B-6413E7309B9E}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
+		{7C865F43-5FA3-413D-B787-C7F5F258B26C}.Debug - Test Servers|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C865F43-5FA3-413D-B787-C7F5F258B26C}.Debug - Test Servers|Any CPU.Build.0 = Debug|Any CPU
+		{7C865F43-5FA3-413D-B787-C7F5F258B26C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C865F43-5FA3-413D-B787-C7F5F258B26C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C865F43-5FA3-413D-B787-C7F5F258B26C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C865F43-5FA3-413D-B787-C7F5F258B26C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C865F43-5FA3-413D-B787-C7F5F258B26C}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C865F43-5FA3-413D-B787-C7F5F258B26C}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
+		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.Debug - Test Servers|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.Debug - Test Servers|Any CPU.Build.0 = Debug|Any CPU
+		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
+		{F62AABA8-3271-40A3-BE82-6F55D7325489}.Debug - Test Servers|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62AABA8-3271-40A3-BE82-6F55D7325489}.Debug - Test Servers|Any CPU.Build.0 = Debug|Any CPU
+		{F62AABA8-3271-40A3-BE82-6F55D7325489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62AABA8-3271-40A3-BE82-6F55D7325489}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F62AABA8-3271-40A3-BE82-6F55D7325489}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F62AABA8-3271-40A3-BE82-6F55D7325489}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F62AABA8-3271-40A3-BE82-6F55D7325489}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62AABA8-3271-40A3-BE82-6F55D7325489}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

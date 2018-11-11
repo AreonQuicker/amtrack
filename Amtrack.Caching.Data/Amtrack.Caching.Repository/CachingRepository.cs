@@ -10,10 +10,11 @@ using Amtrack.Core.Repositories;
 using Amtrack.StockCheck.Data;
 using Amtrack.StockCheck.Data.Data;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Amtrack.Caching.Repository
 {
-    public class CachingRepository : CoreBaseRepository, ICachingRepository
+    public class CachingRepository : CoreBaseRepository, ICachingRepository, IDisposable
     {
         private readonly AmtrackStockCheckCachingContext _amtrackStockCheckCachingContext;
 
@@ -112,6 +113,16 @@ namespace Amtrack.Caching.Repository
         {
             return AmtrackStockCheckContext.StockEmbroideryPricing
                 .ToList();
+        }
+
+        public override void Dispose()
+        {
+            if(_amtrackStockCheckCachingContext != null)
+            {
+                _amtrackStockCheckCachingContext.Dispose();
+            }
+
+            base.Dispose();
         }
     }
 }

@@ -1,9 +1,0 @@
-C:\Users\Gideon\source\repos\Amtrack.Caching.Data\Amtrack.Caching.Data\bin\Debug\netstandard2.0\Amtrack.Caching.Data.deps.json
-C:\Users\Gideon\source\repos\Amtrack.Caching.Data\Amtrack.Caching.Data\bin\Debug\netstandard2.0\Amtrack.Caching.Data.dll
-C:\Users\Gideon\source\repos\Amtrack.Caching.Data\Amtrack.Caching.Data\obj\Debug\netstandard2.0\Amtrack.Caching.Data.csproj.CoreCompileInputs.cache
-C:\Users\Gideon\source\repos\Amtrack.Caching.Data\Amtrack.Caching.Data\obj\Debug\netstandard2.0\Amtrack.Caching.Data.AssemblyInfoInputs.cache
-C:\Users\Gideon\source\repos\Amtrack.Caching.Data\Amtrack.Caching.Data\obj\Debug\netstandard2.0\Amtrack.Caching.Data.AssemblyInfo.cs
-C:\Users\Gideon\source\repos\Amtrack.Caching.Data\Amtrack.Caching.Data\bin\Debug\netstandard2.0\Amtrack.Caching.Data.pdb
-C:\Users\Gideon\source\repos\Amtrack.Caching.Data\Amtrack.Caching.Data\obj\Debug\netstandard2.0\Amtrack.Caching.Data.dll
-C:\Users\Gideon\source\repos\Amtrack.Caching.Data\Amtrack.Caching.Data\obj\Debug\netstandard2.0\Amtrack.Caching.Data.pdb
-C:\Users\Gideon\source\repos\Amtrack.Caching.Data\Amtrack.Caching.Data\obj\Debug\netstandard2.0\Amtrack.Caching.Data.csprojAssemblyReference.cache
