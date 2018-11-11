@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Amtrack.Caching.Data.StockCheckData;
 using Amtrack.Caching.Repository;
 using Amtrack.Core.Services;
 using Amtrack.Extensions;
+using Amtrack.Models;
 using Amtrack.ValueObjects.Inventory;
 using Amtrack.ValueObjects.OrderEntry;
 using Amtrack.ValueObjects.Security;
@@ -10,37 +13,51 @@ using Amtrack.ValueObjects.Users;
 
 namespace Amtrack.Caching.Service
 {
-	public class CachingService : CoreBaseService, ICachingService
-	{
-		private readonly ICachingRepository _cachingRepository;
+    public class CachingService : BaseCachingService, ICachingService
+    {
 
-		public CachingService(ICachingRepository cachingRepository)
-		{
-			_cachingRepository = cachingRepository;
-		}
+        public CachingService(ICachingRepository cachingRepository)
+            : base(cachingRepository)
+        {
 
-		public IEnumerable<SecurityLevelVO> GetSecurityLevelsVo()
-		{
-			return _cachingRepository.GetAllPermissions().Select(s => s.ToSecurityLevelVo()).ToList();
-		}
+        }
 
-		public IEnumerable<UserVO> GetUsersVo()
-		{
-			return _cachingRepository.GetAllUsersWithParents().Select(s => s.ToUserVo()).ToList();
-		}
+        public UserCacheModel GetUserCacheModel()
+        {
+            return new UserCacheModel
+            {
+                SecurityLevels = cachingRepository.GetAllPermissions()
+                .Select(s => s.ToSecurityLevelVo())
+                .ToList(),
 
-		public IEnumerable<PriceListVO> GetPriceListVos()
-		{
-			throw new System.NotImplementedException();
-		}
+                Users = cachingRepository.GetAllUsersWithParents()
+                .Select(s => s.ToUserVo())
+                .ToList()
+            };
+        }
+        public InventoryCacheModel GetInventoryCacheModel()
+        {
+            var inventoryCacheModel = new InventoryCacheModel
+            {
+                Groups = new List<GroupVO>(),
+                InventoryItems = new List<InventoryItemVO>(),
+                InventoryPricing = new List<InventoryPricingVO>(),
+                PriceLists = new List<PriceListVO>(),
+                InventorySets = new List<InventorySetVO>(),
+                EmbroideryPricing = new List<ValueObjects.Branding.EmbroideryPricingVO>()
+            };
 
-		/// <inheritdoc />
-		public IEnumerable<InventoryItemVO> GetInventoryItemVos()
-		{
-			var Catalogue = _cachingRepository.stLoadCatalogue();
+            var inventoryCacheController = InventoryCacheController.Instance(cachingRepository);
 
+            inventoryCacheModel.Groups = inventoryCacheController.GetGroupVOs();
+            inventoryCacheModel.PriceLists = inventoryCacheController.GetPriceListVOs();
+            inventoryCacheModel.EmbroideryPricing = inventoryCacheController.GetEmbroideryPricingVOs();
+            inventoryCacheModel.InventoryPricing = inventoryCacheController.GetInventoryPricingVOs();
+            inventoryCacheModel.InventoryItems = inventoryCacheController.GetInventoryItemVOs();
+            inventoryCacheModel.InventoryItems.AddRange(inventoryCacheController.GetInventoryStockSetItemVOs());
+            inventoryCacheModel.InventorySets = inventoryCacheController.GetInventorySetVOs();
 
-
-		}
-	}
+            return inventoryCacheModel;
+        }
+    }
 }

@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Personal Projects\\amtrack\\Amtrack.Caching.Data\\Amtrack.Core.Services\\Amtrack.Core.Services.csproj",
+      "projectUniqueName": "C:\\PersonalProjects\\amtrack\\Amtrack.Caching.Data\\Amtrack.Core.Services\\Amtrack.Core.Services.csproj",
       "projectName": "Amtrack.Core.Services",
-      "projectPath": "C:\\Personal Projects\\amtrack\\Amtrack.Caching.Data\\Amtrack.Core.Services\\Amtrack.Core.Services.csproj",
+      "projectPath": "C:\\PersonalProjects\\amtrack\\Amtrack.Caching.Data\\Amtrack.Core.Services\\Amtrack.Core.Services.csproj",
       "packagesPath": "C:\\Users\\Gideon\\.nuget\\packages\\",
-      "outputPath": "C:\\Personal Projects\\amtrack\\Amtrack.Caching.Data\\Amtrack.Core.Services\\obj\\",
+      "outputPath": "C:\\PersonalProjects\\amtrack\\Amtrack.Caching.Data\\Amtrack.Core.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

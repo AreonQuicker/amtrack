@@ -10,6 +10,7 @@
     <ProjectReference Include="..\Amtrack.Caching.Repository\Amtrack.Caching.Repository.csproj" />
     <ProjectReference Include="..\Amtrack.Core.Services\Amtrack.Core.Services.csproj" />
     <ProjectReference Include="..\Amtrack.Extensions\Amtrack.Extensions.csproj" />
+    <ProjectReference Include="..\Amtrack.Models\Amtrack.Models.csproj" />
   </ItemGroup>
 
 </Project>

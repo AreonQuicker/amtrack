@@ -7,14 +7,19 @@ using Amtrack.StockCheck.Data.Data;
 
 namespace Amtrack.Caching.Repository
 {
-	public interface ICachingRepository : ICoreRepository
-	{
-		IEnumerable<User> GetAllUsersV1();
-		IEnumerable<Users> GetAllUsers();
-		IEnumerable<Users> GetAllUsersWithParents();
-		IEnumerable<Permission> GetAllPermissions();
-		IEnumerable<StockPricelists> GetStockPriceLists();
-		IEnumerable<StockItemGroups> GetStockItemGroups();
-		IEnumerable<stCatalogue> stLoadCatalogue();
-	}
+    public interface ICachingRepository : ICoreRepository
+    {
+        IEnumerable<User> GetAllUsersV1();
+        IEnumerable<Users> GetAllUsers();
+        IEnumerable<Users> GetAllUsersWithParents();
+        IEnumerable<Permission> GetAllPermissions();
+        IEnumerable<StockPricelists> GetAllStockPriceLists();
+        IEnumerable<StockItemGroups> GetAllStockItemGroups();
+        StockItemGroups GetStockItemGroup(int id);
+        IEnumerable<stCatalogue> stLoadCatalogue();
+        IEnumerable<stInventoryPricing> stGetInventoryPricing();
+        StockPricelists GetStockPricelist(int id);
+        IEnumerable<StockSets> GetAllStockSets();
+        IEnumerable<StockEmbroideryPricing> GetAllStockEmbroideryPricing();
+    }
 }

@@ -13,59 +13,105 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Amtrack.Caching.Repository
 {
-	public class CachingRepository : CoreBaseRepository, ICachingRepository
-	{
-		private readonly AmtrackStockCheckCachingContext _amtrackStockCheckCachingContext;
+    public class CachingRepository : CoreBaseRepository, ICachingRepository
+    {
+        private readonly AmtrackStockCheckCachingContext _amtrackStockCheckCachingContext;
 
-		public CachingRepository(AmtrackV2Context amtrackV2Context,
-			AmtrackContext amtrackContext,
-			AmtrackStockCheckContext amtrackStockCheckContext,
-			AmtrackStockCheckCachingContext amtrackStockCheckCachingContext)
-			: base(amtrackV2Context, amtrackContext, amtrackStockCheckContext)
-		{
-			_amtrackStockCheckCachingContext = amtrackStockCheckCachingContext;
-		}
+        public CachingRepository(AmtrackV2Context amtrackV2Context,
+            AmtrackContext amtrackContext,
+            AmtrackStockCheckContext amtrackStockCheckContext,
+            AmtrackStockCheckCachingContext amtrackStockCheckCachingContext)
+            : base(amtrackV2Context, amtrackContext, amtrackStockCheckContext)
+        {
+            _amtrackStockCheckCachingContext = amtrackStockCheckCachingContext;
+        }
 
-		public IEnumerable<Users> GetAllUsers()
-		{
-			return AmtrackV2Context.Users.ToList();
-		}
+        public IEnumerable<Users> GetAllUsers()
+        {
+            return AmtrackV2Context.Users.ToList();
+        }
 
-		/// <inheritdoc />
-		public IEnumerable<Users> GetAllUsersWithParents()
-		{
-			return AmtrackV2Context.Users.Include(i => i.UserUser).ToList();
-		}
+        /// <inheritdoc />
+        public IEnumerable<Users> GetAllUsersWithParents()
+        {
+            return AmtrackV2Context.Users.Include(i => i.UserUser).ToList();
+        }
 
-		/// <inheritdoc />
-		public IEnumerable<Permission> GetAllPermissions()
-		{
-			return AmtrackContext.Permission.ToList();
-		}
+        /// <inheritdoc />
+        public IEnumerable<Permission> GetAllPermissions()
+        {
+            return AmtrackContext.Permission.ToList();
+        }
 
-		/// <inheritdoc />
-		public IEnumerable<StockPricelists> GetStockPriceLists()
-		{
-			throw new System.NotImplementedException();
-		}
+        /// <inheritdoc />
+        public IEnumerable<StockPricelists> GetAllStockPriceLists()
+        {
+            return AmtrackStockCheckContext.StockPricelists.ToList();
+        }
 
-		/// <inheritdoc />
-		public IEnumerable<StockItemGroups> GetStockItemGroups()
-		{
-			throw new System.NotImplementedException();
-		}
+        /// <inheritdoc />
+        public IEnumerable<StockItemGroups> GetAllStockItemGroups()
+        {
+            return AmtrackStockCheckContext.StockItemGroups.ToList();
+        }
 
-		/// <inheritdoc />
-		public IEnumerable<stCatalogue> stLoadCatalogue()
-		{
-			var stCatalogue = _amtrackStockCheckCachingContext.stCatalogue.FromSql("EXEC stLoadCatalogue").ToList();
+        /// <inheritdoc />
+        public IEnumerable<stCatalogue> stLoadCatalogue()
+        {
+            var stCatalogue = _amtrackStockCheckCachingContext.stCatalogue.FromSql("EXEC stLoadCatalogue").ToList();
 
-			return stCatalogue;
-		}
+            return stCatalogue;
+        }
 
-		public IEnumerable<User> GetAllUsersV1()
-		{
-			return AmtrackContext.User.ToList();
-		}
-	}
+        public IEnumerable<User> GetAllUsersV1()
+        {
+            return AmtrackContext.User.ToList();
+        }
+
+        public StockItemGroups GetStockItemGroups(int id)
+        {
+            return AmtrackStockCheckContext.StockItemGroups
+                .FirstOrDefault(f => f.Id == id);
+
+        }
+
+        public IEnumerable<StockItemGroups> GetStockItemGroups()
+        {
+            return AmtrackStockCheckContext.StockItemGroups
+                 .ToList();
+        }
+
+        public StockItemGroups GetStockItemGroup(int id)
+        {
+            return AmtrackStockCheckContext.StockItemGroups
+                .FirstOrDefault(f => f.Id == id);
+        }
+
+        public IEnumerable<stInventoryPricing> stGetInventoryPricing()
+        {
+            var stInventoryPricings = _amtrackStockCheckCachingContext.stInventoryPricings.FromSql("EXEC stGetInventoryPricing @ItemCode @BaseItemCode", null, null).ToList();
+
+            return stInventoryPricings;
+        }
+
+        public StockPricelists GetStockPricelist(int id)
+        {
+            return AmtrackStockCheckContext.StockPricelists
+              .FirstOrDefault(f => f.Id == id);
+        }
+
+        public IEnumerable<StockSets> GetAllStockSets()
+        {
+            return AmtrackStockCheckContext.StockSets
+             .Include(i => i.StockSetComponents)
+             .Include(i => i.StockSetContents)
+             .ToList();
+        }
+
+        public IEnumerable<StockEmbroideryPricing> GetAllStockEmbroideryPricing()
+        {
+            return AmtrackStockCheckContext.StockEmbroideryPricing
+                .ToList();
+        }
+    }
 }
