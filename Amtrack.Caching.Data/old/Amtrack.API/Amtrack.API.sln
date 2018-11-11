@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Services", "Amtrack.Services\Amtrack.Services.csproj", "{D88028B9-5CB7-44B5-9886-4F2AB375D011}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Enumeration", "..\..\..\..\..\Projects\Amrod-Amtrack-ASPNet\src\amtrack\Amtrack.Enumeration\Amtrack.Enumeration.csproj", "{ABE51EDA-7FB8-4622-8909-7FB1681C730B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Data_V2", "Amtrack.Data_V2\Amtrack.Data_V2.csproj", "{785A590F-F861-406E-831D-62E581D4B455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.ValueObjects", "..\..\..\..\..\Projects\Amrod-Amtrack-ASPNet\src\amtrack\Amtrack.ValueObjects\Amtrack.ValueObjects.csproj", "{CC2F6DF4-1312-42C4-91D3-D43701EF96F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.API", "Amtrack.API\Amtrack.API.csproj", "{D59EC3C6-0A61-4345-BD4C-468B33D2A959}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug - Test Servers|Any CPU = Debug - Test Servers|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		TSTSERVER|Any CPU = TSTSERVER|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D88028B9-5CB7-44B5-9886-4F2AB375D011}.Debug - Test Servers|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88028B9-5CB7-44B5-9886-4F2AB375D011}.Debug - Test Servers|Any CPU.Build.0 = Debug|Any CPU
+		{D88028B9-5CB7-44B5-9886-4F2AB375D011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88028B9-5CB7-44B5-9886-4F2AB375D011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D88028B9-5CB7-44B5-9886-4F2AB375D011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88028B9-5CB7-44B5-9886-4F2AB375D011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88028B9-5CB7-44B5-9886-4F2AB375D011}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88028B9-5CB7-44B5-9886-4F2AB375D011}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
+		{ABE51EDA-7FB8-4622-8909-7FB1681C730B}.Debug - Test Servers|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE51EDA-7FB8-4622-8909-7FB1681C730B}.Debug - Test Servers|Any CPU.Build.0 = Debug|Any CPU
+		{ABE51EDA-7FB8-4622-8909-7FB1681C730B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE51EDA-7FB8-4622-8909-7FB1681C730B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE51EDA-7FB8-4622-8909-7FB1681C730B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE51EDA-7FB8-4622-8909-7FB1681C730B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE51EDA-7FB8-4622-8909-7FB1681C730B}.TSTSERVER|Any CPU.ActiveCfg = TSTSERVER|Any CPU
+		{ABE51EDA-7FB8-4622-8909-7FB1681C730B}.TSTSERVER|Any CPU.Build.0 = TSTSERVER|Any CPU
+		{785A590F-F861-406E-831D-62E581D4B455}.Debug - Test Servers|Any CPU.ActiveCfg = Debug|Any CPU
+		{785A590F-F861-406E-831D-62E581D4B455}.Debug - Test Servers|Any CPU.Build.0 = Debug|Any CPU
+		{785A590F-F861-406E-831D-62E581D4B455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{785A590F-F861-406E-831D-62E581D4B455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{785A590F-F861-406E-831D-62E581D4B455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{785A590F-F861-406E-831D-62E581D4B455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{785A590F-F861-406E-831D-62E581D4B455}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
+		{785A590F-F861-406E-831D-62E581D4B455}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
+		{CC2F6DF4-1312-42C4-91D3-D43701EF96F7}.Debug - Test Servers|Any CPU.ActiveCfg = Debug - Test Servers|Any CPU
+		{CC2F6DF4-1312-42C4-91D3-D43701EF96F7}.Debug - Test Servers|Any CPU.Build.0 = Debug - Test Servers|Any CPU
+		{CC2F6DF4-1312-42C4-91D3-D43701EF96F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2F6DF4-1312-42C4-91D3-D43701EF96F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2F6DF4-1312-42C4-91D3-D43701EF96F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2F6DF4-1312-42C4-91D3-D43701EF96F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC2F6DF4-1312-42C4-91D3-D43701EF96F7}.TSTSERVER|Any CPU.ActiveCfg = TSTSERVER|Any CPU
+		{CC2F6DF4-1312-42C4-91D3-D43701EF96F7}.TSTSERVER|Any CPU.Build.0 = TSTSERVER|Any CPU
+		{D59EC3C6-0A61-4345-BD4C-468B33D2A959}.Debug - Test Servers|Any CPU.ActiveCfg = Debug|Any CPU
+		{D59EC3C6-0A61-4345-BD4C-468B33D2A959}.Debug - Test Servers|Any CPU.Build.0 = Debug|Any CPU
+		{D59EC3C6-0A61-4345-BD4C-468B33D2A959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D59EC3C6-0A61-4345-BD4C-468B33D2A959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D59EC3C6-0A61-4345-BD4C-468B33D2A959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D59EC3C6-0A61-4345-BD4C-468B33D2A959}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D59EC3C6-0A61-4345-BD4C-468B33D2A959}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
+		{D59EC3C6-0A61-4345-BD4C-468B33D2A959}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45D58373-D653-4221-98B9-1B3F25D70D81}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Services\bin\Debug\netcoreapp2.1\Amtrack.Services.deps.json
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Services\bin\Debug\netcoreapp2.1\Amtrack.Services.dll
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Services\bin\Debug\netcoreapp2.1\Amtrack.Services.pdb
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Services\bin\Debug\netcoreapp2.1\Amtrack.Data_V2.dll
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Services\bin\Debug\netcoreapp2.1\Amtrack.Data_V2.pdb
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Services\obj\Debug\netcoreapp2.1\Amtrack.Services.csprojAssemblyReference.cache
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Services\obj\Debug\netcoreapp2.1\Amtrack.Services.csproj.CoreCompileInputs.cache
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Services\obj\Debug\netcoreapp2.1\Amtrack.Services.AssemblyInfoInputs.cache
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Services\obj\Debug\netcoreapp2.1\Amtrack.Services.AssemblyInfo.cs
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Services\obj\Debug\netcoreapp2.1\Amtrack.Services.csproj.CopyComplete
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Services\obj\Debug\netcoreapp2.1\Amtrack.Services.dll
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Services\obj\Debug\netcoreapp2.1\Amtrack.Services.pdb

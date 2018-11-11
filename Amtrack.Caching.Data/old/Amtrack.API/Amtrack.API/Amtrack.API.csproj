@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="CacheCow.Server.Core.Mvc" Version="2.4.2" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\Projects\Amrod-Amtrack-ASPNet\src\amtrack\Amtrack.Enumeration\Amtrack.Enumeration.csproj" />
+    <ProjectReference Include="..\..\..\..\..\..\Projects\Amrod-Amtrack-ASPNet\src\amtrack\Amtrack.ValueObjects\Amtrack.ValueObjects.csproj" />
+    <ProjectReference Include="..\Amtrack.Data_V2\Amtrack.Data_V2.csproj" />
+    <ProjectReference Include="..\Amtrack.Services\Amtrack.Services.csproj" />
+  </ItemGroup>
+
+</Project>
