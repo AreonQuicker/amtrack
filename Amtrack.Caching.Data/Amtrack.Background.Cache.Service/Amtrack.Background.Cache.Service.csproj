@@ -5,4 +5,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Amtrack.Cache.Store\Amtrack.Cache.Store.csproj" />
+    <ProjectReference Include="..\Amtrack.Caching.Service\Amtrack.Caching.Service.csproj" />
+    <ProjectReference Include="..\Amtrack.Logger\Amtrack.Logger.csproj" />
+  </ItemGroup>
+
 </Project>
