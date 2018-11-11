@@ -1,0 +1,16 @@
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\bin\Debug\netcoreapp2.1\Amtrack.Core.Repositories.deps.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\bin\Debug\netcoreapp2.1\Amtrack.Core.Repositories.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\bin\Debug\netcoreapp2.1\Amtrack.Core.Repositories.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\bin\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\bin\Debug\netcoreapp2.1\Amtrack.Amtrack_V2.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\bin\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\bin\Debug\netcoreapp2.1\Amtrack.Amtrack_V2.Data.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\obj\Debug\netcoreapp2.1\Amtrack.Core.Repositories.csprojAssemblyReference.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\obj\Debug\netcoreapp2.1\Amtrack.Core.Repositories.csproj.CoreCompileInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\obj\Debug\netcoreapp2.1\Amtrack.Core.Repositories.AssemblyInfoInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\obj\Debug\netcoreapp2.1\Amtrack.Core.Repositories.AssemblyInfo.cs
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\obj\Debug\netcoreapp2.1\Amtrack.Core.Repositories.csproj.CopyComplete
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\obj\Debug\netcoreapp2.1\Amtrack.Core.Repositories.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\obj\Debug\netcoreapp2.1\Amtrack.Core.Repositories.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\bin\Debug\netcoreapp2.1\Amtrack.StockCheck.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Core.Repositories\bin\Debug\netcoreapp2.1\Amtrack.StockCheck.Data.pdb

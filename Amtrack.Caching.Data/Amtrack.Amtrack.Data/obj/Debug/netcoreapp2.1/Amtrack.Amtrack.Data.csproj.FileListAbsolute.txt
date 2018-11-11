@@ -1,0 +1,10 @@
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\bin\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.deps.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\bin\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.runtimeconfig.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\bin\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.runtimeconfig.dev.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\bin\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\bin\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.csproj.CoreCompileInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.AssemblyInfoInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.AssemblyInfo.cs
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.pdb

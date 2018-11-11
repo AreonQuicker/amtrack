@@ -1,0 +1,64 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="BDB5FED3-96A1-4466-9846-2E55819AF9E7/d:Data/f:AccountContacts.cs" caret="0" fromTop="0" />
+    <File id="BDB5FED3-96A1-4466-9846-2E55819AF9E7/d:Data/f:AccountAddress.cs" caret="0" fromTop="0" />
+    <File id="E667F9F3-4BC0-4C63-99BC-29A459A92184/f:AmtrackContext.cs" caret="287" fromTop="12" />
+    <File id="694FF756-92EA-411C-92A8-519FF605EAEF/d:Data/f:StockVirtualStockLookup.cs" caret="211" fromTop="8" />
+    <File id="CC2F6DF4-1312-42C4-91D3-D43701EF96F7/f:BaseEntityVO.cs" caret="384" fromTop="15" />
+    <File id="ABE51EDA-7FB8-4622-8909-7FB1681C730B/f:GiftSetType.cs" caret="242" fromTop="13" />
+    <File id="ABE51EDA-7FB8-4622-8909-7FB1681C730B/f:DocumentTypes.cs" caret="893" fromTop="30" />
+    <File id="BDB5FED3-96A1-4466-9846-2E55819AF9E7/f:AmtrackV2Context.cs" caret="0" fromTop="0" />
+    <File id="F1457BE6-BB18-495B-A4F7-F9638409FBB2/f:ICoreRepository.cs" caret="0" fromTop="0" />
+    <File id="B2E9A401-94FE-4226-89D9-72207A8378A2/f:AmtrackCachingContext.cs" caret="870" fromTop="27" />
+    <File id="B2E9A401-94FE-4226-89D9-72207A8378A2/f:AmtrackStockCheckCachingContext.cs" caret="986" fromTop="30" />
+    <File id="B2E9A401-94FE-4226-89D9-72207A8378A2/f:AmtrackV2CachingContext.cs" caret="874" fromTop="27" />
+    <File id="CC2F6DF4-1312-42C4-91D3-D43701EF96F7/d:Production/f:EmTbaJobCardInfoVO.cs" caret="1832" fromTop="54" />
+    <File id="CC2F6DF4-1312-42C4-91D3-D43701EF96F7/d:LeadTime/f:mMatrix.cs" caret="547" fromTop="17" />
+    <File id="0E9054CE-FD7D-425A-9807-6535376D0C3C/f:CachingRepository.cs" caret="1322" fromTop="13" />
+    <File id="3059F80F-49D3-43BC-B460-9D849256F80C/f:ICachingService.cs" caret="462" fromTop="14" />
+    <File id="0E9054CE-FD7D-425A-9807-6535376D0C3C/f:ICachingRepository.cs" caret="628" fromTop="17" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:UserExtensions.cs" caret="0" fromTop="0" />
+    <File id="CC2F6DF4-1312-42C4-91D3-D43701EF96F7/d:Inventory/f:GroupVO.cs" caret="206" fromTop="9" />
+    <File id="CC2F6DF4-1312-42C4-91D3-D43701EF96F7/d:Inventory/f:InventoryItemVO.cs" caret="1773" fromTop="19" />
+    <File id="B2E9A401-94FE-4226-89D9-72207A8378A2/d:StockCheckData/f:stCatalogue.cs" caret="1036" fromTop="30" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="1379" fromTop="13" />
+    <File id="ABE51EDA-7FB8-4622-8909-7FB1681C730B/f:AccountContactAddressFlags.cs" caret="0" fromTop="0" />
+    <File id="694FF756-92EA-411C-92A8-519FF605EAEF/f:AmtrackStockCheckContext.cs" caret="0" fromTop="0" />
+    <File id="3059F80F-49D3-43BC-B460-9D849256F80C/f:CachingService.cs" caret="0" fromTop="0" />
+    <File id="F1457BE6-BB18-495B-A4F7-F9638409FBB2/f:CoreBaseRepository.cs" caret="776" fromTop="25" />
+    <File id="F5167C8D-9589-4B16-9F7B-6413E7309B9E/f:ICoreService.cs" caret="0" fromTop="0" />
+    <File id="F5167C8D-9589-4B16-9F7B-6413E7309B9E/f:CoreBaseService.cs" caret="0" fromTop="0" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="0E9054CE-FD7D-425A-9807-6535376D0C3C/f:CachingRepository.cs" caret="1045" fromTop="16" />
+    <File id="0E9054CE-FD7D-425A-9807-6535376D0C3C/f:CachingRepository.cs" caret="1334" fromTop="28" />
+    <File id="0E9054CE-FD7D-425A-9807-6535376D0C3C/f:CachingRepository.cs" caret="1660" fromTop="42" />
+    <File id="0E9054CE-FD7D-425A-9807-6535376D0C3C/f:CachingRepository.cs" caret="1943" fromTop="34" />
+    <File id="B2E9A401-94FE-4226-89D9-72207A8378A2/f:AmtrackCachingContext.cs" caret="870" fromTop="27" />
+    <File id="0E9054CE-FD7D-425A-9807-6535376D0C3C/f:CachingRepository.cs" caret="676" fromTop="9" />
+    <File id="0E9054CE-FD7D-425A-9807-6535376D0C3C/f:CachingRepository.cs" caret="1160" fromTop="23" />
+    <File id="0E9054CE-FD7D-425A-9807-6535376D0C3C/f:CachingRepository.cs" caret="1875" fromTop="13" />
+    <File id="0E9054CE-FD7D-425A-9807-6535376D0C3C/f:CachingRepository.cs" caret="1511" fromTop="20" />
+    <File id="3059F80F-49D3-43BC-B460-9D849256F80C/f:CachingService.cs" caret="700" fromTop="22" />
+    <File id="3059F80F-49D3-43BC-B460-9D849256F80C/f:ICachingService.cs" caret="405" fromTop="13" />
+    <File id="3059F80F-49D3-43BC-B460-9D849256F80C/f:CachingService.cs" caret="376" fromTop="11" />
+    <File id="3059F80F-49D3-43BC-B460-9D849256F80C/f:CachingService.cs" caret="1163" fromTop="22" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="2582" fromTop="33" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="2582" fromTop="39" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="2582" fromTop="28" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="2582" fromTop="17" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="2582" fromTop="10" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="2582" fromTop="21" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="664" fromTop="14" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="353" fromTop="4" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="2582" fromTop="25" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="2582" fromTop="25" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="742" fromTop="26" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="2584" fromTop="31" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="1550" fromTop="2" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="2075" fromTop="19" />
+    <File id="B2E9A401-94FE-4226-89D9-72207A8378A2/d:StockCheckData/f:stCatalogue.cs" caret="1164" fromTop="33" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="2464" fromTop="27" />
+    <File id="360FB89C-DC8C-4B3C-B652-8762B7C12A8D/f:InventoryExtensions.cs" caret="1250" fromTop="10" />
+  </RecentEdits>
+</RecentFiles>

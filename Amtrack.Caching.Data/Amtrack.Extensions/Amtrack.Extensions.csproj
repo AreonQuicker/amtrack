@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Projects\Amrod-Amtrack-ASPNet\src\amtrack\Amtrack.Enumeration\Amtrack.Enumeration.csproj" />
+    <ProjectReference Include="..\..\..\..\Projects\Amrod-Amtrack-ASPNet\src\amtrack\Amtrack.ValueObjects\Amtrack.ValueObjects.csproj" />
+    <ProjectReference Include="..\Amtrack.Amtrack.Data\Amtrack.Amtrack.Data.csproj" />
+    <ProjectReference Include="..\Amtrack.Amtrack_V2.Data\Amtrack.Amtrack_V2.Data.csproj" />
+    <ProjectReference Include="..\Amtrack.Caching.Data\Amtrack.Caching.Data.csproj" />
+    <ProjectReference Include="..\Amtrack.StockCheck.Data\Amtrack.StockCheck.Data.csproj" />
+  </ItemGroup>
+
+</Project>

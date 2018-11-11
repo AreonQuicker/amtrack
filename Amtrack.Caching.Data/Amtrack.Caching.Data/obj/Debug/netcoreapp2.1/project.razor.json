@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Personal Projects\\amtrack\\Amtrack.Caching.Data\\Amtrack.Caching.Data\\Amtrack.Caching.Data.csproj",
+  "TargetFramework": "netcoreapp2.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "Amtrack.Models/1.0.0": {
+        "dependencies": {
+          "Amtrack.Enumeration": "1.0.0",
+          "Amtrack.ValueObjects": "1.0.0"
+        },
+        "runtime": {
+          "Amtrack.Models.dll": {}
+        }
+      },
+      "Amtrack.Enumeration/1.0.0": {
+        "runtime": {
+          "Amtrack.Enumeration.dll": {}
+        }
+      },
+      "Amtrack.ValueObjects/1.0.0": {
+        "dependencies": {
+          "Amtrack.Enumeration": "1.0.0",
+          "Newtonsoft.Json": "11.0.0.0"
+        },
+        "runtime": {
+          "Amtrack.ValueObjects.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Reference/11.0.0.0": {
+        "runtime": {
+          "Newtonsoft.Json.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.2.21924"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Amtrack.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Amtrack.Enumeration/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Amtrack.ValueObjects/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Newtonsoft.Json.Reference/11.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
