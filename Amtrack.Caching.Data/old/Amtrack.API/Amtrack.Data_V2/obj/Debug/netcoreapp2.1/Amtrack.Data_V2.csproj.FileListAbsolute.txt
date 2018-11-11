@@ -1,0 +1,11 @@
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Data_V2\bin\Debug\netcoreapp2.1\Amtrack.Data_V2.deps.json
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Data_V2\bin\Debug\netcoreapp2.1\Amtrack.Data_V2.dll
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Data_V2\obj\Debug\netcoreapp2.1\Amtrack.Data_V2.csproj.CoreCompileInputs.cache
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Data_V2\obj\Debug\netcoreapp2.1\Amtrack.Data_V2.AssemblyInfoInputs.cache
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Data_V2\obj\Debug\netcoreapp2.1\Amtrack.Data_V2.AssemblyInfo.cs
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Data_V2\bin\Debug\netcoreapp2.1\Amtrack.Data_V2.pdb
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Data_V2\obj\Debug\netcoreapp2.1\Amtrack.Data_V2.dll
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Data_V2\obj\Debug\netcoreapp2.1\Amtrack.Data_V2.pdb
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Data_V2\bin\Debug\netcoreapp2.1\Amtrack.Data_V2.runtimeconfig.json
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Data_V2\bin\Debug\netcoreapp2.1\Amtrack.Data_V2.runtimeconfig.dev.json
+C:\Users\Gideon\source\repos\Amtrack.API\Amtrack.Data_V2\obj\Debug\netcoreapp2.1\Amtrack.Data_V2.csprojAssemblyReference.cache

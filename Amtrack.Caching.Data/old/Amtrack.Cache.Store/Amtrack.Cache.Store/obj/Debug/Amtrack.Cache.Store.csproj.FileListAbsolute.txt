@@ -1,0 +1,15 @@
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\bin\Debug\Amtrack.Cache.Store.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\bin\Debug\Amtrack.Cache.Store.pdb
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\bin\Debug\ServiceStack.Common.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\bin\Debug\ServiceStack.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\bin\Debug\ServiceStack.Interfaces.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\bin\Debug\ServiceStack.OrmLite.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\bin\Debug\ServiceStack.OrmLite.SqlServer.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\bin\Debug\ServiceStack.Redis.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\bin\Debug\ServiceStack.ServiceInterface.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\bin\Debug\ServiceStack.Text.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\obj\Debug\Amtrack.Cache.Store.csproj.CoreCompileInputs.cache
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\obj\Debug\Amtrack.Cache.Store.csproj.CopyComplete
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\obj\Debug\Amtrack.Cache.Store.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\obj\Debug\Amtrack.Cache.Store.pdb
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Store\obj\Debug\Amtrack.Cache.Store.csprojAssemblyReference.cache

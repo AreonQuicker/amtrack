@@ -1,0 +1,13 @@
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Test\bin\Debug\Amtrack.Cache.Test.exe.config
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Test\bin\Debug\Amtrack.Cache.Test.exe
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Test\bin\Debug\Amtrack.Cache.Test.pdb
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Test\bin\Debug\Amtrack.Cache.Store.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Test\bin\Debug\ServiceStack.Redis.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Test\bin\Debug\ServiceStack.Interfaces.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Test\bin\Debug\ServiceStack.Text.dll
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Test\bin\Debug\Amtrack.Cache.Store.pdb
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Test\obj\Debug\Amtrack.Cache.Test.csprojAssemblyReference.cache
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Test\obj\Debug\Amtrack.Cache.Test.csproj.CoreCompileInputs.cache
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Test\obj\Debug\Amtrack.Cache.Test.csproj.CopyComplete
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Test\obj\Debug\Amtrack.Cache.Test.exe
+C:\Users\Gideon\source\repos\Amtrack.Cache.Store\Amtrack.Cache.Test\obj\Debug\Amtrack.Cache.Test.pdb
