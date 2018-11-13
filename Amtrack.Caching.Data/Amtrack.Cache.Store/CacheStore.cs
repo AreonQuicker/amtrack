@@ -209,6 +209,35 @@ namespace Amtrack.Cache.Store
                 .Where(w => w != null)
                 .ToList();
         }
+
+        public override void Set(object value)
+        {
+            if(initialized)
+            {
+                lock(lockObject)
+                {
+                    string key = null;
+                    Type type = value.GetType();
+
+                    var eProperty = type.GetProperty("CacheKey", typeof(string));
+                    if(eProperty != null)
+                        key = eProperty.GetValue(value) as string;
+
+                    if(!string.IsNullOrEmpty(key))
+                    {
+                        var cacheLink = redisClient.Get<CacheLink>(Key(type.Name));
+
+                        if(cacheLink == null)
+                            cacheLink = new CacheLink(Key(type.Name), type, new HashSet<string>());
+
+                        cacheLink.LinkKeys.Add(key);
+
+                        redisClient.Add<CacheLink>(Key(type.Name), cacheLink);
+                        redisClient.Add<object>(Key(key, type.Name), value); 
+                    }
+                }
+            }
+        }
         #endregion
     }
 }

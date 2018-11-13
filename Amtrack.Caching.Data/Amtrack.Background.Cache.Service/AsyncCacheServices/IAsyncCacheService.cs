@@ -6,6 +6,7 @@ namespace Amtrack.Background.Cache.Service.AsyncCacheServices
 {
     public interface IAsyncCacheService
     {
+        bool Synchronous { get; }
         Task<(bool, string, Exception)> SetDataAsync(CancellationToken cancellationToken);
         Task<(bool, string, Exception)> DeleteDataAsync(CancellationToken cancellationToken);
     }

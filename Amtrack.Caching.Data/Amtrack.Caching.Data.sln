@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Cache.SDK", "Amtrac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.DependencyInjection", "Amtrack.DependencyInjection\Amtrack.DependencyInjection.csproj", "{86CB41A6-C10B-4BA7-95AD-85CDD500CB62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Cache.Test", "Amtrack.Cache.Test\Amtrack.Cache.Test.csproj", "{AEBB8C9C-01EF-47C5-AD9C-3AF114494999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Cache.Test", "Amtrack.Cache.Test\Amtrack.Cache.Test.csproj", "{AEBB8C9C-01EF-47C5-AD9C-3AF114494999}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

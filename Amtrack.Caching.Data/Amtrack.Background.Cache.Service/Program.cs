@@ -11,14 +11,14 @@ namespace Amtrack.Background.Cache.Service
 
             SetupUnity();
 
-            var backgroundService = DependencyInjector.Retrieve<IBackgroundCacheService>();
+            var backgroundServiceController = BackgroundServiceController.Instance;
 
-            backgroundService.Start();
+            backgroundServiceController.Start();
 
             Console.WriteLine("Press any key to stop");
             Console.ReadLine();
 
-            backgroundService.Stop();
+            backgroundServiceController.Stop();
         }
 
         static void SetupUnity()

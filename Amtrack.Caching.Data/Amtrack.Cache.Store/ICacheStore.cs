@@ -10,6 +10,7 @@ namespace Amtrack.Cache.Store
         void Init(string host);
         void Init(string host, int? Port);
 
+        void Set(object value);
         void Set<T>(string key, T value);
         void Set<T>(string key, T value, TimeSpan cacheTimeSpan = default(TimeSpan));
 

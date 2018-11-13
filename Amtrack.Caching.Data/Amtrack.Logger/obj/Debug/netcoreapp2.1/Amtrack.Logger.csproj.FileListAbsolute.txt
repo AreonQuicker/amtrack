@@ -7,3 +7,12 @@ C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netco
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.dll
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.pdb
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.csprojAssemblyReference.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netcoreapp2.1\Amtrack.Logger.deps.json
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netcoreapp2.1\Amtrack.Logger.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netcoreapp2.1\Amtrack.Logger.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.csprojAssemblyReference.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.csproj.CoreCompileInputs.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.AssemblyInfoInputs.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.AssemblyInfo.cs
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.pdb

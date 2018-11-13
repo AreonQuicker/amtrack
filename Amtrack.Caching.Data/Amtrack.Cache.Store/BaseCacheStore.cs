@@ -97,6 +97,7 @@ namespace Amtrack.Cache.Store
         public abstract IList<object> GetAll(Type type);
         public abstract IList<object> Get(string[] keys, Type type);
         public abstract void Set<T>(string key, T value);
+        public abstract void Set(object value);
         #endregion
     }
 }

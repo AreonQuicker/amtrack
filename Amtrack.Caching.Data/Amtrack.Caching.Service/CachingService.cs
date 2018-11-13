@@ -6,6 +6,7 @@ using Amtrack.Caching.Repository;
 using Amtrack.Core.Services;
 using Amtrack.Extensions;
 using Amtrack.Models;
+using Amtrack.Models.Cache;
 using Amtrack.ValueObjects.Inventory;
 using Amtrack.ValueObjects.OrderEntry;
 using Amtrack.ValueObjects.Security;
@@ -35,6 +36,7 @@ namespace Amtrack.Caching.Service
                 .ToList()
             };
         }
+
         public InventoryCacheModel GetInventoryCacheModel()
         {
             var inventoryCacheModel = new InventoryCacheModel

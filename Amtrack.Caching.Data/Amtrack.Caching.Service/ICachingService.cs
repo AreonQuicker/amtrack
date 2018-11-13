@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Amtrack.Models;
+using Amtrack.Models.Cache;
 using Amtrack.ValueObjects.Inventory;
 using Amtrack.ValueObjects.OrderEntry;
 using Amtrack.ValueObjects.Security;
