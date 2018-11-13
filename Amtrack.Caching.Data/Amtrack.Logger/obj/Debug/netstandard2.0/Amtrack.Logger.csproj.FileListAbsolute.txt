@@ -1,7 +1,6 @@
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Logger.deps.json
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Logger.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Logger.pdb
-C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.csprojAssemblyReference.cache
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.csproj.CoreCompileInputs.cache
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.AssemblyInfoInputs.cache
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.AssemblyInfo.cs

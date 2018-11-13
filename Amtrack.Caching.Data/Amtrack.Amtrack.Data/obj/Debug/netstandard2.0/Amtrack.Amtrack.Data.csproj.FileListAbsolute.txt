@@ -6,4 +6,3 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\netstandard2.0\Amtrack.Amtrack.Data.AssemblyInfo.cs
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\netstandard2.0\Amtrack.Amtrack.Data.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\netstandard2.0\Amtrack.Amtrack.Data.pdb
-C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\netstandard2.0\Amtrack.Amtrack.Data.csprojAssemblyReference.cache
