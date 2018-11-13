@@ -6,3 +6,12 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Debug\n
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\bin\Debug\netstandard2.0\Amtrack.Cache.Store.pdb
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Debug\netstandard2.0\Amtrack.Cache.Store.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Debug\netstandard2.0\Amtrack.Cache.Store.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\bin\Debug\netstandard2.0\Amtrack.Cache.Store.deps.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\bin\Debug\netstandard2.0\Amtrack.Cache.Store.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\bin\Debug\netstandard2.0\Amtrack.Cache.Store.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Debug\netstandard2.0\Amtrack.Cache.Store.csproj.CoreCompileInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Debug\netstandard2.0\Amtrack.Cache.Store.AssemblyInfoInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Debug\netstandard2.0\Amtrack.Cache.Store.AssemblyInfo.cs
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Debug\netstandard2.0\Amtrack.Cache.Store.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Debug\netstandard2.0\Amtrack.Cache.Store.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Debug\netstandard2.0\Amtrack.Cache.Store.csprojAssemblyReference.cache

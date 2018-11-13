@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Projects\Amrod-Amtrack-ASPNet\src\amtrack\Amtrack.ValueObjects\Amtrack.ValueObjects.csproj" />
+    <ProjectReference Include="..\Amtrack.Cache.SDK\Amtrack.Cache.SDK.csproj" />
+    <ProjectReference Include="..\Amtrack.Cache.Store\Amtrack.Cache.Store.csproj" />
+  </ItemGroup>
+
+</Project>

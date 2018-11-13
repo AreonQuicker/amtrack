@@ -1,0 +1,9 @@
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netcoreapp2.1\Amtrack.Logger.deps.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netcoreapp2.1\Amtrack.Logger.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netcoreapp2.1\Amtrack.Logger.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.csproj.CoreCompileInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.AssemblyInfoInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.AssemblyInfo.cs
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netcoreapp2.1\Amtrack.Logger.csprojAssemblyReference.cache

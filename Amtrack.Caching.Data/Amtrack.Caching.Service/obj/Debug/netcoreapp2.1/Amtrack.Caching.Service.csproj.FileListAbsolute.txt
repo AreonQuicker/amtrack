@@ -58,3 +58,7 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Service\obj\Deb
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Service\obj\Debug\netcoreapp2.1\Amtrack.Caching.Service.pdb
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Service\bin\Debug\netcoreapp2.1\Amtrack.Models.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Service\bin\Debug\netcoreapp2.1\Amtrack.Models.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Service\bin\Debug\netcoreapp2.1\Amtrack.Models.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Service\bin\Debug\netcoreapp2.1\Amtrack.Models.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Data.pdb

@@ -3,20 +3,26 @@ using System.Collections.Generic;
 
 namespace Amtrack.Cache.Store
 {
-	public interface ICacheStore
-	{
-		void Init(string host);
-		void Init(string host, int Port);
+    public interface ICacheStore
+    {
+        TimeSpan DefaultCacheTimeSpan { get; }
 
-		void Set<T>(string key, T value, TimeSpan cacheTimeSpan = default(TimeSpan));
+        void Init(string host);
+        void Init(string host, int? Port);
 
-		IList<T> GetAll<T>();
-		IList<T> Get<T>(string[] keys);
-		T Get<T>(string Key);
+        void Set<T>(string key, T value);
+        void Set<T>(string key, T value, TimeSpan cacheTimeSpan = default(TimeSpan));
 
-		void FlushALL();
-		void Remove<T>(string key);
-		void Remove<T>(string[] keys);
-		void DeleteAll<T>();
-	}
+        IList<object> GetAll(Type type);
+        IList<T> GetAll<T>();
+        IList<T> Get<T>(string[] keys);
+        IList<object> Get(string[] keys, Type type);
+        T Get<T>(string Key);
+        IList<Type> GetAllTypes();
+
+        void FlushALL();
+        void Remove<T>(string key);
+        void Remove<T>(string[] keys);
+        void DeleteAll<T>();
+    }
 }

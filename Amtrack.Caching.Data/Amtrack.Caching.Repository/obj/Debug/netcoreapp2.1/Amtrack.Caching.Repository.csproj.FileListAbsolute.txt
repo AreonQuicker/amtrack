@@ -36,3 +36,5 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\Debug\netcoreapp2.1\Amtrack.Caching.Repository.csproj.CopyComplete
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\Debug\netcoreapp2.1\Amtrack.Caching.Repository.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\Debug\netcoreapp2.1\Amtrack.Caching.Repository.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netcoreapp2.1\Amtrack.Caching.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netcoreapp2.1\Amtrack.Caching.Data.pdb

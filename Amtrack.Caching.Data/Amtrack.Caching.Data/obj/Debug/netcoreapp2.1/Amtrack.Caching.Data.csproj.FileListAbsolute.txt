@@ -19,3 +19,4 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Data\obj\Debug\
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Data\obj\Debug\netcoreapp2.1\Amtrack.Caching.Data.AssemblyInfo.cs
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Data\obj\Debug\netcoreapp2.1\Amtrack.Caching.Data.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Data\obj\Debug\netcoreapp2.1\Amtrack.Caching.Data.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Data\obj\Debug\netcoreapp2.1\Amtrack.Caching.Data.csprojAssemblyReference.cache

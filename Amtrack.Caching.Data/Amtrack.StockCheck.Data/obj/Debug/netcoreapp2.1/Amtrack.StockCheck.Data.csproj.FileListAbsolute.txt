@@ -19,3 +19,4 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Deb
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netcoreapp2.1\Amtrack.StockCheck.Data.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netcoreapp2.1\Amtrack.StockCheck.Data.pdb
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netcoreapp2.1\Amtrack.StockCheck.Data.csprojAssemblyReference.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netcoreapp2.1\Amtrack.StockCheck.Data.csprojAssemblyReference.cache

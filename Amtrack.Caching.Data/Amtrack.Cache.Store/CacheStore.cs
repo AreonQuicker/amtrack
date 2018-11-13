@@ -4,129 +4,211 @@ using System.Linq;
 
 namespace Amtrack.Cache.Store
 {
-	internal class CacheLink
-	{
-		public string Key { get; set; }
-		public HashSet<string> LinkKeys { get; set; }
+    internal class CacheLink
+    {
+        public string Key { get; set; }
+        public HashSet<string> LinkKeys { get; set; }
+        public Type Type { get; set; }
 
-		public CacheLink(string key, HashSet<string> linkKeys)
-		{
-			Key = key;
-			LinkKeys = linkKeys;
-		}
-	}
+        public CacheLink(string key, Type type, HashSet<string> linkKeys)
+        {
+            Key = key;
+            LinkKeys = linkKeys;
+            Type = type;
 
-	public class CacheStore : BaseCacheStore
-	{
-		public CacheStore(Dictionary<ConfigurationType, object> configurations)
-			: base(configurations)
-		{
+        }
+    }
 
-		}
+    public class CacheStore : BaseCacheStore
+    {
+        public CacheStore(Dictionary<ConfigurationType, object> configurations, bool init = false)
+            : base(configurations, init)
+        {
 
-		#region Key Builders
-		private string AppKey { get { return (string.IsNullOrWhiteSpace(appKey) ? "" : $"{appKey}."); } }
-		private string Key<T>()
-		{
-			return $"{AppKey}{typeof(T).Name}";
-		}
-		private string Key<T>(string Key)
-		{
-			return $"{AppKey}{typeof(T).Name}.{Key}";
-		}
-		#endregion
+        }
 
-		#region Public Methods
-		public override void FlushALL()
-		{
-			if(!initialized)
-				base.redisClient.FlushAll();
-		}
+        #region Key Builders
+        private string AppKey { get { return (string.IsNullOrWhiteSpace(appKey) ? "" : $"{appKey}."); } }
+        private string Key<T>()
+        {
+            return $"Type::{AppKey}{typeof(T).Name}";
+        }
+        private string Key(string name)
+        {
+            return $"Type::{AppKey}{name}";
+        }
+        private string Key<T>(string key)
+        {
+            return $"Key::{AppKey}{typeof(T).Name}.{key}";
+        }
+        private string Key(string key, string name)
+        {
+            return $"Key::{AppKey}{name}.{key}";
+        }
+        #endregion
 
-		public override IList<T> Get<T>(string[] keys)
-		{
-			if(!initialized)
-				return null;
+        #region Public Methods
+        public override void FlushALL()
+        {
+            if(!initialized)
+                redisClient.FlushDb();
+        }
 
-			return base.redisClient.GetAll<T>(keys.Select(k => Key<T>(k)))
-				.Values
-				.Where(w => w != null)
-				.ToList();
-		}
+        public override IList<T> Get<T>(string[] keys)
+        {
+            if(!initialized)
+                return new List<T>();
 
-		public override T Get<T>(string Key)
-		{
-			if(!initialized)
-				return default(T);
+            return redisClient.GetAll<T>(keys.Select(k => Key<T>(k)))
+                .Values
+                .Where(w => w != null)
+                .ToList();
+        }
 
-			return base.redisClient.Get<T>(Key<T>(Key));
-		}
+        public override T Get<T>(string Key)
+        {
+            if(!initialized)
+                return default(T);
 
-		public override IList<T> GetAll<T>()
-		{
-			if(!initialized)
-				return null;
+            return redisClient.Get<T>(Key<T>(Key));
+        }
 
-			var cacheLink = base.redisClient.Get<CacheLink>(Key<T>());
+        public override IList<T> GetAll<T>()
+        {
+            if(!initialized)
+                return new List<T>();
 
-			if(cacheLink != null
-				&& cacheLink.LinkKeys.Any())
-			{
-				return Get<T>(cacheLink.LinkKeys.ToArray());
-			}
+            var cacheLink = redisClient.Get<CacheLink>(Key<T>());
 
-			return null;
-		}
+            if(cacheLink != null
+                && cacheLink.LinkKeys.Any())
+            {
+                return Get<T>(cacheLink.LinkKeys.ToArray());
+            }
 
-		public override void Set<T>(string key, T value, TimeSpan cacheTimeSpan = default(TimeSpan))
-		{
-			if(initialized)
-			{
-				var cacheLink = base.redisClient.Get<CacheLink>(Key<T>());
-				if(cacheLink == null)
-					cacheLink = new CacheLink(Key<T>(), new HashSet<string>());
+            return new List<T>();
+        }
 
-				cacheLink.LinkKeys.Add(key);
+        public override void Set<T>(string key, T value)
+        {
+            if(initialized)
+            {
+                lock(lockObject)
+                {
 
-				if(cacheTimeSpan != default(TimeSpan))
-				{
-					base.redisClient.Set<CacheLink>(Key<T>(), cacheLink, cacheTimeSpan);
-					base.redisClient.Set<T>(Key<T>(key), value, cacheTimeSpan);
-				}
-				else
-				{
-					base.redisClient.Set<CacheLink>(Key<T>(), cacheLink);
-					base.redisClient.Set<T>(Key<T>(key), value);
-				}
-			}
-		}
+                    var cacheLink = redisClient.Get<CacheLink>(Key<T>());
 
-		public override void Remove<T>(string key)
-		{
-			if(initialized)
-				base.redisClient.Remove(Key<T>(key));
+                    if(cacheLink == null)
+                        cacheLink = new CacheLink(Key<T>(), typeof(T), new HashSet<string>());
 
-		}
+                    cacheLink.LinkKeys.Add(key);
 
-		public override void Remove<T>(string[] keys)
-		{
-			if(initialized)
-				base.redisClient.RemoveAll(keys.Select(k => Key<T>(k)));
-		}
+                    redisClient.Add<CacheLink>(Key<T>(), cacheLink);
+                    redisClient.Add<T>(Key<T>(key), value);
+                }
+            }
+        }
 
-		public override void DeleteAll<T>()
-		{
-			if(initialized)
-			{
-				var cacheLink = base.redisClient.Get<CacheLink>(Key<T>());
+        public override void Set<T>(string key, T value, TimeSpan cacheTimeSpan = default(TimeSpan))
+        {
 
-				if(cacheLink != null)
-				{
-					Remove<T>(cacheLink.LinkKeys.ToArray());
-					base.redisClient.Remove(cacheLink.Key);
-				}
-			}
-		} 
-		#endregion
-	}
+            if(initialized)
+            {
+                lock(lockObject)
+                {
+
+                    var cacheLink = redisClient.Get<CacheLink>(Key<T>());
+
+                    if(cacheLink == null)
+                        cacheLink = new CacheLink(Key<T>(), typeof(T), new HashSet<string>());
+
+                    cacheLink.LinkKeys.Add(key);
+
+                    if(cacheTimeSpan != default(TimeSpan))
+                    {
+                        DateTime cacheExpiry = DateTime.Now.Add(cacheTimeSpan);
+
+                        redisClient.Add<CacheLink>(Key<T>(), cacheLink, cacheExpiry);
+                        redisClient.Add<T>(Key<T>(key), value, cacheTimeSpan);
+                    }
+                    else
+                    {
+                        DateTime cacheExpiry = DateTime.Now.Add(defaultCacheTimeSpan);
+
+                        redisClient.Add<CacheLink>(Key<T>(), cacheLink);
+                        redisClient.Add<T>(Key<T>(key), value);
+                    }
+                }
+            }
+        }
+
+        public override void Remove<T>(string key)
+        {
+            if(initialized)
+                redisClient.Remove(Key<T>(key));
+
+        }
+
+        public override void Remove<T>(string[] keys)
+        {
+            if(initialized)
+                redisClient.RemoveAll(keys.Select(k => Key<T>(k)));
+        }
+
+        public override void DeleteAll<T>()
+        {
+            if(initialized)
+            {
+                var cacheLink = redisClient.Get<CacheLink>(Key<T>());
+
+                if(cacheLink != null)
+                {
+                    Remove<T>(cacheLink.LinkKeys.ToArray());
+                    redisClient.Remove(cacheLink.Key);
+                }
+            }
+        }
+
+        public override IList<Type> GetAllTypes()
+        {
+            if(!initialized)
+                return new List<Type>();
+
+            var keys = redisClient.SearchKeys("Type::*");
+
+            var cacheLinks = Get<CacheLink>(keys.ToArray());
+
+            return cacheLinks
+                .Select(s => s.Type)
+                .ToList();
+        }
+
+        public override IList<object> GetAll(Type type)
+        {
+            if(!initialized)
+                return new List<object>();
+
+            var cacheLink = redisClient.Get<CacheLink>(Key(type.Name));
+
+            if(cacheLink != null
+                && cacheLink.LinkKeys.Any())
+            {
+                return Get(cacheLink.LinkKeys.ToArray(), type);
+            }
+
+            return new List<object>();
+        }
+
+        public override IList<object> Get(string[] keys, Type type)
+        {
+            if(!initialized)
+                return new List<object>();
+
+            return redisClient.GetAll<object>(keys.Select(k => Key(k, type.Name)))
+                .Values
+                .Where(w => w != null)
+                .ToList();
+        }
+        #endregion
+    }
 }
