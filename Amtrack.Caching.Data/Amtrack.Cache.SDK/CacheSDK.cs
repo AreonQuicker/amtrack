@@ -4,11 +4,10 @@ using Amtrack.Cache.Store;
 
 namespace Amtrack.Cache.SDK
 {
-	//TODO NotImplementedException
 	public class CacheSDK : BaseCacheSDK
 	{
-		public CacheSDK(Dictionary<ConfigurationType, object> configurations, bool initCacheStore = false)
-			: base(configurations, initCacheStore)
+		public CacheSDK(Dictionary<ConfigurationType, object> configurations, bool initCacheStore, bool useInternalCacheStore)
+			: base(configurations, initCacheStore, useInternalCacheStore)
 		{
 
 		}
@@ -16,101 +15,144 @@ namespace Amtrack.Cache.SDK
 		#region Public Methods
 		public override void DeleteAllInternal<T>()
 		{
-			internalCacheStore.DeleteAll<T>();
+			if(internalCacheStore != null)
+				internalCacheStore.DeleteAll<T>();
 		}
 
 		public override void FlushALLInternal()
 		{
-			internalCacheStore.FlushALL();
+			if(internalCacheStore != null)
+				internalCacheStore.FlushALL();
 		}
 
 		public override IList<T> Get<T>(string[] keys)
 		{
-			var values = internalCacheStore.Get<T>(keys);
-
-			if(values.Count != keys.Length)
+			if(internalCacheStore != null)
 			{
-				values = cacheStore.Get<T>(keys);
+				var values = internalCacheStore.Get<T>(keys);
 
-				if(values.Any())
-					internalCacheStore.SetAll((IEnumerable<object>)values);
+				if(values.Count != keys.Length)
+				{
+					values = cacheStore.Get<T>(keys);
+
+					if(values.Any())
+						internalCacheStore.SetAll((IEnumerable<object>)values);
+
+					RemoveAllExpiredInternal<T>();
+				}
+
+				return values;
 			}
-
-			return values;
+			else
+			{
+				return cacheStore.Get<T>(keys);
+			}
 		}
 
 		public override T Get<T>(string key)
 		{
-			var value = internalCacheStore.Get<T>(key);
-
-			if(value == null)
+			if(internalCacheStore != null)
 			{
-				value = cacheStore.Get<T>(key);
+				var value = internalCacheStore.Get<T>(key);
 
-				if(value != null)
-					internalCacheStore.Set<T>(key, value);
+				if(value == null)
+				{
+					value = cacheStore.Get<T>(key);
+
+					if(value != null)
+						internalCacheStore.Set<T>(key, value);
+
+					RemoveAllExpiredInternal<T>();
+				}
+
+				return value;
 			}
-
-			return value;
+			else
+			{
+				return cacheStore.Get<T>(key);
+			}
 		}
 
 		public override IList<T> GetAll<T>()
 		{
-			var values = internalCacheStore.GetAll<T>(typeof(T).Name);
-
-			if(!values.Any())
+			if(internalCacheStore != null)
 			{
-				values = cacheStore.GetAll<T>();
+				var values = internalCacheStore.GetAll<T>(typeof(T).Name);
 
-				if(values.Any())
-					internalCacheStore.SetAll((IEnumerable<object>)values, typeof(T).Name);
+				if(!values.Any())
+				{
+					values = cacheStore.GetAll<T>();
+
+					if(values.Any())
+						internalCacheStore.SetAll((IEnumerable<object>)values, typeof(T).Name);
+
+					RemoveAllExpiredInternal<T>();
+				}
+
+				return values;
 			}
-
-			return values;
+			else
+			{
+				return cacheStore.GetAll<T>();
+			}
 		}
 
 		public override IList<T> GetAll<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues)
 		{
-			var key = $"{typeof(T).Name}-{connectionValues.GetType().Name}";
-
 			var keys = cacheStore.GetAllKeys<T>(connectionType, connectionValues);
 
-			var values = internalCacheStore.GetAll<T>(connectionType, key, connectionValues);
-
-			if(values.Count != keys.Count)
+			if(internalCacheStore != null)
 			{
-				values = cacheStore.Get<T>(keys.ToArray());
+				var key = $"{typeof(T).Name}-{connectionValues.GetType().Name}";
 
-				if(values.Any())
-					internalCacheStore.SetAll((IEnumerable<object>)values, key);
+				var values = internalCacheStore.GetAll<T>(connectionType, key, connectionValues);
+
+				if(values.Count != keys.Count)
+				{
+					values = cacheStore.Get<T>(keys.ToArray());
+
+					if(values.Any())
+						internalCacheStore.SetAll((IEnumerable<object>)values, key);
+
+					RemoveAllExpiredInternal<T>();
+				}
+
+				return values;
 			}
-
-			return values;
+			else
+			{
+				return cacheStore.Get<T>(keys.ToArray());
+			}
 		}
 
 		public override void SetInternal(object value)
 		{
-			internalCacheStore.Set(value);
+			if(internalCacheStore != null)
+				internalCacheStore.Set(value);
 		}
 
 		public override void SetInternal<T>(string key, T value)
 		{
-			internalCacheStore.Set<T>(key, value);
+			if(internalCacheStore != null)
+				internalCacheStore.Set<T>(key, value);
 		}
 
 		public override void SetInternal<T>(T value)
 		{
-			internalCacheStore.Set<T>(value);
+			if(internalCacheStore != null)
+				internalCacheStore.Set<T>(value);
 		}
 
 		public override void SetInternalAll(IEnumerable<object> values)
 		{
-			internalCacheStore.SetAll(values);
+			if(internalCacheStore != null)
+				internalCacheStore.SetAll(values);
 		}
 
 		public override void SetInternalAll<T>(IEnumerable<KeyValuePair<string, T>> values)
 		{
-			internalCacheStore.SetAll<T>(values);
+			if(internalCacheStore != null)
+				internalCacheStore.SetAll<T>(values);
 		}
 		#endregion
 	}

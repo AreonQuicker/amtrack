@@ -18,7 +18,7 @@ namespace Amtrack.Cache.Test
 				[ConfigurationType.Host] = "127.0.0.1:6379"
 			};
 
-			ICacheSDK cacheSDK = new CacheSDK(configurations, true);
+			ICacheSDK cacheSDK = new CacheSDK(configurations, true, true);
 
 			var item = cacheSDK.Get<InventoryItemVO>("BAG-3000");
 

@@ -3,7 +3,6 @@ using Amtrack.Cache.Store;
 
 namespace Amtrack.Cache.SDK
 {
-	//TODO Change Names
 	public interface IInternalCacheStore
 	{
 		void Set(object value);
@@ -27,6 +26,8 @@ namespace Amtrack.Cache.SDK
 		void DeleteAll<T>();
 
 		void FlushALL();
+
+		void RemoveAllExpired<T>();
 	}
 
 }

@@ -31,7 +31,6 @@ namespace Amtrack.Background.Cache.Service.BackgroundCacheServices
 					if(stop)
 						return;
 
-					//Set Data
 					foreach(var syncCacheService in syncCacheServices)
 					{
 						Logger.LogInfo($"Processing Cache For Service {syncCacheService.ServiceName} - Start");
@@ -50,8 +49,6 @@ namespace Amtrack.Background.Cache.Service.BackgroundCacheServices
 
 						Logger.LogInfo($"Processing Cache For Service {syncCacheService.ServiceName} - Complete");
 					}
-
-					//Set Data
 
 					Logger.LogInfo($"Processing Cache For Services Async {string.Join(",", asyncCacheServices.Select(s => s.ServiceName))} - Start");
 

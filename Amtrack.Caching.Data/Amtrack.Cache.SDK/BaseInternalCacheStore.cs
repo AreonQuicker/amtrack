@@ -36,6 +36,7 @@ namespace Amtrack.Cache.SDK
 		public abstract void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, string eKey);
 		public abstract void SetAll(IEnumerable<object> values);
 		public abstract void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values);
+		public abstract void RemoveAllExpired<T>();
 		#endregion
 	}
 

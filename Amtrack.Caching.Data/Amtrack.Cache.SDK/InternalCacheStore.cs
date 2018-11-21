@@ -4,12 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Amtrack.Cache.Store;
 
-//TODO
-//NotImplementedException
-//Can Set Internal Cache Off
-//Can Use Dictionary
-//Remove of Expired
-
 namespace Amtrack.Cache.SDK
 {
 	public class InternalCacheStore : BaseInternalCacheStore
@@ -180,6 +174,10 @@ namespace Amtrack.Cache.SDK
 
 			if(entityCacheStore != null)
 			{
+				var connectionValuesD = connectionValues
+					.GroupBy(g => g.Field)
+					.ToDictionary(d => d.Key, d => d.FirstOrDefault());
+
 				var values = entityCacheStore.Values(eKey)
 					.AsParallel()
 					.Select(s =>
@@ -187,8 +185,7 @@ namespace Amtrack.Cache.SDK
 						return new
 						{
 							s.Value,
-							values = connectionValues
-							.GroupBy(g => g.Field)
+							values = connectionValuesD
 							.ToDictionary(
 								d => d.Key,
 								d => s.Value.GetValue(d.Key)
@@ -213,9 +210,9 @@ namespace Amtrack.Cache.SDK
 						};
 
 						if(connectionType == ConnectionType.And)
-							return connectionValues.All(predicate);
+							return connectionValuesD.Values.All(predicate);
 						else
-							return connectionValues.Any(predicate);
+							return connectionValuesD.Values.Any(predicate);
 					})
 					.Select(s => s.Value)
 					.Cast<T>()
@@ -225,6 +222,16 @@ namespace Amtrack.Cache.SDK
 			}
 
 			return new List<T>();
+		}
+
+		public override void RemoveAllExpired<T>()
+		{
+			var entityCacheStore = GetEntityCache<T>();
+
+			if(entityCacheStore != null)
+			{
+				entityCacheStore.RemoveAllExpired();
+			}
 		}
 
 		#endregion

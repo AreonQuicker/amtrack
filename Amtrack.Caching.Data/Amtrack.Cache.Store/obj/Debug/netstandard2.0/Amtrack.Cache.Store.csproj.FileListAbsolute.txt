@@ -18,3 +18,7 @@ C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Debug\
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\bin\Debug\netstandard2.0\Amtrack.Cache.Models.dll
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\bin\Debug\netstandard2.0\Amtrack.Cache.Models.pdb
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Debug\netstandard2.0\Amtrack.Cache.Store.csproj.CopyComplete
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\bin\Debug\netstandard2.0\Amtrack.Cache.Models.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\bin\Debug\netstandard2.0\Amtrack.Cache.Models.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Debug\netstandard2.0\Amtrack.Cache.Store.csprojAssemblyReference.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Debug\netstandard2.0\Amtrack.Cache.Store.csproj.CopyComplete

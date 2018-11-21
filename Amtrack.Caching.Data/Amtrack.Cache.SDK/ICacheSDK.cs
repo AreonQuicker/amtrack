@@ -3,7 +3,6 @@ using Amtrack.Cache.Store;
 
 namespace Amtrack.Cache.SDK
 {
-	//TODO add beter names
 	public interface ICacheSDK
 	{
 		void InitCache(string host, int? port);

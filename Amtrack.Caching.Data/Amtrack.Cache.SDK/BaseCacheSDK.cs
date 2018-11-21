@@ -8,13 +8,33 @@ namespace Amtrack.Cache.SDK
 	{
 		protected IInternalCacheStore internalCacheStore;
 		protected ICacheStore cacheStore;
-		protected bool isLoaded = false;
+		protected DateTime date;
+		protected TimeSpan defaultInternalCacheTimeSpan;
 
-		protected BaseCacheSDK(Dictionary<ConfigurationType, object> configurations, bool initCacheStore = false)
+		protected BaseCacheSDK(Dictionary<ConfigurationType, object> configurations, bool initCacheStore, bool useInternalCacheStore)
 		{
-			cacheStore = new CacheStore(configurations, initCacheStore);
-			internalCacheStore = new InternalCacheStore((TimeSpan)configurations[ConfigurationType.DefaultInternalCacheTimeSpan]);
+			if(useInternalCacheStore)
+			{
+				defaultInternalCacheTimeSpan = (TimeSpan)configurations[ConfigurationType.DefaultInternalCacheTimeSpan];
+				internalCacheStore = new InternalCacheStore(defaultInternalCacheTimeSpan);
+				date = DateTime.Now; 
+			}
+
+			cacheStore = new CacheStore(configurations, initCacheStore);	
+	
 		}
+
+		#region Protected Methods
+		protected void RemoveAllExpiredInternal<T>()
+		{
+			if(internalCacheStore != null
+				&& date.Add(defaultInternalCacheTimeSpan) < DateTime.Now)
+			{
+				internalCacheStore.RemoveAllExpired<T>();
+				date = DateTime.Now;
+			}
+		}
+		#endregion
 
 		#region Public Methods
 		public void InitCache(string host, int? port)
@@ -24,9 +44,8 @@ namespace Amtrack.Cache.SDK
 			else
 				cacheStore.Init();
 
-			//TODO
+			//TODO Load all cache
 		}
-
 		#endregion
 
 		#region Public Abstract Methods

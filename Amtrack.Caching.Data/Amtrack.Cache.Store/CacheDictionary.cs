@@ -3,12 +3,21 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using StackExchange.Redis;
 
+//TODO Set serialize back
 namespace Amtrack.Cache.Store
 {
 	public class CacheDictionary<TValue> : IDictionary<string, TValue>
 	{
 		private readonly ConnectionMultiplexer _cnn;
 		private readonly string _redisKey;
+
+		public CacheDictionary(string host)
+		{	
+
+			string redisConnection = $"{host},ssl=false,allowAdmin=true,ConnectRetry=3,ConnectTimeout=5000,defaultDatabase=1";
+
+			_cnn = ConnectionMultiplexer.Connect(redisConnection);	
+		}
 
 		public CacheDictionary(ConnectionMultiplexer connectionMultiplexer, string redisKey)
 		{
@@ -79,6 +88,7 @@ namespace Amtrack.Cache.Store
 				.AsParallel()
 				.Select(s => GetRedisDb()
 				.HashGet(_redisKey, (RedisValue)s))
+				.Where(w => !w.IsNull)
 				.ToList();
 
 			if(!redisValues.Any())
@@ -87,6 +97,7 @@ namespace Amtrack.Cache.Store
 			return redisValues
 				.AsParallel()
 				.Select(s => s.ToString().StringToObject<TValue>())
+				.Where(w => w != null)
 				.ToList();
 		}
 

@@ -15,3 +15,4 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.pdb
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.csprojAssemblyReference.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.csprojAssemblyReference.cache

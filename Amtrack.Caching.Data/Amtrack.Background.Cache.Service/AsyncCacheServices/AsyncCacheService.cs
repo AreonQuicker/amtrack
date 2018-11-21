@@ -52,9 +52,7 @@ namespace Amtrack.Background.Cache.Service.AsyncCacheServices
 							if(propertyValue != null
 								&& propertyValue is IEnumerable<object>)
 							{
-								var values = ((IEnumerable<object>)propertyValue);
-								//TODO
-								values = values.Take(10000);
+								var values = ((IEnumerable<object>)propertyValue);						
 
 								cacheStore.SetAll(values);
 							}

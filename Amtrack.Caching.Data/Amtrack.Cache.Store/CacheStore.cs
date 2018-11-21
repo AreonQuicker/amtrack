@@ -5,12 +5,6 @@ using System.Threading.Tasks;
 
 namespace Amtrack.Cache.Store
 {
-	//TODO add more locks
-	//TODO remove dublicate code
-	//TODO remove objects
-	//TODO check all paralel
-	//TODO Check ICollection
-	//TODO Check null     
 
 	public class CacheStore : BaseCacheStore
 	{
@@ -386,10 +380,7 @@ namespace Amtrack.Cache.Store
 			{
 				var connectionValuesD = connectionValues
 					.GroupBy(g => g.Field)
-					.ToDictionary(d => d.Key, d =>
-					{
-						return d.Select(s => s).ToList();
-					});
+					.ToDictionary(d => d.Key, d => d.FirstOrDefault());
 
 				List<List<string>> values = null;
 
@@ -400,46 +391,40 @@ namespace Amtrack.Cache.Store
 					if(dKeys == null)
 						return new List<string>();
 
-					var dsad = connectionValuesD
+					var rkeys = connectionValuesD
 						.AsParallel()
 						.Select(s =>
 						{
-							return s.Value.Select(ss =>
+							switch(s.Value.ConnectionValueType)
 							{
-								switch(ss.ConnectionValueType)
-								{
-									case ConnectionValueType.Contains:
-										return dKeys.Where(w => w.Contains(LinkKey(ss.Field, ss.Value)));
-									case ConnectionValueType.StartsWith:
-										return dKeys.Where(w => w.StartsWith(LinkKey(ss.Field, ss.Value)));
-									case ConnectionValueType.EndWith:
-										return dKeys.Where(w => w.EndsWith(LinkKey(ss.Field, ss.Value)));
-									default:
-										return dKeys.Where(w => w.Equals(LinkKey(ss.Field, ss.Value), StringComparison.CurrentCultureIgnoreCase));
-								}
-							});
+								case ConnectionValueType.Contains:
+									return dKeys.Where(w => w.Contains(LinkKey(s.Value.Field, s.Value.Value)));
+								case ConnectionValueType.StartsWith:
+									return dKeys.Where(w => w.StartsWith(LinkKey(s.Value.Field, s.Value.Value)));
+								case ConnectionValueType.EndWith:
+									return dKeys.Where(w => w.EndsWith(LinkKey(s.Value.Field, s.Value.Value)));
+								default:
+									return dKeys.Where(w => w.Equals(LinkKey(s.Value.Field, s.Value.Value), StringComparison.CurrentCultureIgnoreCase));
+							}
 
 						})
 						.ToList();
 
-					values = dKeys
-						.Distinct()
-						.AsParallel()
-						.Select(s => connectionCacheDictionary.GetValue(s))
-						.Where(w => w != null)
-						.ToList();
+					values = rkeys
+							.AsParallel()
+							.Select(s =>
+							{
+								return connectionCacheDictionary.GetValues(s.ToArray())
+								.SelectMany(ss => ss)
+								.ToList();
+							})
+							.ToList();
 				}
 				else
 				{
 					values = connectionValuesD
 						.AsParallel()
-						.Select(s =>
-						{
-							return s.Value
-							.Select(ss => connectionCacheDictionary.GetValue(LinkKey(s.Key, ss.Value)))
-							.SelectMany(ss => ss)
-							.ToList();
-						})
+						.Select(s => connectionCacheDictionary.GetValue(s.Value.Value))
 						.ToList();
 				}
 
