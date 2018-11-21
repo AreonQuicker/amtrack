@@ -38,3 +38,5 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Test\obj\Debug\ne
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Test\obj\Debug\netcoreapp2.1\Amtrack.Cache.Test.csproj.CopyComplete
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Test\obj\Debug\netcoreapp2.1\Amtrack.Cache.Test.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Test\obj\Debug\netcoreapp2.1\Amtrack.Cache.Test.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Test\bin\Debug\netcoreapp2.1\Amtrack.Cache.Models.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Test\bin\Debug\netcoreapp2.1\Amtrack.Cache.Models.pdb

@@ -1,88 +1,84 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using Amtrack.Logger;
 
 namespace Amtrack.Background.Cache.Service
 {
-   public abstract class BaseBackgroundService : IBackgroundService
-    {
-        #region protected Readonly Variables   
-        protected CancellationTokenSource cancellationTokenSource;
-        private readonly string _threadName;
-        #endregion
+	public abstract class BaseBackgroundService : IBackgroundService
+	{
+		#region Private Readonly Variables   
 
-        #region Private Variables      
-        private Thread _thread = null;
-        protected bool stop = false;
-        protected bool running = false;
-        #endregion
+		#endregion
 
-        #region Public Properties
-        public bool IsRunning => running;
-        public string Name => _thread?.Name;
-        #endregion
+		#region Protected Variables
+		protected CancellationTokenSource cancellationTokenSource;
+		protected IAmtrackLogger Logger { get; }
+		protected bool stop = false;
+		protected bool running = false;
+		#endregion
 
-        protected BaseBackgroundService(
-           IAmtrackLogger logger,
-           string threadName)
-        {
+		#region Private Variables      
+		private Thread _thread = null;
+		#endregion
 
-            cancellationTokenSource = new CancellationTokenSource();
-            _threadName = threadName;
-        }
+		#region Public Properties
+		public bool IsRunning => running;
+		public string Name => _thread?.Name;
+		#endregion
 
-        #region Public Methods
-        public virtual bool Start()
-        {
-            if(_thread == null
-                && !running
-                && stop)
-            {               
+		protected BaseBackgroundService(
+		   IAmtrackLogger logger)
+		{
 
-                stop = false;
-                running = false;
-                cancellationTokenSource = new CancellationTokenSource();
-                _thread = new Thread(Process);
-                _thread.Name = _threadName;
-                _thread.Start();
+			cancellationTokenSource = new CancellationTokenSource();
+			Logger = logger;
+		}
 
-                return true;
-            }
+		#region Public Methods
+		public virtual bool Start()
+		{
+			if(_thread == null
+				&& !running)
+			{
+				stop = false;
+				running = false;
+				cancellationTokenSource = new CancellationTokenSource();
+				_thread = new Thread(Process);
+				_thread.Start();
 
-            return false;
-        }
+				return true;
+			}
 
-        public virtual bool Stop()
-        {
-            cancellationTokenSource.Cancel();
-            stop = true;
+			return false;
+		}
 
-            while(IsRunning)
-            {
-                Thread.Sleep(250);
-            }
+		public virtual bool Stop()
+		{
+			cancellationTokenSource.Cancel();
+			stop = true;
 
-            running = false;
-            _thread = null;
+			while(IsRunning)
+			{
+				Thread.Sleep(250);
+			}
 
-            return true;
-        }
+			running = false;
+			_thread = null;
 
-        public abstract void Process();
+			return true;
+		}
 
-        public bool CanStart()
-        {
-            if(_thread == null
-                && !running
-                && stop)
-            {
-                return true;
-            }
+		public abstract void Process();
 
-            return false;
-        }
-        #endregion
-    }
+		public bool CanStart()
+		{
+			if(_thread == null
+				&& !running)
+			{
+				return true;
+			}
+
+			return false;
+		}
+		#endregion
+	}
 }

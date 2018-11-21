@@ -16,44 +16,50 @@ using Unity.Lifetime;
 
 namespace Amtrack.Background.Cache.Service
 {
-    public class DependencyOfCacheExtension : UnityContainerExtension
-    {
-        protected override void Initialize()
-        {
-            Container.RegisterType<IAmtrackLogger, OldConsoleLogger>(new ContainerControlledLifetimeManager());
+	public class DependencyOfCacheExtension : UnityContainerExtension
+	{
+		protected override void Initialize()
+		{
+			NLog.LogManager.Configuration = new AmtrackConfiguration(Enumeration.LoggerTargetTypes.Console);
 
-            //TODO
-            var configurations = new Dictionary<ConfigurationType, object>()
-            {
-                [ConfigurationType.AppKey] = "Amtrack.Cache",
-                [ConfigurationType.DefaultCacheTimeSpan] = new TimeSpan(0, 1, 0),
-                [ConfigurationType.Host] = "127.0.0.1:6379"
-            };
+			Container.RegisterType<IAmtrackLogger, AmtrackLogger>(new ContainerControlledLifetimeManager(), new InjectionConstructor
+			  (
+				 LoggerNames.Amtrack_Cache,
+				 true
+			  ));
 
-            Container.RegisterType<ICacheStore, CacheStore>
-            (
-              new ContainerControlledLifetimeManager()
-              , new InjectionConstructor
-              (
-                 configurations,
-                 true
-              )
-            );
+			//TODO Load config
+			var configurations = new Dictionary<ConfigurationType, object>()
+			{
+				[ConfigurationType.AppKey] = "Amtrack.Cache",
+				[ConfigurationType.DefaultCacheTimeSpan] = new TimeSpan(0, 1, 0),
+				[ConfigurationType.Host] = "127.0.0.1:6379"
+			};
 
-            Container.RegisterType<ICachingRepository, CachingRepository>
-           (
-              new InjectionConstructor
-             (
-                new AmtrackV2Context(),
-                new AmtrackContext(),
-                new AmtrackStockCheckContext(),
-                new AmtrackStockCheckCachingContext()
-             )
-           );
+			Container.RegisterType<ICacheStore, CacheStore>
+			(
+			  new ContainerControlledLifetimeManager()
+			  , new InjectionConstructor
+			  (
+				 configurations,
+				 true
+			  )
+			);
 
-            Container.RegisterType<ICachingService, CachingService>();
+			Container.RegisterType<ICachingRepository, CachingRepository>
+		   (
+			  new InjectionConstructor
+			 (
+				new AmtrackV2Context(),
+				new AmtrackContext(),
+				new AmtrackStockCheckContext(),
+				new AmtrackStockCheckCachingContext()
+			 )
+		   );
 
-            Container.RegisterType<IBackgroundCacheService, BackgroundCacheService>();
-        }
-    }
+			Container.RegisterType<ICachingService, CachingService>();
+
+			Container.RegisterType<IBackgroundCacheService, BackgroundCacheService>();
+		}
+	}
 }

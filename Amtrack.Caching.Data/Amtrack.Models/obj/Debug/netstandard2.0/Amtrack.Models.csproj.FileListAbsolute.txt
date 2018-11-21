@@ -14,3 +14,19 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Models\obj\Debug\netsta
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Models\obj\Debug\netstandard2.0\Amtrack.Models.csproj.CopyComplete
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Models\obj\Debug\netstandard2.0\Amtrack.Models.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Models\obj\Debug\netstandard2.0\Amtrack.Models.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\bin\Debug\netstandard2.0\Amtrack.Models.deps.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\bin\Debug\netstandard2.0\Amtrack.Models.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\bin\Debug\netstandard2.0\Amtrack.Models.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\bin\Debug\netstandard2.0\Amtrack.Enumeration.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\bin\Debug\netstandard2.0\Amtrack.ValueObjects.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\bin\Debug\netstandard2.0\Newtonsoft.Json.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\bin\Debug\netstandard2.0\Amtrack.Enumeration.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\bin\Debug\netstandard2.0\Amtrack.ValueObjects.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\bin\Debug\netstandard2.0\Newtonsoft.Json.xml
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\obj\Debug\netstandard2.0\Amtrack.Models.csprojAssemblyReference.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\obj\Debug\netstandard2.0\Amtrack.Models.csproj.CoreCompileInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\obj\Debug\netstandard2.0\Amtrack.Models.AssemblyInfoInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\obj\Debug\netstandard2.0\Amtrack.Models.AssemblyInfo.cs
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\obj\Debug\netstandard2.0\Amtrack.Models.csproj.CopyComplete
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\obj\Debug\netstandard2.0\Amtrack.Models.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Models\obj\Debug\netstandard2.0\Amtrack.Models.pdb

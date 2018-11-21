@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Amtrack.Background.Cache.Service.AsyncCacheServices;
 using Amtrack.Background.Cache.Service.BackgroundCacheServices;
 using Amtrack.Cache.Store;
@@ -9,53 +7,55 @@ using Amtrack.Logger;
 
 namespace Amtrack.Background.Cache.Service
 {
-    public class BackgroundServiceController
-    {
-        private readonly IList<IBackgroundCacheService> _backgroundCacheServices = null;
-        private readonly IAmtrackLogger _amtrackLogger = null;
+	public class BackgroundServiceController
+	{
+		private readonly IList<IBackgroundCacheService> _backgroundCacheServices = null;
+		private readonly IAmtrackLogger _amtrackLogger = null;
 
-        public BackgroundServiceController()
-        {
-            _amtrackLogger = DependencyInjector.Retrieve<IAmtrackLogger>();
-            _backgroundCacheServices = new List<IBackgroundCacheService>();
+		public BackgroundServiceController()
+		{
+			_amtrackLogger = DependencyInjector.Retrieve<IAmtrackLogger>();
+			_backgroundCacheServices = new List<IBackgroundCacheService>();
 
-            Register();
-        }
+			Register();
+		}
 
-        private void Register()
-        {
-            var backgroundService = DependencyInjector.Retrieve<IBackgroundCacheService>();
-          
-            var cacheStore = DependencyInjector.Retrieve<ICacheStore>();
+		private void Register()
+		{
+			var cacheStore = DependencyInjector.Retrieve<ICacheStore>();
 
-            backgroundService.Init(new List<IAsyncCacheService>
-            {
-                new AsyncUserCacheService(cacheStore,_amtrackLogger, true)
-            });
+			var backgroundService = DependencyInjector.Retrieve<IBackgroundCacheService>();
 
-            _backgroundCacheServices.Add(backgroundService);
-        }
+			backgroundService.Init(new List<IAsyncCacheService>
+			{
+                //new AsyncCacheService<ICacheModel>(cacheStore,_amtrackLogger, true,"Users", "GetUserCacheModel"),
+               // new AsyncCacheService<ICacheModel>(cacheStore,_amtrackLogger, true,"Inventory", "GetInventoryCacheModel"),
+               new AsyncInventoryCacheService(cacheStore, _amtrackLogger, true, "GetInventoryCacheModel")
+			});
 
-        public bool Start()
-        {
-            foreach(var backgroundCacheService in _backgroundCacheServices)
-            {
-                backgroundCacheService.Start();
-            }
+			_backgroundCacheServices.Add(backgroundService);
+		}
 
-            return true;
-        }
+		public bool Start()
+		{
+			foreach(var backgroundCacheService in _backgroundCacheServices)
+			{
+				backgroundCacheService.Start();
+			}
 
-        public bool Stop()
-        {
-            foreach(var backgroundCacheService in _backgroundCacheServices)
-            {
-                backgroundCacheService.Stop();
-            }
+			return true;
+		}
 
-            return true;
-        }
+		public bool Stop()
+		{
+			foreach(var backgroundCacheService in _backgroundCacheServices)
+			{
+				backgroundCacheService.Stop();
+			}
 
-        public static BackgroundServiceController Instance => new BackgroundServiceController();
-    }
+			return true;
+		}
+
+		public static BackgroundServiceController Instance => new BackgroundServiceController();
+	}
 }

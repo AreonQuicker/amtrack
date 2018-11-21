@@ -18,3 +18,23 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\Debug\netstandard2.0\Amtrack.Caching.Repository.csproj.CopyComplete
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\Debug\netstandard2.0\Amtrack.Caching.Repository.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\Debug\netstandard2.0\Amtrack.Caching.Repository.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netstandard2.0\Amtrack.Caching.Repository.deps.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netstandard2.0\Amtrack.Caching.Repository.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netstandard2.0\Amtrack.Caching.Repository.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netstandard2.0\Amtrack.Amtrack.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netstandard2.0\Amtrack.Amtrack_V2.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netstandard2.0\Amtrack.Caching.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netstandard2.0\Amtrack.Core.Repositories.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netstandard2.0\Amtrack.StockCheck.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netstandard2.0\Amtrack.Amtrack.Data.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netstandard2.0\Amtrack.Amtrack_V2.Data.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netstandard2.0\Amtrack.Caching.Data.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netstandard2.0\Amtrack.Core.Repositories.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\bin\Debug\netstandard2.0\Amtrack.StockCheck.Data.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\Debug\netstandard2.0\Amtrack.Caching.Repository.csprojAssemblyReference.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\Debug\netstandard2.0\Amtrack.Caching.Repository.csproj.CoreCompileInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\Debug\netstandard2.0\Amtrack.Caching.Repository.AssemblyInfoInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\Debug\netstandard2.0\Amtrack.Caching.Repository.AssemblyInfo.cs
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\Debug\netstandard2.0\Amtrack.Caching.Repository.csproj.CopyComplete
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\Debug\netstandard2.0\Amtrack.Caching.Repository.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Repository\obj\Debug\netstandard2.0\Amtrack.Caching.Repository.pdb

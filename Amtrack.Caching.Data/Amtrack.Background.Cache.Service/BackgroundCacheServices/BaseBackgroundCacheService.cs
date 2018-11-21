@@ -7,38 +7,37 @@ using Amtrack.Logger;
 
 namespace Amtrack.Background.Cache.Service.BackgroundCacheServices
 {
-    public abstract class BaseBackgroundCacheService : BaseBackgroundService, IBackgroundCacheService
-    {
+	public abstract class BaseBackgroundCacheService : BaseBackgroundService, IBackgroundCacheService
+	{
 
-        #region protected Variables   
-        protected IList<IAsyncCacheService> asyncCacheServices;
-        protected IList<IAsyncCacheService> syncCacheServices;
-        #endregion
+		#region protected Variables   
+		protected IList<IAsyncCacheService> asyncCacheServices;
+		protected IList<IAsyncCacheService> syncCacheServices;
+		#endregion
 
-        #region Private Variables      
-        #endregion    
+		#region Private Variables      
+		#endregion
 
-        protected BaseBackgroundCacheService(
-           ICacheStore cacheStore,
-           IAmtrackLogger logger,
-           string threadName)
-            : base(logger, threadName)
-        {
+		protected BaseBackgroundCacheService(
+		   ICacheStore cacheStore,
+		   IAmtrackLogger logger)
+			: base(logger)
+		{
 
-            cancellationTokenSource = new CancellationTokenSource();
-        }
+			cancellationTokenSource = new CancellationTokenSource();
+		}
 
-        #region Public Methods
-        public void Init(IList<IAsyncCacheService> asyncCacheServices)
-        {
-            this.asyncCacheServices = asyncCacheServices
-                 .Where(w => !w.Synchronous)
-                 .ToList();
+		#region Public Methods
+		public void Init(IList<IAsyncCacheService> asyncCacheServices)
+		{
+			this.asyncCacheServices = asyncCacheServices
+				 .Where(w => !w.Synchronous)
+				 .ToList();
 
-            this.syncCacheServices = asyncCacheServices
-                .Where(w => w.Synchronous)
-                .ToList();
-        }      
-        #endregion
-    }
+			this.syncCacheServices = asyncCacheServices
+				.Where(w => w.Synchronous)
+				.ToList();
+		}
+		#endregion
+	}
 }

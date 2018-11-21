@@ -2,79 +2,92 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Amtrack.Background.Cache.Service.AsyncCacheServices;
 using Amtrack.Cache.Store;
 using Amtrack.Logger;
 
 namespace Amtrack.Background.Cache.Service.BackgroundCacheServices
 {
-    public class BackgroundCacheService : BaseBackgroundCacheService
-    {
-        public BackgroundCacheService(
-           ICacheStore cacheStore,
-           IAmtrackLogger logger)
-            : base(cacheStore, logger, nameof(BackgroundCacheService))
-        {
-           
-        }
+	public class BackgroundCacheService : BaseBackgroundCacheService
+	{
+		public BackgroundCacheService(
+		   ICacheStore cacheStore,
+		   IAmtrackLogger logger)
+			: base(cacheStore, logger)
+		{
 
-        #region Public Methods
-        public override void Process()
-        {
-            try
-            {
-                while(true)
-                {
-                    running = true;
+		}
 
-                    if(stop)
-                        return;
+		#region Public Methods
+		public override void Process()
+		{
+			Logger.LogInfo($"Processing Cache For Background Service {nameof(BackgroundCacheService)} - Start");
 
-                    //Set Data
-                    foreach(var syncCacheService in syncCacheServices)
-                    {
-                        (bool, string, Exception) result = syncCacheService.SetDataAsync(cancellationTokenSource.Token).Result;
+			try
+			{
+				while(true)
+				{
+					running = true;
 
-                        if(result.Item1)
-                        {
+					if(stop)
+						return;
 
-                        }
-                        else
-                        {
+					//Set Data
+					foreach(var syncCacheService in syncCacheServices)
+					{
+						Logger.LogInfo($"Processing Cache For Service {syncCacheService.ServiceName} - Start");
 
-                        }
-                        //TODO
-                    }
+						(bool, string, Exception) result = syncCacheService.SetDataAsync(cancellationTokenSource.Token).Result;
 
-                    //Set Data
-                    var tasks = asyncCacheServices
-                         .Select(s => s.SetDataAsync(cancellationTokenSource.Token))
-                         .ToList();
+						//TODO
+						if(result.Item1)
+						{
 
-                    var results = Task.WhenAll(tasks).Result;
+						}
+						else
+						{
 
-                    foreach(var result in results)
-                    {
-                        //TODO
-                    }
+						}
 
-                    //TODO
-                    if(!stop)
-                        Thread.Sleep(1000);
-                }
+						Logger.LogInfo($"Processing Cache For Service {syncCacheService.ServiceName} - Complete");
+					}
 
-            }
-            catch(Exception ex)
-            {
-                //TODO
-                throw;
-            }
-            finally
-            {
-                running = false;
-            }
-        }
-        #endregion
+					//Set Data
 
-    }
+					Logger.LogInfo($"Processing Cache For Services Async {string.Join(",", asyncCacheServices.Select(s => s.ServiceName))} - Start");
+
+					var tasks = asyncCacheServices
+						  .Select(s => s.SetDataAsync(cancellationTokenSource.Token))
+						  .ToList();
+
+					var results = Task.WhenAll(tasks).Result;
+
+					Logger.LogInfo($"Processing Cache For Services Async {string.Join(",", asyncCacheServices.Select(s => s.ServiceName))} - Complete");
+
+					//TODO
+					foreach(var result in results)
+					{
+
+					}
+
+					if(!stop)
+						Thread.Sleep(1000);
+				}
+
+			}
+			catch(Exception ex)
+			{
+				Logger.LogError(ex, $"Processing Cache For Background Service {nameof(BackgroundCacheService)} - Failed");
+
+				throw;
+			}
+			finally
+			{
+				Logger.LogInfo($"Processing Cache For Background Service {nameof(BackgroundCacheService)} - Complete");
+
+				running = false;
+			}
+		}
+		#endregion
+
+	}
 }

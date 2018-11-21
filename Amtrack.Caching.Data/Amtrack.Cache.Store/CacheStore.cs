@@ -1,243 +1,475 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Amtrack.Cache.Store
 {
-    internal class CacheLink
-    {
-        public string Key { get; set; }
-        public HashSet<string> LinkKeys { get; set; }
-        public Type Type { get; set; }
+	//TODO add more locks
+	//TODO remove dublicate code
+	//TODO remove objects
+	//TODO check all paralel
+	//TODO Check ICollection
+	//TODO Check null     
 
-        public CacheLink(string key, Type type, HashSet<string> linkKeys)
-        {
-            Key = key;
-            LinkKeys = linkKeys;
-            Type = type;
+	public class CacheStore : BaseCacheStore
+	{
+		#region Private ReadOnly Variables
+		private readonly CacheDictionary<Type> mainCacheDictionary;
+		#endregion
 
-        }
-    }
+		public CacheStore(Dictionary<ConfigurationType, object> configurations, bool init = false)
+			: base(configurations, init)
+		{
+			mainCacheDictionary = new CacheDictionary<Type>(connectionMultiplexer, AppKey);
+		}
 
-    public class CacheStore : BaseCacheStore
-    {
-        public CacheStore(Dictionary<ConfigurationType, object> configurations, bool init = false)
-            : base(configurations, init)
-        {
+		#region Private Methods
+		private CacheDictionary<List<string>> ConnectionCacheDictionaryInstance(Type type) =>
+		new CacheDictionary<List<string>>(connectionMultiplexer, ConnectionTypeKey(type.Name));
 
-        }
+		private CacheDictionary<List<string>> ConnectionCacheDictionaryInstance<T>() =>
+		  new CacheDictionary<List<string>>(connectionMultiplexer, ConnectionTypeKey<T>());
 
-        #region Key Builders
-        private string AppKey { get { return (string.IsNullOrWhiteSpace(appKey) ? "" : $"{appKey}."); } }
-        private string Key<T>()
-        {
-            return $"Type::{AppKey}{typeof(T).Name}";
-        }
-        private string Key(string name)
-        {
-            return $"Type::{AppKey}{name}";
-        }
-        private string Key<T>(string key)
-        {
-            return $"Key::{AppKey}{typeof(T).Name}.{key}";
-        }
-        private string Key(string key, string name)
-        {
-            return $"Key::{AppKey}{name}.{key}";
-        }
-        #endregion
+		private CacheDictionary<T> CacheDictionaryInstance<T>() =>
+			new CacheDictionary<T>(connectionMultiplexer, TypeKey<T>());
 
-        #region Public Methods
-        public override void FlushALL()
-        {
-            if(!initialized)
-                redisClient.FlushDb();
-        }
+		private CacheDictionary<object> CacheDictionaryInstance(Type type) =>
+		  new CacheDictionary<object>(connectionMultiplexer, TypeKey(type.Name));
+		#endregion
 
-        public override IList<T> Get<T>(string[] keys)
-        {
-            if(!initialized)
-                return new List<T>();
+		#region Public Methods
+		public override void DeleteAll<T>()
+		{
+			lock(lockObject)
+			{
+				var cacheDictionary = CacheDictionaryInstance<T>();
 
-            return redisClient.GetAll<T>(keys.Select(k => Key<T>(k)))
-                .Values
-                .Where(w => w != null)
-                .ToList();
-        }
+				var connectionCacheDictionary = ConnectionCacheDictionaryInstance<T>();
 
-        public override T Get<T>(string Key)
-        {
-            if(!initialized)
-                return default(T);
+				if(mainCacheDictionary.ContainsKey(TypeKey<T>()))
+					mainCacheDictionary.Remove(TypeKey<T>());
 
-            return redisClient.Get<T>(Key<T>(Key));
-        }
+				cacheDictionary.Clear();
 
-        public override IList<T> GetAll<T>()
-        {
-            if(!initialized)
-                return new List<T>();
+				connectionCacheDictionary.Clear();
+			}
+		}
 
-            var cacheLink = redisClient.Get<CacheLink>(Key<T>());
+		public override void DeleteAll(Type type)
+		{
+			lock(lockObject)
+			{
+				var cacheDictionary = CacheDictionaryInstance(type);
 
-            if(cacheLink != null
-                && cacheLink.LinkKeys.Any())
-            {
-                return Get<T>(cacheLink.LinkKeys.ToArray());
-            }
+				var connectionCacheDictionary = ConnectionCacheDictionaryInstance(type);
 
-            return new List<T>();
-        }
+				if(mainCacheDictionary.ContainsKey(TypeKey(type.Name)))
+					mainCacheDictionary.Remove(TypeKey(type.Name));
 
-        public override void Set<T>(string key, T value)
-        {
-            if(initialized)
-            {
-                lock(lockObject)
-                {
+				cacheDictionary.Clear();
 
-                    var cacheLink = redisClient.Get<CacheLink>(Key<T>());
+				connectionCacheDictionary.Clear();
+			}
+		}
 
-                    if(cacheLink == null)
-                        cacheLink = new CacheLink(Key<T>(), typeof(T), new HashSet<string>());
+		public override void FlushALL()
+		{
+			throw new NotImplementedException();
+		}
 
-                    cacheLink.LinkKeys.Add(key);
+		public override IList<T> Get<T>(string[] keys)
+		{
+			keys = keys
+				.Select(s => Key<T>(s))
+				.ToArray();
 
-                    redisClient.Add<CacheLink>(Key<T>(), cacheLink);
-                    redisClient.Add<T>(Key<T>(key), value);
-                }
-            }
-        }
+			var values = CacheDictionaryInstance<T>().GetValues(keys);
 
-        public override void Set<T>(string key, T value, TimeSpan cacheTimeSpan = default(TimeSpan))
-        {
+			if(values == null)
+				return new List<T>();
 
-            if(initialized)
-            {
-                lock(lockObject)
-                {
+			return values;
+		}
 
-                    var cacheLink = redisClient.Get<CacheLink>(Key<T>());
+		public override T Get<T>(string key)
+		{
+			return CacheDictionaryInstance<T>().GetValue(Key<T>(key));
+		}
 
-                    if(cacheLink == null)
-                        cacheLink = new CacheLink(Key<T>(), typeof(T), new HashSet<string>());
+		public override IList<T> GetAll<T>()
+		{
+			var values = CacheDictionaryInstance<T>()
+				.Values;
 
-                    cacheLink.LinkKeys.Add(key);
+			if(values == null)
+				return new List<T>();
 
-                    if(cacheTimeSpan != default(TimeSpan))
-                    {
-                        DateTime cacheExpiry = DateTime.Now.Add(cacheTimeSpan);
+			return values.ToList();
+		}
 
-                        redisClient.Add<CacheLink>(Key<T>(), cacheLink, cacheExpiry);
-                        redisClient.Add<T>(Key<T>(key), value, cacheTimeSpan);
-                    }
-                    else
-                    {
-                        DateTime cacheExpiry = DateTime.Now.Add(defaultCacheTimeSpan);
+		public override IList<T> GetAll<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues)
+		{
+			return Get<T>(GetAllKeys<T>(connectionType, connectionValues).ToArray());
+		}
 
-                        redisClient.Add<CacheLink>(Key<T>(), cacheLink);
-                        redisClient.Add<T>(Key<T>(key), value);
-                    }
-                }
-            }
-        }
+		public override IList<Type> GetAllTypes()
+		{
+			return mainCacheDictionary
+				.Values
+				.ToList();
+		}
 
-        public override void Remove<T>(string key)
-        {
-            if(initialized)
-                redisClient.Remove(Key<T>(key));
+		public override void Remove<T>(string key)
+		{
+			lock(lockObject)
+			{
+				var cacheDictionary = CacheDictionaryInstance<T>();
 
-        }
+				var connectionCacheDictionary = ConnectionCacheDictionaryInstance<T>();
 
-        public override void Remove<T>(string[] keys)
-        {
-            if(initialized)
-                redisClient.RemoveAll(keys.Select(k => Key<T>(k)));
-        }
+				cacheDictionary.Remove(key);
 
-        public override void DeleteAll<T>()
-        {
-            if(initialized)
-            {
-                var cacheLink = redisClient.Get<CacheLink>(Key<T>());
+				//TODO REMOVE KEY FROM connectionCacheDictionary
+			}
+		}
 
-                if(cacheLink != null)
-                {
-                    Remove<T>(cacheLink.LinkKeys.ToArray());
-                    redisClient.Remove(cacheLink.Key);
-                }
-            }
-        }
+		public override void Remove<T>(string[] keys)
+		{
+			lock(lockObject)
+			{
+				var cacheDictionary = CacheDictionaryInstance<T>();
 
-        public override IList<Type> GetAllTypes()
-        {
-            if(!initialized)
-                return new List<Type>();
+				var connectionCacheDictionary = ConnectionCacheDictionaryInstance<T>();
 
-            var keys = redisClient.SearchKeys("Type::*");
 
-            var cacheLinks = Get<CacheLink>(keys.ToArray());
+				foreach(var key in keys)
+					cacheDictionary.Remove(key);
 
-            return cacheLinks
-                .Select(s => s.Type)
-                .ToList();
-        }
+				//TODO REMOVE KEY FROM connectionCacheDictionary
+			}
+		}
 
-        public override IList<object> GetAll(Type type)
-        {
-            if(!initialized)
-                return new List<object>();
+		public override void Remove(string[] keys, Type type)
+		{
+			lock(lockObject)
+			{
+				var cacheDictionary = CacheDictionaryInstance(type);
 
-            var cacheLink = redisClient.Get<CacheLink>(Key(type.Name));
+				var connectionCacheDictionary = ConnectionCacheDictionaryInstance(type);
 
-            if(cacheLink != null
-                && cacheLink.LinkKeys.Any())
-            {
-                return Get(cacheLink.LinkKeys.ToArray(), type);
-            }
+				foreach(var key in keys)
+					cacheDictionary.Remove(key);
 
-            return new List<object>();
-        }
+				//TODO REMOVE KEY FROM connectionCacheDictionary
+			}
+		}
 
-        public override IList<object> Get(string[] keys, Type type)
-        {
-            if(!initialized)
-                return new List<object>();
+		public override void Set(object value)
+		{
+			lock(lockObject)
+			{
+				var type = value.GetType();
 
-            return redisClient.GetAll<object>(keys.Select(k => Key(k, type.Name)))
-                .Values
-                .Where(w => w != null)
-                .ToList();
-        }
+				if(!mainCacheDictionary.ContainsKey(TypeKey(type.Name)))
+					mainCacheDictionary.Add(TypeKey(type.Name), type);
 
-        public override void Set(object value)
-        {
-            if(initialized)
-            {
-                lock(lockObject)
-                {
-                    string key = null;
-                    Type type = value.GetType();
+				var cacheKey = value.GetValue("CacheKey");
 
-                    var eProperty = type.GetProperty("CacheKey", typeof(string));
-                    if(eProperty != null)
-                        key = eProperty.GetValue(value) as string;
+				if(!string.IsNullOrEmpty(cacheKey))
+					CacheDictionaryInstance(type).Add(Key(cacheKey, type.Name), value);
+			}
+		}
 
-                    if(!string.IsNullOrEmpty(key))
-                    {
-                        var cacheLink = redisClient.Get<CacheLink>(Key(type.Name));
+		public override void Set<T>(string key, T value)
+		{
+			lock(lockObject)
+			{
+				if(!mainCacheDictionary.ContainsKey(TypeKey<T>()))
+					mainCacheDictionary.Add(TypeKey<T>(), typeof(T));
 
-                        if(cacheLink == null)
-                            cacheLink = new CacheLink(Key(type.Name), type, new HashSet<string>());
+				CacheDictionaryInstance<T>().Add(Key<T>(key), value);
+			}
+		}
 
-                        cacheLink.LinkKeys.Add(key);
+		public override void SetAll(IEnumerable<object> values)
+		{
+			lock(lockObject)
+			{
+				var type = values.FirstOrDefault().GetType();
 
-                        redisClient.Add<CacheLink>(Key(type.Name), cacheLink);
-                        redisClient.Add<object>(Key(key, type.Name), value); 
-                    }
-                }
-            }
-        }
-        #endregion
-    }
+				if(!mainCacheDictionary.ContainsKey(TypeKey(type.Name)))
+					mainCacheDictionary.Add(TypeKey(type.Name), type);
+
+				var redisValues =
+					 values
+					 .AsParallel()
+					 .Select(s => new KeyValuePair<string, object>(Key(s.GetValue("CacheKey"), type.Name), s));
+
+				CacheDictionaryInstance(type).AddMultiple(redisValues);
+			}
+		}
+
+		public override void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values)
+		{
+			lock(lockObject)
+			{
+				if(!mainCacheDictionary.ContainsKey(TypeKey<T>()))
+					mainCacheDictionary.Add(TypeKey<T>(), typeof(T));
+
+				values = values
+					.AsParallel()
+					.Select(s => new KeyValuePair<string, T>(Key<T>(s.Key), s.Value));
+
+				CacheDictionaryInstance<T>().AddMultiple(values);
+			}
+		}
+
+		public override void Set(object value, string[] connectionsFields)
+		{
+			lock(lockObject)
+			{
+				var type = value.GetType();
+
+				if(!mainCacheDictionary.ContainsKey(TypeKey(type.Name)))
+					mainCacheDictionary.Add(TypeKey(type.Name), type);
+
+				var cacheKey = value.GetValue("CacheKey");
+
+				if(!string.IsNullOrEmpty(cacheKey))
+				{
+					var connectionCacheDictionary = ConnectionCacheDictionaryInstance(type);
+
+					Parallel.ForEach(connectionsFields.Distinct(), (connectionsField) =>
+					{
+						if(value.GetValue(connectionsField, out var connectionsFieldValue))
+						{
+							var linkKey = LinkKey(connectionsField, connectionsFieldValue);
+
+							var redisValue = connectionCacheDictionary.GetValue(linkKey);
+
+							if(redisValue == null)
+								redisValue = new List<string>();
+
+							redisValue.Add(cacheKey);
+
+							connectionCacheDictionary.Add(linkKey, redisValue.Distinct().ToList());
+						}
+					});
+
+					CacheDictionaryInstance(type).Add(Key(cacheKey, type.Name), value);
+				}
+			}
+		}
+
+		public override void Set<T>(string key, T value, string[] connectionsFields)
+		{
+			lock(lockObject)
+			{
+				if(!mainCacheDictionary.ContainsKey(TypeKey<T>()))
+					mainCacheDictionary.Add(TypeKey<T>(), typeof(T));
+
+				var connectionCacheDictionary = ConnectionCacheDictionaryInstance<T>();
+
+				Parallel.ForEach(connectionsFields.Distinct(), (connectionsField) =>
+				{
+					if(value.GetValue(connectionsField, out var connectionsFieldValue))
+					{
+						var linkKey = LinkKey(connectionsField, connectionsFieldValue);
+
+						var redisValue = connectionCacheDictionary.GetValue(linkKey);
+
+						if(redisValue == null)
+							redisValue = new List<string>();
+
+						redisValue.Add(key);
+
+						connectionCacheDictionary.Add(linkKey, redisValue.Distinct().ToList());
+					}
+				});
+
+				CacheDictionaryInstance<T>().Add(Key<T>(key), value);
+			}
+		}
+
+		public override void SetAll(IEnumerable<object> values, string[] connectionsFields)
+		{
+			lock(lockObject)
+			{
+				var type = values.FirstOrDefault().GetType();
+
+				if(!mainCacheDictionary.ContainsKey(TypeKey(type.Name)))
+					mainCacheDictionary.Add(TypeKey(type.Name), type);
+
+				var connectionCacheDictionary = ConnectionCacheDictionaryInstance(type);
+
+				Parallel.ForEach(connectionsFields.Distinct(), (connectionsField) =>
+				{
+					var gValues = values
+					.GroupBy(g => g.GetValue(connectionsField))
+					.Select(s => new { connectionsFieldValue = s.Key, keys = s.Select(ss => ss.GetValue("CacheKey")) })
+					.ToList();
+
+					foreach(var gValue in gValues)
+					{
+						var linkKey = LinkKey(connectionsField, gValue.connectionsFieldValue);
+
+						var redisValue = connectionCacheDictionary.GetValue(linkKey);
+
+						if(redisValue == null)
+							redisValue = new List<string>();
+
+						redisValue.AddRange(gValue.keys);
+
+						connectionCacheDictionary.Add(linkKey, redisValue.Distinct().ToList());
+					}
+
+				});
+
+				var redisValues =
+					 values
+					 .AsParallel()
+					 .Select(s => new KeyValuePair<string, object>(Key(s.GetValue("CacheKey"), type.Name), s));
+
+				CacheDictionaryInstance(type).AddMultiple(redisValues);
+			}
+		}
+
+		public override void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, string[] connectionsFields)
+		{
+			lock(lockObject)
+			{
+				if(!mainCacheDictionary.ContainsKey(TypeKey<T>()))
+					mainCacheDictionary.Add(TypeKey<T>(), typeof(T));
+
+				var connectionCacheDictionary = ConnectionCacheDictionaryInstance<T>();
+
+				Parallel.ForEach(connectionsFields.Distinct(), (connectionsField) =>
+				{
+					var gValues = values
+					.GroupBy(g => g.Value.GetValue(connectionsField))
+					.Select(s => new { connectionsFieldValue = s.Key, keys = s.Select(ss => ss.Key) })
+					.ToList();
+
+					foreach(var gValue in gValues)
+					{
+						var linkKey = LinkKey(connectionsField, gValue.connectionsFieldValue);
+
+						var redisValue = connectionCacheDictionary.GetValue(linkKey);
+
+						if(redisValue == null)
+							redisValue = new List<string>();
+
+						redisValue.AddRange(gValue.keys);
+
+						connectionCacheDictionary.Add(linkKey, redisValue.Distinct().ToList());
+					}
+				});
+
+				values = values
+					.AsParallel()
+					.Select(s => new KeyValuePair<string, T>(Key<T>(s.Key), s.Value));
+
+				CacheDictionaryInstance<T>().AddMultiple(values);
+			}
+		}
+
+		public override int GetAllCount<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues)
+		{
+			return GetAllKeys<T>(connectionType, connectionValues).Count;
+		}
+
+		public override IList<string> GetAllKeys<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues)
+		{
+			var connectionCacheDictionary = ConnectionCacheDictionaryInstance<T>();
+			if(connectionValues.Any())
+			{
+				var connectionValuesD = connectionValues
+					.GroupBy(g => g.Field)
+					.ToDictionary(d => d.Key, d =>
+					{
+						return d.Select(s => s).ToList();
+					});
+
+				List<List<string>> values = null;
+
+				if(!connectionValues.All(a => a.ConnectionValueType == ConnectionValueType.Equals))
+				{
+					var dKeys = connectionCacheDictionary.Keys;
+
+					if(dKeys == null)
+						return new List<string>();
+
+					var dsad = connectionValuesD
+						.AsParallel()
+						.Select(s =>
+						{
+							return s.Value.Select(ss =>
+							{
+								switch(ss.ConnectionValueType)
+								{
+									case ConnectionValueType.Contains:
+										return dKeys.Where(w => w.Contains(LinkKey(ss.Field, ss.Value)));
+									case ConnectionValueType.StartsWith:
+										return dKeys.Where(w => w.StartsWith(LinkKey(ss.Field, ss.Value)));
+									case ConnectionValueType.EndWith:
+										return dKeys.Where(w => w.EndsWith(LinkKey(ss.Field, ss.Value)));
+									default:
+										return dKeys.Where(w => w.Equals(LinkKey(ss.Field, ss.Value), StringComparison.CurrentCultureIgnoreCase));
+								}
+							});
+
+						})
+						.ToList();
+
+					values = dKeys
+						.Distinct()
+						.AsParallel()
+						.Select(s => connectionCacheDictionary.GetValue(s))
+						.Where(w => w != null)
+						.ToList();
+				}
+				else
+				{
+					values = connectionValuesD
+						.AsParallel()
+						.Select(s =>
+						{
+							return s.Value
+							.Select(ss => connectionCacheDictionary.GetValue(LinkKey(s.Key, ss.Value)))
+							.SelectMany(ss => ss)
+							.ToList();
+						})
+						.ToList();
+				}
+
+				var keys = values.FirstOrDefault();
+
+				if(keys == null)
+					keys = new List<string>();
+
+				if(connectionType == ConnectionType.And)
+				{
+					foreach(var value in values)
+					{
+						keys = keys
+							.Intersect(value)
+							.ToList();
+					}
+				}
+				else
+				{
+					keys = values
+						.SelectMany(s => s)
+						.ToList();
+				}
+
+
+				return keys;
+			}
+
+			return new List<string>();
+		}
+		#endregion
+	}
 }

@@ -2,171 +2,460 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using Amtrack.Cache.Store;
+
+//TODO
+//NotImplementedException
+//Can Set Internal Cache Off
+//Can Use Dictionary
+//Remove of Expired
 
 namespace Amtrack.Cache.SDK
 {
-    public class InternalCacheStore : BaseInternalCacheStore
-    {
-        public InternalCacheStore(TimeSpan defaultCacheTimeSpan)
-            : base(defaultCacheTimeSpan)
-        {
+	public class InternalCacheStore : BaseInternalCacheStore
+	{
+		private ConcurrentDictionary<Type, EntityCache> store = null;
 
-        }
+		public InternalCacheStore(TimeSpan defaultCacheTimeSpan)
+			: base(defaultCacheTimeSpan)
+		{
+			store = new ConcurrentDictionary<Type, EntityCache>();
+		}
 
-        #region Public Methods
-        public override void Set<T>(string key, T cacheItem)
-        {
+		#region Private Methods
+		private EntityCache GetAndAddEntityCache<T>()
+		{
+			return GetAndAddEntityCache(typeof(T));
+		}
 
-            Type typeOfCache = typeof(EntityCache<T>);
-            EntityCache<T> entityCacheStore = null;
+		private EntityCache GetAndAddEntityCache(Type typeOfCache)
+		{
+			EntityCache entityCacheStore = null;
 
-            if(store.ContainsKey(typeOfCache))
-                entityCacheStore = store[typeOfCache] as EntityCache<T>;
-            else
-            {
-                entityCacheStore = new EntityCache<T>();
-                store.TryAdd(typeOfCache, entityCacheStore);
-            }
+			if(store.ContainsKey(typeOfCache))
+				entityCacheStore = store[typeOfCache];
+			else
+			{
+				entityCacheStore = new EntityCache(defaultCacheTimeSpan);
+				store.TryAdd(typeOfCache, entityCacheStore);
+			}
 
-            entityCacheStore.Set(key, cacheItem);
+			return entityCacheStore;
+		}
 
-        }
+		private EntityCache GetEntityCache<T>()
+		{
+			return GetEntityCache(typeof(T));
+		}
 
-        public override T Get<T>(string key)
-        {
-            if(string.IsNullOrEmpty(key))
-                return default(T);
+		private EntityCache GetEntityCache(Type typeOfCache)
+		{
+			if(store.ContainsKey(typeOfCache))
+				return store[typeOfCache];
 
-            Type typeOfCache = typeof(EntityCache<T>);
+			return null;
+		}
+		#endregion
 
-            if(store.ContainsKey(typeOfCache))
-            {
-                var entityCacheStore = store[typeOfCache] as EntityCache<T>;
+		#region Public Methods
+		public override void DeleteAll<T>()
+		{
+			Type typeOfCache = typeof(T);
 
-                var value = entityCacheStore.Get(key);
+			store.TryRemove(typeOfCache, out EntityCache val);
+		}
 
-                if(value != null
-                    && (value.DateAdded.Add(defaultCacheTimeSpan) < DateTime.Now))
-                    return value.Value;
-            }
+		public override void FlushALL()
+		{
+			store = new ConcurrentDictionary<Type, EntityCache>();
+		}
 
-            return default(T);
-        }
+		public override IList<T> Get<T>(string[] keys)
+		{
+			return keys
+				.Select(s => Get<T>(s))
+				.Where(w => w != null)
+				.ToList();
+		}
 
-        public override void Set<T>(T cacheItem)
-        {
-            Type typeOfCache = typeof(EntityCache<T>);
-            EntityCache<T> entityCacheStore = null;
+		public override T Get<T>(string key)
+		{
+			if(string.IsNullOrEmpty(key))
+				return default(T);
 
-            if(store.ContainsKey(typeOfCache))
-                entityCacheStore = store[typeOfCache] as EntityCache<T>;
-            else
-            {
-                entityCacheStore = new EntityCache<T>();
-                store.TryAdd(typeOfCache, entityCacheStore);
-            }
+			var entityCacheStore = GetEntityCache<T>();
 
-            entityCacheStore.Set(cacheItem);
+			if(entityCacheStore != null)
+			{
+				var value = entityCacheStore.Get(key);
 
-        }
+				if(value != null
+					&& (value.DateAdded.Add(defaultCacheTimeSpan) > DateTime.Now))
+					return (T)value.Value;
+			}
 
-        public override void ClearAllCache()
-        {
-            store = new ConcurrentDictionary<Type, object>();
-        }
+			return default(T);
+		}
 
-        public override void ClearEntityCache<T>()
-        {
-            Type typeOfCache = typeof(EntityCache<T>);
+		public override IList<T> GetAll<T>(string eKey)
+		{
+			EntityCache entityCacheStore = GetEntityCache<T>();
 
-            store.TryRemove(typeOfCache, out object val);
-        }
+			if(entityCacheStore != null)
+			{
+				return entityCacheStore.Values(eKey)
+					.Where(w => (w.DateAdded.Add(defaultCacheTimeSpan) > DateTime.Now))
+					.Select(s => s.Value)
+					.Cast<T>()
+					.ToList();
+			}
 
-        public override IList<T> AllValues<T>()
-        {
-            Type typeOfCache = typeof(EntityCache<T>);
-            EntityCache<T> entityCacheStore = null;
+			return new List<T>();
+		}
 
-            if(store.ContainsKey(typeOfCache))
-            {
-                entityCacheStore = store[typeOfCache] as EntityCache<T>;
+		public override IList<T> GetAll<T>()
+		{
+			return GetAll<T>(null);
+		}
 
-                return entityCacheStore.AllValues
-                    .Where(w => (w.DateAdded.Add(defaultCacheTimeSpan) < DateTime.Now))
-                    .Select(s => s.Value)
-                    .ToList();
-            }
+		public override void Set(object value)
+		{
+			Type typeOfCache = value.GetType();
 
-            return new List<T>();
-        }
-        #endregion
+			EntityCache entityCacheStore = GetAndAddEntityCache(typeOfCache);
 
-        #region Private Classes
-        private class EntityCache<T>
-        {
-            private readonly Dictionary<string, EntityCacheItem<T>> _store = null;
+			entityCacheStore.Set(value);
+		}
 
-            public EntityCache()
-            {
-                _store = new Dictionary<string, EntityCacheItem<T>>();
-            }
+		public override void Set<T>(string key, T value)
+		{
+			EntityCache entityCacheStore = GetAndAddEntityCache<T>();
 
-            #region Public Methods
-            public IList<EntityCacheItem<T>> AllValues => _store.Values.Select(v => v).ToList();
+			entityCacheStore.Set(key, value);
+		}
 
-            public EntityCacheItem<T> Get(string key)
-            {
-                if(_store.ContainsKey(key))
-                    return _store[key];
+		public override void Set<T>(T value)
+		{
+			EntityCache entityCacheStore = GetAndAddEntityCache<T>();
 
-                return null;
-            }
+			entityCacheStore.Set(value);
+		}
 
-            public void Set(string key, T cacheItem)
-            {
-                if(_store.ContainsKey(key))
-                    _store.Remove(key);
+		public override void SetAll(IEnumerable<object> values, string eKey)
+		{
+			Type typeOfCache = values.FirstOrDefault().GetType();
 
-                _store.Add(key, new EntityCacheItem<T>(cacheItem));
-            }
+			EntityCache entityCacheStore = GetAndAddEntityCache(typeOfCache);
 
-            public void Set(T cacheItem)
-            {
-                string key = null;
-                Type type = cacheItem.GetType();
+			foreach(var value in values)
+				entityCacheStore.Set(value, eKey);
+		}
 
-                var eProperty = type.GetProperty("CacheKey", typeof(string));
-                if(eProperty != null)
-                    key = eProperty.GetValue(cacheItem) as string;
+		public override void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, string eKey)
+		{
+			EntityCache entityCacheStore = GetAndAddEntityCache<T>();
 
-                if(key != null)
-                {
-                    if(_store.ContainsKey(key))
-                        _store.Remove(key);
+			foreach(var value in values)
+				entityCacheStore.Set(value.Key, value.Value, eKey);
+		}
 
-                    _store.Add(key, new EntityCacheItem<T>(cacheItem));
-                }
-            }
-            #endregion
+		public override void SetAll(IEnumerable<object> values)
+		{
+			SetAll(values, null);
+		}
 
-        }
+		public override void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values)
+		{
+			SetAll<T>(values, null);
+		}
 
-        private class EntityCacheItem<T>
-        {
-            private readonly T _entity = default(T);
+		public override IList<T> GetAll<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues)
+		{
+			return GetAll<T>(connectionType, null, connectionValues);
+		}
 
-            #region Public Properties
-            public DateTime DateAdded { get; set; }
-            public T Value { get { return _entity; } }
-            #endregion
+		public override IList<T> GetAll<T>(ConnectionType connectionType, string eKey, params ConnectionValue[] connectionValues)
+		{
+			EntityCache entityCacheStore = GetEntityCache<T>();
 
-            public EntityCacheItem(T cacheItem)
-            {
-                _entity = cacheItem;
-                DateAdded = DateTime.Now;
-            }
-        }
-        #endregion
-    }
+			if(entityCacheStore != null)
+			{
+				var values = entityCacheStore.Values(eKey)
+					.AsParallel()
+					.Select(s =>
+					{
+						return new
+						{
+							s.Value,
+							values = connectionValues
+							.GroupBy(g => g.Field)
+							.ToDictionary(
+								d => d.Key,
+								d => s.Value.GetValue(d.Key)
+								)
+						};
+					})
+					.Where(w =>
+					{
+						Func<ConnectionValue, bool> predicate = (a) =>
+						{
+							switch(a.ConnectionValueType)
+							{
+								case ConnectionValueType.Contains:
+									return w.values[a.Field].Contains(a.Value);
+								case ConnectionValueType.StartsWith:
+									return w.values[a.Field].StartsWith(a.Value);
+								case ConnectionValueType.EndWith:
+									return w.values[a.Field].EndsWith(a.Value);
+								default:
+									return w.values[a.Field].Equals(a.Value, StringComparison.CurrentCultureIgnoreCase);
+							};
+						};
+
+						if(connectionType == ConnectionType.And)
+							return connectionValues.All(predicate);
+						else
+							return connectionValues.Any(predicate);
+					})
+					.Select(s => s.Value)
+					.Cast<T>()
+					.ToList();
+
+				return values;
+			}
+
+			return new List<T>();
+		}
+
+		#endregion
+
+		#region Private Classes
+		private class EntityCache
+		{
+			private const string defaultKey = "DefaultKey";
+
+			private readonly Dictionary<string, Dictionary<string, EntityCacheItem>> _store = null;
+			private readonly TimeSpan _defaultCacheTimeSpan;
+
+			private Dictionary<string, EntityCacheItem> defaultStore => _store[defaultKey];
+
+			public DateTime DateAdded { get; set; }
+
+			public EntityCache(TimeSpan defaultCacheTimeSpan)
+			{
+				_store = new Dictionary<string, Dictionary<string, EntityCacheItem>>();
+
+				_store.Add(defaultKey, new Dictionary<string, EntityCacheItem>());
+
+				DateAdded = DateTime.Now;
+
+				_defaultCacheTimeSpan = defaultCacheTimeSpan;
+			}
+
+			#region Private Methods
+			private static string GetKey(object cacheItem)
+			{
+				string key = null;
+				Type type = cacheItem.GetType();
+
+				var eProperty = type.GetProperty("CacheKey", typeof(string));
+				if(eProperty != null)
+					key = eProperty.GetValue(cacheItem) as string;
+
+				return key;
+			}
+			#endregion
+
+			#region Public Methods		
+			public IList<EntityCacheItem> DefaultValues()
+			{
+				var values = defaultStore
+						.Where(w => (w.Value.DateAdded.Add(_defaultCacheTimeSpan) > DateTime.Now))
+						.Select(s => s.Value)
+						.ToList();
+
+				var keysToBeRemoved = defaultStore
+					.Where(w => (w.Value.DateAdded.Add(_defaultCacheTimeSpan) <= DateTime.Now))
+					.Select(s => s.Key)
+					.ToList();
+
+				if(keysToBeRemoved.Any())
+					keysToBeRemoved.ForEach(f => defaultStore.Remove(f));
+
+				return values.ToList();
+			}
+
+			public IList<string> DefaultKeys()
+			{
+				return defaultStore.Keys.ToList();
+			}
+
+			public IList<EntityCacheItem> Values(string eKey)
+			{
+				if(string.IsNullOrEmpty(eKey))
+					return DefaultValues();
+
+				if(_store.ContainsKey(eKey))
+				{
+					var innterStore = _store[eKey];
+
+					var values = innterStore
+						.Where(w => (w.Value.DateAdded.Add(_defaultCacheTimeSpan) > DateTime.Now))
+						.Select(s => s.Value)
+						.ToList();
+
+					var keysToBeRemoved = innterStore
+						.Where(w => (w.Value.DateAdded.Add(_defaultCacheTimeSpan) <= DateTime.Now))
+						.Select(s => s.Key)
+						.ToList();
+
+					if(keysToBeRemoved.Any())
+						keysToBeRemoved.ForEach(f => innterStore.Remove(f));
+
+					return values.ToList();
+				}
+
+				return new List<EntityCacheItem>();
+			}
+
+			public IList<string> Keys(string eKey)
+			{
+				if(string.IsNullOrEmpty(eKey))
+					return DefaultKeys();
+
+				if(_store.ContainsKey(eKey))
+				{
+					var innterStore = _store[eKey];
+
+					return innterStore.Keys.ToList();
+				}
+
+				return new List<string>();
+			}
+
+			public EntityCacheItem Get(string key)
+			{
+				if(defaultStore.ContainsKey(key))
+				{
+					var v = defaultStore[key];
+
+					if((v.DateAdded.Add(_defaultCacheTimeSpan) > DateTime.Now))
+						return v;
+
+					defaultStore.Remove(key);
+				}
+
+				return null;
+			}
+
+			public EntityCacheItem Get(string key, string eKey)
+			{
+				if(_store.ContainsKey(eKey)
+					&& _store[eKey].ContainsKey(key))
+				{
+					var v = _store[eKey][key];
+
+					if((v.DateAdded.Add(_defaultCacheTimeSpan) > DateTime.Now))
+						return v;
+
+					_store[eKey].Remove(key);
+				}
+
+				return null;
+			}
+
+			public void Set(string key, object cacheItem)
+			{
+				if(defaultStore.ContainsKey(key))
+					defaultStore.Remove(key);
+
+				defaultStore.Add(key, new EntityCacheItem(cacheItem));
+			}
+
+			public void Set(string key, object cacheItem, string eKey)
+			{
+				if(string.IsNullOrEmpty(eKey))
+				{
+					Set(key, cacheItem);
+
+					return;
+				}
+
+				if(!_store.ContainsKey(eKey))
+					_store.Add(eKey, new Dictionary<string, EntityCacheItem>());
+
+				if(_store[eKey].ContainsKey(key))
+					_store[eKey].Remove(key);
+
+				_store[eKey].Add(key, new EntityCacheItem(cacheItem));
+			}
+
+			public void Set(object cacheItem)
+			{
+				string key = GetKey(cacheItem);
+
+				if(key != null)
+				{
+					if(defaultStore.ContainsKey(key))
+						defaultStore.Remove(key);
+
+					defaultStore.Add(key, new EntityCacheItem(cacheItem));
+				}
+			}
+
+			public void Set(object cacheItem, string eKey)
+			{
+				if(string.IsNullOrEmpty(eKey))
+				{
+					Set(cacheItem);
+
+					return;
+				}
+
+				string key = GetKey(cacheItem);
+
+				if(key != null)
+				{
+					if(!_store.ContainsKey(eKey))
+						_store.Add(eKey, new Dictionary<string, EntityCacheItem>());
+
+					if(_store[eKey].ContainsKey(key))
+						_store[eKey].Remove(key);
+
+					_store[eKey].Add(key, new EntityCacheItem(cacheItem));
+				}
+			}
+
+			public void RemoveAllExpired()
+			{
+				foreach(var storeItem in _store)
+				{
+					var keysToBeRemoved = storeItem.Value
+					.Where(w => (w.Value.DateAdded.Add(_defaultCacheTimeSpan) > DateTime.Now))
+					.Select(s => s.Key)
+					.ToList();
+
+					if(keysToBeRemoved.Any())
+						keysToBeRemoved.ForEach(f => storeItem.Value.Remove(f));
+				}
+			}
+			#endregion
+		}
+
+		private class EntityCacheItem
+		{
+			#region Public Properties
+			public DateTime DateAdded { get; set; }
+			public object Value { get; } = null;
+			#endregion
+
+			public EntityCacheItem(object cacheItem)
+			{
+				Value = cacheItem;
+				DateAdded = DateTime.Now;
+			}
+		}
+		#endregion
+	}
 
 }

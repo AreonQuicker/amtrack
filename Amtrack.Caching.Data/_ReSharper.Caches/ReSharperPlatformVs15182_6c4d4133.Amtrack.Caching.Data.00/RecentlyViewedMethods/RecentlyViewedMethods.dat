@@ -1,0 +1,11 @@
+﻿<RecentlyViewedMethods>
+  <RecentlyViewedMethods>
+    <RecentMethod id="3059f80f-49d3-43bc-b460-9d849256f80c%28Amtrack.Caching.Service%29-A7C196C4%5B.NETStandard%2CVersion%3Dv2.0%5D/M%3AAmtrack.Caching.Service.CachingService.GetInventoryCacheModel" />
+    <RecentMethod id="7c865f43-5fa3-413d-b787-c7f5f258b26c%28Amtrack.Cache.Store%29-2A49B5B3%5B.NETStandard%2CVersion%3Dv2.0%5D/M%3AAmtrack.Cache.Store.ICacheStore.Init%28System.String%29" />
+    <RecentMethod id="3059f80f-49d3-43bc-b460-9d849256f80c%28Amtrack.Caching.Service%29-A7C196C4%5B.NETStandard%2CVersion%3Dv2.0%5D/M%3AAmtrack.Caching.Service.InventoryCacheController.GetInventoryStockSetItemVOs" />
+    <RecentMethod id="7c865f43-5fa3-413d-b787-c7f5f258b26c%28Amtrack.Cache.Store%29-2A49B5B3%5B.NETStandard%2CVersion%3Dv2.0%5D/M%3AAmtrack.Cache.Store.ICacheStore.GetAll%60%601" />
+    <RecentMethod id="d46e4ccb-9e02-4e7f-bb43-158b509f83b0%28Amtrack.Background.Cache.Service%29-716D960B%5B.NETCoreApp%2CVersion%3Dv2.1%5D/M%3AAmtrack.Background.Cache.Service.AsyncCacheServices.AsyncCacheService%601.SetData%28System.Threading.CancellationToken%29" />
+    <RecentMethod id="7c865f43-5fa3-413d-b787-c7f5f258b26c%28Amtrack.Cache.Store%29-2A49B5B3%5B.NETStandard%2CVersion%3Dv2.0%5D/M%3AAmtrack.Cache.Store.CacheStore.Set%28System.Collections.Generic.IEnumerable%7BSystem.Object%7D%29" />
+    <RecentMethod id="d46e4ccb-9e02-4e7f-bb43-158b509f83b0%28Amtrack.Background.Cache.Service%29-716D960B%5B.NETCoreApp%2CVersion%3Dv2.1%5D/M%3AAmtrack.Background.Cache.Service.AsyncCacheServices.BaseAsyncCacheService.SetDataAsync%28System.Threading.CancellationToken%29" />
+  </RecentlyViewedMethods>
+</RecentlyViewedMethods>

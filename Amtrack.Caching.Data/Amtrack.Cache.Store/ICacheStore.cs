@@ -3,27 +3,42 @@ using System.Collections.Generic;
 
 namespace Amtrack.Cache.Store
 {
-    public interface ICacheStore
-    {
-        TimeSpan DefaultCacheTimeSpan { get; }
+	public interface ICacheStore
+	{
+		TimeSpan DefaultCacheTimeSpan { get; }
 
-        void Init(string host);
-        void Init(string host, int? Port);
+		void Init();
+		void Init(string host);
+		void Init(string host, int? port);
 
-        void Set(object value);
-        void Set<T>(string key, T value);
-        void Set<T>(string key, T value, TimeSpan cacheTimeSpan = default(TimeSpan));
+		void Set(object value);
+		void Set<T>(string key, T value);
 
-        IList<object> GetAll(Type type);
-        IList<T> GetAll<T>();
-        IList<T> Get<T>(string[] keys);
-        IList<object> Get(string[] keys, Type type);
-        T Get<T>(string Key);
-        IList<Type> GetAllTypes();
+		void SetAll(IEnumerable<object> values);
+		void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values);
 
-        void FlushALL();
-        void Remove<T>(string key);
-        void Remove<T>(string[] keys);
-        void DeleteAll<T>();
-    }
+		void Set(object value, string[] connectionsFields);
+		void Set<T>(string key, T value, string[] connectionsFields);
+
+		void SetAll(IEnumerable<object> values, string[] connectionsFields);
+		void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, string[] connectionsFields);
+
+		IList<T> GetAll<T>();
+		IList<T> GetAll<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues);
+		int GetAllCount<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues);
+		IList<string> GetAllKeys<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues);
+
+		IList<T> Get<T>(string[] keys);
+		T Get<T>(string key);
+
+		IList<Type> GetAllTypes();
+
+		void FlushALL();
+		void Remove<T>(string key);
+		void Remove<T>(string[] keys);
+		void Remove(string[] keys, Type type);
+
+		void DeleteAll<T>();
+		void DeleteAll(Type type);
+	}
 }

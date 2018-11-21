@@ -82,3 +82,5 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Servic
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.csproj.CopyComplete
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Cache.Models.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Cache.Models.pdb

@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using Amtrack.Cache.Store;
 using Amtrack.Caching.Service;
 using Amtrack.DependencyInjection;
@@ -10,124 +10,55 @@ using Amtrack.ValueObjects.Users;
 
 namespace Amtrack.Background.Cache.Service.AsyncCacheServices
 {
-    public class AsyncUserCacheService : BaseAsyncCacheService
-    {
+	public class AsyncUserCacheService : BaseAsyncCacheService
+	{
+		public AsyncUserCacheService(
+		   ICacheStore cacheStore,
+		   IAmtrackLogger logger,
+		   bool synchronous,
+		   string serviceName)
+			: base(cacheStore, logger, synchronous, serviceName)
+		{
 
-        public AsyncUserCacheService(
-           ICacheStore cacheStore,
-           IAmtrackLogger logger,
-           bool synchronous)
-            : base(cacheStore, logger, synchronous)
-        {
+		}
 
-        }
+		public override bool SetData(CancellationToken cancellationToken)
+		{
+			logger.LogInfo($"Saving Cache For Service {ServiceName} On Method {"GetUserCacheModel"} - Start");
 
-        //public override async Task<(bool, string, Exception)> SetDataAsync(CancellationToken cancellationToken)
-        //{
-        //    var cachingService = DependencyInjector.Retrieve<ICachingService>();
+			var cachingService = DependencyInjector.Retrieve<ICachingService>();
 
-        //    var metodKey = $"{nameof(AsyncUserCacheService)} {nameof(SetDataAsync)}";
+			var userCacheModel = cachingService.GetUserCacheModel();
 
-        //    try
-        //    {
-        //        bool result = await Task.Factory.StartNew<bool>(() =>
-        //          {
-        //              cancellationToken.ThrowIfCancellationRequested();
+			if(userCacheModel == null)
+				throw new NullReferenceException(nameof(userCacheModel));
 
-        //              var userCacheModel = cachingService.GetUserCacheModel();
+			var securityLevelValues = userCacheModel.SecurityLevels
+				.ToDictionary(d => d.CacheKey, d => d);
 
-        //              if(userCacheModel == null)
-        //                  throw new NullReferenceException(nameof(userCacheModel));
+			cacheStore.SetAll<SecurityLevelVO>(securityLevelValues);
 
-        //              foreach(var securityLevelVO in userCacheModel.SecurityLevels)
-        //              {
-        //                  cacheStore.Set(securityLevelVO.CacheKey, securityLevelVO);
-        //              }
+			var userValues = userCacheModel.Users
+			  .ToDictionary(d => d.CacheKey, d => d);
 
-        //              foreach(var userVO in userCacheModel.Users)
-        //              {
-        //                  cacheStore.Set(userVO.CacheKey, userVO);
-        //              }
+			cacheStore.SetAll<UserVO>(userValues);
 
-        //              return true;
+			logger.LogInfo($"Saving Cache For Service {ServiceName} On Method {"GetUserCacheModel"} - Complete");
 
-        //          }, cancellationToken, TaskCreationOptions.LongRunning, TaskScheduler.Default);
+			return true;
+		}
 
-        //        return (result, metodKey, null);
-        //    }
-        //    catch(OperationCanceledException ex)
-        //    {
-        //        //TODO
-        //        return (false, metodKey, ex);
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        //TODO
-        //        return (false, metodKey, ex);
-        //    }
-        //}
+		public override bool DeleteData(CancellationToken cancellationToken)
+		{
+			logger.LogInfo($"Deleting Cache For Service {ServiceName} On Method {"GetUserCacheModel"} - Start");
 
-        //public override async Task<(bool, string, Exception)> DeleteDataAsync(CancellationToken cancellationToken)
-        //{
-        //    var metodKey = $"{nameof(AsyncUserCacheService)} {nameof(DeleteDataAsync)}";
+			cacheStore.DeleteAll<SecurityLevelVO>();
 
-        //    try
-        //    {
-        //        bool result = await Task.Factory.StartNew<bool>(() =>
-        //           {
-        //               cancellationToken.ThrowIfCancellationRequested();
+			cacheStore.DeleteAll<UserVO>();
 
-        //               cacheStore.DeleteAll<SecurityLevelVO>();
+			logger.LogInfo($"Deleting Cache For Service {ServiceName} On Method {"GetUserCacheModel"} - Complete");
 
-        //               cacheStore.DeleteAll<UserVO>();
-
-        //               return true;
-
-        //           }, cancellationToken, TaskCreationOptions.LongRunning, TaskScheduler.Default);
-
-        //        return (result, metodKey, null);
-        //    }
-        //    catch(OperationCanceledException ex)
-        //    {
-        //        //TODO
-        //        return (false, metodKey, ex);
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        //TODO
-        //        return (false, metodKey, ex);
-        //    }
-        //}
-
-        public override bool SetData(CancellationToken cancellationToken)
-        {
-            var cachingService = DependencyInjector.Retrieve<ICachingService>();          
-
-            var userCacheModel = cachingService.GetUserCacheModel();
-
-            if(userCacheModel == null)
-                throw new NullReferenceException(nameof(userCacheModel));
-
-            foreach(var securityLevelVO in userCacheModel.SecurityLevels)
-            {
-                cacheStore.Set(securityLevelVO.CacheKey, securityLevelVO);
-            }
-
-            foreach(var userVO in userCacheModel.Users)
-            {
-                cacheStore.Set(userVO.CacheKey, userVO);
-            }
-
-            return true;
-        }
-
-        public override bool DeleteData(CancellationToken cancellationToken)
-        {      
-            cacheStore.DeleteAll<SecurityLevelVO>();
-
-            cacheStore.DeleteAll<UserVO>();
-
-            return true;
-        }
-    }
+			return true;
+		}
+	}
 }

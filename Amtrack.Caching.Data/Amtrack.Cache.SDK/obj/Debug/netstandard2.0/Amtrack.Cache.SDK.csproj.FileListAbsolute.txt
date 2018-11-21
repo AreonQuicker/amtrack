@@ -22,3 +22,5 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\net
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.csproj.CopyComplete
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.Models.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.Models.pdb

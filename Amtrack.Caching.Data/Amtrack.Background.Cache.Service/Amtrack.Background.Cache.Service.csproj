@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Amtrack.Cache.Models\Amtrack.Cache.Models.csproj" />
     <ProjectReference Include="..\Amtrack.Cache.Store\Amtrack.Cache.Store.csproj" />
     <ProjectReference Include="..\Amtrack.Caching.Service\Amtrack.Caching.Service.csproj" />
     <ProjectReference Include="..\Amtrack.DependencyInjection\Amtrack.DependencyInjection.csproj" />

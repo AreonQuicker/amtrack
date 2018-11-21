@@ -319,7 +319,7 @@ namespace Amtrack.Amtrack.Data
 			if(!optionsBuilder.IsConfigured)
 			{
 
-				optionsBuilder.UseSqlServer("server=10.37.0.36,1443;database=amtrack;uid=support;pwd=F15HP@15T;Max Pool Size=300;");
+				optionsBuilder.UseSqlServer(@"server=ACG-SERV-TST2\ACTST5;database=amtrack;uid=sa;pwd=F15HP@15T;Max Pool Size=300;");
 			}
 		}
 

@@ -1,29 +1,42 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
+using Amtrack.Cache.Store;
 
 namespace Amtrack.Cache.SDK
 {
-    public abstract class BaseInternalCacheStore : IInternalCacheStore
-    {
-        protected TimeSpan defaultCacheTimeSpan = default(TimeSpan);
-        protected ConcurrentDictionary<Type, object> store = null;
+	public abstract class BaseInternalCacheStore : IInternalCacheStore
+	{
+		protected TimeSpan defaultCacheTimeSpan = default(TimeSpan);
 
-        protected BaseInternalCacheStore(TimeSpan defaultCacheTimeSpan)
-        {
-            store = new ConcurrentDictionary<Type, object>();
-            //TODO
-            this.defaultCacheTimeSpan = defaultCacheTimeSpan;
-        }
+		protected BaseInternalCacheStore(TimeSpan defaultCacheTimeSpan)
+		{
+			this.defaultCacheTimeSpan = defaultCacheTimeSpan;
+		}
 
-        #region Public Methods
-        public abstract IList<T> AllValues<T>();
-        public abstract void ClearAllCache();
-        public abstract void ClearEntityCache<T>();
-        public abstract T Get<T>(string key);
-        public abstract void Set<T>(string key, T cacheItem);
-        public abstract void Set<T>(T cacheItem);
-        #endregion
-    }
+		#region Protected Methods
+		protected string LinkKey(params string[] names)
+		{
+			return string.Join("-", names);
+		}
+		#endregion
+
+		#region Public Methods
+		public abstract void DeleteAll<T>();
+		public abstract void FlushALL();
+		public abstract IList<T> Get<T>(string[] keys);
+		public abstract T Get<T>(string key);
+		public abstract IList<T> GetAll<T>(string eKey);
+		public abstract IList<T> GetAll<T>();
+		public abstract IList<T> GetAll<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues);
+		public abstract IList<T> GetAll<T>(ConnectionType connectionType, string eKey, params ConnectionValue[] connectionValues);
+		public abstract void Set(object value);
+		public abstract void Set<T>(string key, T value);
+		public abstract void Set<T>(T value);
+		public abstract void SetAll(IEnumerable<object> values, string eKey);
+		public abstract void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, string eKey);
+		public abstract void SetAll(IEnumerable<object> values);
+		public abstract void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values);
+		#endregion
+	}
 
 }

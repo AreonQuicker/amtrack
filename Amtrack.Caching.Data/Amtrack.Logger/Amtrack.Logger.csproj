@@ -4,4 +4,13 @@
 	  <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="NLog" Version="4.5.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Projects\Amrod-Amtrack-ASPNet\src\amtrack\Amtrack.Enumeration\Amtrack.Enumeration.csproj" />
+  </ItemGroup>
+
 </Project>

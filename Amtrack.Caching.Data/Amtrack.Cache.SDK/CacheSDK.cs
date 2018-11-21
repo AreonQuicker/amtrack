@@ -4,65 +4,115 @@ using Amtrack.Cache.Store;
 
 namespace Amtrack.Cache.SDK
 {
-    public class CacheSDK : BaseCacheSDK
-    {
-        public CacheSDK(Dictionary<ConfigurationType, object> configurations, bool initCacheStore = false)
-            : base(configurations, initCacheStore)
-        {
+	//TODO NotImplementedException
+	public class CacheSDK : BaseCacheSDK
+	{
+		public CacheSDK(Dictionary<ConfigurationType, object> configurations, bool initCacheStore = false)
+			: base(configurations, initCacheStore)
+		{
 
-        }
+		}
 
-        public override IList<T> AllValues<T>()
-        {
-            var values = internalCacheStore.AllValues<T>();
+		#region Public Methods
+		public override void DeleteAllInternal<T>()
+		{
+			internalCacheStore.DeleteAll<T>();
+		}
 
-            if(!values.Any())
-            {
-                values = cacheStore.GetAll<T>();
+		public override void FlushALLInternal()
+		{
+			internalCacheStore.FlushALL();
+		}
 
-                foreach(var value in values)
-                {
-                    SetInternal<T>(value);
-                }
-            }
+		public override IList<T> Get<T>(string[] keys)
+		{
+			var values = internalCacheStore.Get<T>(keys);
 
-            return values;
-        }
+			if(values.Count != keys.Length)
+			{
+				values = cacheStore.Get<T>(keys);
 
-        public override void ClearAllInternalCache()
-        {
-            internalCacheStore.ClearAllCache();
-        }
+				if(values.Any())
+					internalCacheStore.SetAll((IEnumerable<object>)values);
+			}
 
-        public override void ClearInteralEntityCache<T>()
-        {
-            internalCacheStore.ClearEntityCache<T>();
-        }
+			return values;
+		}
 
-        public override T Get<T>(string key)
-        {
-            var value = internalCacheStore.Get<T>(key);
+		public override T Get<T>(string key)
+		{
+			var value = internalCacheStore.Get<T>(key);
 
-            if(value.Equals(default(T)))
-            {
-                value = cacheStore.Get<T>(key);
+			if(value == null)
+			{
+				value = cacheStore.Get<T>(key);
 
-                if(value.Equals(default(T)))
-                    SetInternal<T>(key, value);
-            }
+				if(value != null)
+					internalCacheStore.Set<T>(key, value);
+			}
 
-            return value;
-        }
+			return value;
+		}
 
-        public override void SetInternal<T>(string key, T cacheItem)
-        {
-            internalCacheStore.Set<T>(key, cacheItem);
-        }
+		public override IList<T> GetAll<T>()
+		{
+			var values = internalCacheStore.GetAll<T>(typeof(T).Name);
 
-        public override void SetInternal<T>(T cacheItem)
-        {
-            internalCacheStore.Set<T>(cacheItem);
-        }
-    }
+			if(!values.Any())
+			{
+				values = cacheStore.GetAll<T>();
+
+				if(values.Any())
+					internalCacheStore.SetAll((IEnumerable<object>)values, typeof(T).Name);
+			}
+
+			return values;
+		}
+
+		public override IList<T> GetAll<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues)
+		{
+			var key = $"{typeof(T).Name}-{connectionValues.GetType().Name}";
+
+			var keys = cacheStore.GetAllKeys<T>(connectionType, connectionValues);
+
+			var values = internalCacheStore.GetAll<T>(connectionType, key, connectionValues);
+
+			if(values.Count != keys.Count)
+			{
+				values = cacheStore.Get<T>(keys.ToArray());
+
+				if(values.Any())
+					internalCacheStore.SetAll((IEnumerable<object>)values, key);
+			}
+
+			return values;
+		}
+
+		public override void SetInternal(object value)
+		{
+			internalCacheStore.Set(value);
+		}
+
+		public override void SetInternal<T>(string key, T value)
+		{
+			internalCacheStore.Set<T>(key, value);
+		}
+
+		public override void SetInternal<T>(T value)
+		{
+			internalCacheStore.Set<T>(value);
+		}
+
+		public override void SetInternalAll(IEnumerable<object> values)
+		{
+			internalCacheStore.SetAll(values);
+		}
+
+		public override void SetInternalAll<T>(IEnumerable<KeyValuePair<string, T>> values)
+		{
+			internalCacheStore.SetAll<T>(values);
+		}
+		#endregion
+	}
 
 }
