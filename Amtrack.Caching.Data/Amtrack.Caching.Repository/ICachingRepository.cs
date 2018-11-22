@@ -9,7 +9,6 @@ namespace Amtrack.Caching.Repository
 {
 	public interface ICachingRepository : ICoreRepository
 	{
-
 		IEnumerable<User> GetAllUsersV1();
 		IEnumerable<Users> GetAllUsers();
 		IEnumerable<Users> GetAllUsersWithParents();
@@ -22,5 +21,7 @@ namespace Amtrack.Caching.Repository
 		StockPricelists GetStockPricelist(int id);
 		IEnumerable<StockSets> GetAllStockSets();
 		IEnumerable<StockEmbroideryPricing> GetAllStockEmbroideryPricing();
+		IEnumerable<TaxRates> GetAllTaxRates();
+		IEnumerable<Accounts> GetAllAccounts(params string[] includes);
 	}
 }

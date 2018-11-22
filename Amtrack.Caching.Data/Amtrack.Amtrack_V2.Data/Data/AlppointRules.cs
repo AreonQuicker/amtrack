@@ -23,6 +23,7 @@ namespace Amtrack.Amtrack_V2.Data.Data
         public int Status { get; set; }
         public int Flags { get; set; }
         public int Index { get; set; }
+        public int FkBrandId { get; set; }
 
         public Alps FkAlp { get; set; }
         public AlppointRules FkAlppointRule { get; set; }

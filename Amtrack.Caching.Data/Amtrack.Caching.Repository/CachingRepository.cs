@@ -18,6 +18,7 @@ namespace Amtrack.Caching.Repository
 	{
 		private readonly AmtrackStockCheckCachingContext _amtrackStockCheckCachingContext;
 
+		#region Public Methods
 		public CachingRepository(AmtrackV2Context amtrackV2Context,
 			AmtrackContext amtrackContext,
 			AmtrackStockCheckContext amtrackStockCheckContext,
@@ -115,6 +116,24 @@ namespace Amtrack.Caching.Repository
 				.ToList();
 		}
 
+		public IEnumerable<TaxRates> GetAllTaxRates()
+		{
+			return AmtrackV2Context.TaxRates
+				.ToList();
+		}
+
+		public IEnumerable<Accounts> GetAllAccounts(params string[] includes)
+		{
+			IQueryable<Accounts> accounts = AmtrackV2Context.Accounts;
+
+			foreach(string s in includes)
+				accounts = accounts.Include(s);
+
+			return accounts
+				.ToList();
+		}
+		#endregion
+
 		public override void Dispose()
 		{
 			if(_amtrackStockCheckCachingContext != null)
@@ -124,5 +143,6 @@ namespace Amtrack.Caching.Repository
 
 			base.Dispose();
 		}
+
 	}
 }

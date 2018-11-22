@@ -1,6 +1,7 @@
 ﻿using Amtrack.StockCheck.Data.Data;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace Amtrack.StockCheck.Data
 {
 	public partial class AmtrackStockCheckContext : DbContext
@@ -14,113 +15,116 @@ namespace Amtrack.StockCheck.Data
 		{
 		}
 
-		public DbSet<AccountManagers> AccountManagers { get; set; }
-		public DbSet<AccountManagerSwitch> AccountManagerSwitch { get; set; }
-		public DbSet<ActiveSkus> ActiveSkus { get; set; }
-		public DbSet<AdstockItemBranchAttributes> AdstockItemBranchAttributes { get; set; }
-		public DbSet<AudStAllocateStock> AudStAllocateStock { get; set; }
-		public DbSet<AudStGetOrderPickedQuantities> AudStGetOrderPickedQuantities { get; set; }
-		public DbSet<AudWmsDocumentFlags> AudWmsDocumentFlags { get; set; }
-		public DbSet<BasketMetaData> BasketMetaData { get; set; }
-		public DbSet<BrandingDiscountCodes> BrandingDiscountCodes { get; set; }
-		public DbSet<BrandingDiscountRules> BrandingDiscountRules { get; set; }
-		public DbSet<BrandingDiscounts> BrandingDiscounts { get; set; }
-		public DbSet<BrandingExceptions> BrandingExceptions { get; set; }
-		public DbSet<BrandingExcludeStock> BrandingExcludeStock { get; set; }
-		public DbSet<BrandingOptioncolourRestrictions> BrandingOptioncolourRestrictions { get; set; }
-		public DbSet<BrandingPositionDetail> BrandingPositionDetail { get; set; }
-		public DbSet<BrandingPositionOptions> BrandingPositionOptions { get; set; }
-		public DbSet<BrandingPositions> BrandingPositions { get; set; }
-		public DbSet<BrandingTracking> BrandingTracking { get; set; }
-		public DbSet<BsFailedMrntransactions> BsFailedMrntransactions { get; set; }
-		public DbSet<CategoryTypes> CategoryTypes { get; set; }
-		public DbSet<ContinuingProducts2017> ContinuingProducts2017 { get; set; }
-		public DbSet<ExWebCatalogue> ExWebCatalogue { get; set; }
-		public DbSet<ExWebCatalogueHierarchy> ExWebCatalogueHierarchy { get; set; }
-		public DbSet<ExWebCategories> ExWebCategories { get; set; }
-		public DbSet<HighValue> HighValue { get; set; }
-		public DbSet<IncomingEtacache> IncomingEtacache { get; set; }
-		public DbSet<InventoryAdditionalAttributes> InventoryAdditionalAttributes { get; set; }
-		public DbSet<InventoryBrandDepartmentInkAttributes> InventoryBrandDepartmentInkAttributes { get; set; }
-		public DbSet<InventoryClasification> InventoryClasification { get; set; }
-		public DbSet<InventoryColourAttributes> InventoryColourAttributes { get; set; }
-		public DbSet<InventoryPackagingDetail> InventoryPackagingDetail { get; set; }
-		public DbSet<InventoryPart> InventoryPart { get; set; }
-		public DbSet<InventoryPartsMaster> InventoryPartsMaster { get; set; }
-		public DbSet<InventorySet> InventorySet { get; set; }
-		public DbSet<InventorySizeAttributes> InventorySizeAttributes { get; set; }
-		public DbSet<InventorySupplement> InventorySupplement { get; set; }
-		public DbSet<ItemAdditionalInfo> ItemAdditionalInfo { get; set; }
-		public DbSet<KitProducts> KitProducts { get; set; }
-		public DbSet<NonConveyourable> NonConveyourable { get; set; }
-		public DbSet<PickingTracking> PickingTracking { get; set; }
-		public DbSet<ProductBranding> ProductBranding { get; set; }
-		public DbSet<Promotion> Promotion { get; set; }
-		public DbSet<PromotionItems> PromotionItems { get; set; }
-		public DbSet<PsAccountMasterSubLookup> PsAccountMasterSubLookup { get; set; }
-		public DbSet<RackSlotClassification> RackSlotClassification { get; set; }
-		public DbSet<RackSlotClassificationTracking> RackSlotClassificationTracking { get; set; }
-		public DbSet<RackSlotInfo> RackSlotInfo { get; set; }
-		public DbSet<SizeSwatch> SizeSwatch { get; set; }
-		public DbSet<SpecialApplicableProducts> SpecialApplicableProducts { get; set; }
-		public DbSet<SpecialFreeBrandingCodesLookUp> SpecialFreeBrandingCodesLookUp { get; set; }
-		public DbSet<Specials> Specials { get; set; }
-		public DbSet<SpecialsBrandingDetails> SpecialsBrandingDetails { get; set; }
-		public DbSet<SpecialsTypes> SpecialsTypes { get; set; }
-		public DbSet<StockCartonAttributes> StockCartonAttributes { get; set; }
-		public DbSet<StockCategoryAttributes> StockCategoryAttributes { get; set; }
-		public DbSet<StockEmbroideryPricing> StockEmbroideryPricing { get; set; }
-		public DbSet<StockInventoryTransactionTypes> StockInventoryTransactionTypes { get; set; }
-		public DbSet<StockItemAttributes> StockItemAttributes { get; set; }
-		public DbSet<StockItemAttributeTemplateOptionValues> StockItemAttributeTemplateOptionValues { get; set; }
-		public DbSet<StockItemAttributeTemplates> StockItemAttributeTemplates { get; set; }
-		public DbSet<StockItemBranchAttributes> StockItemBranchAttributes { get; set; }
-		public DbSet<StockItemBranchShippingMethods> StockItemBranchShippingMethods { get; set; }
-		public DbSet<StockItemCosts> StockItemCosts { get; set; }
-		public DbSet<StockItemGroupAttributes> StockItemGroupAttributes { get; set; }
-		public DbSet<StockItemGroupAttributeTemplates> StockItemGroupAttributeTemplates { get; set; }
-		public DbSet<StockItemGroups> StockItemGroups { get; set; }
-		public DbSet<StockItemInventoryTypes> StockItemInventoryTypes { get; set; }
-		public DbSet<StockItemLevel> StockItemLevel { get; set; }
-		public DbSet<StockItemLevelDetail> StockItemLevelDetail { get; set; }
-		public DbSet<StockItemLevelDetailType> StockItemLevelDetailType { get; set; }
-		public DbSet<StockItemLevelIncomingDetails> StockItemLevelIncomingDetails { get; set; }
-		public DbSet<StockItemLevelReserveDetails> StockItemLevelReserveDetails { get; set; }
-		public DbSet<StockItemLevelSource> StockItemLevelSource { get; set; }
-		public DbSet<StockItemLevelTransactions> StockItemLevelTransactions { get; set; }
-		public DbSet<StockItemMaster> StockItemMaster { get; set; }
-		public DbSet<StockItemPriceMatrix> StockItemPriceMatrix { get; set; }
-		public DbSet<StockItemPublication> StockItemPublication { get; set; }
-		public DbSet<StockItemPublicationTransactions> StockItemPublicationTransactions { get; set; }
-		public DbSet<StockItemShippingMethods> StockItemShippingMethods { get; set; }
-		public DbSet<StockItemTransactionResults> StockItemTransactionResults { get; set; }
-		public DbSet<StockItemUom> StockItemUom { get; set; }
-		public DbSet<StockItemUomtemplates> StockItemUomtemplates { get; set; }
-		public DbSet<StockItemUomvalues> StockItemUomvalues { get; set; }
-		public DbSet<StockItemValidation> StockItemValidation { get; set; }
-		public DbSet<StockItemValidationTransactions> StockItemValidationTransactions { get; set; }
-		public DbSet<StockPalletAudit> StockPalletAudit { get; set; }
-		public DbSet<StockPallets> StockPallets { get; set; }
-		public DbSet<StockPallets2> StockPallets2 { get; set; }
-		public DbSet<StockPricelists> StockPricelists { get; set; }
-		public DbSet<StockRelatedProducts> StockRelatedProducts { get; set; }
-		public DbSet<StockSetComponents> StockSetComponents { get; set; }
-		public DbSet<StockSetContents> StockSetContents { get; set; }
-		public DbSet<StockSets> StockSets { get; set; }
-		public DbSet<StockSetStockcheck> StockSetStockcheck { get; set; }
-		public DbSet<StockStItemLoadCatalogueCh1> StockStItemLoadCatalogueCh1 { get; set; }
-		public DbSet<StockStockGpe> StockStockGpe { get; set; }
-		public DbSet<StockToDelete> StockToDelete { get; set; }
-		public DbSet<StockVirtualStockLookup> StockStockLookup { get; set; }
-		public DbSet<StockVolumetric> StockVolumetric { get; set; }
-		public DbSet<StockVolumetricBatches> StockVolumetricBatches { get; set; }
-		public DbSet<StockWmsChange> StockWmsChange { get; set; }
-		public DbSet<TempInclusiveBrandingOptions> TempInclusiveBrandingOptions { get; set; }
-		public DbSet<TStockAttributes> TStockAttributes { get; set; }
-		public DbSet<UtiMrndata> UtiMrndata { get; set; }
-		public DbSet<UtiMrndata1> UtiMrndata1 { get; set; }
-		public DbSet<UtiMrntransactions> UtiMrntransactions { get; set; }
-		public DbSet<UtiMrntransactions1> UtiMrntransactions1 { get; set; }
+		public virtual DbSet<AccountManagers> AccountManagers { get; set; }
+		public virtual DbSet<AccountManagerSwitch> AccountManagerSwitch { get; set; }
+		public virtual DbSet<ActiveSkus> ActiveSkus { get; set; }
+		public virtual DbSet<AdstockItemBranchAttributes> AdstockItemBranchAttributes { get; set; }
+		public virtual DbSet<AudStAllocateStock> AudStAllocateStock { get; set; }
+		public virtual DbSet<AudStGetOrderPickedQuantities> AudStGetOrderPickedQuantities { get; set; }
+		public virtual DbSet<AudWmsDocumentFlags> AudWmsDocumentFlags { get; set; }
+		public virtual DbSet<BasketMetaData> BasketMetaData { get; set; }
+		public virtual DbSet<BrandingDiscountCodes> BrandingDiscountCodes { get; set; }
+		public virtual DbSet<BrandingDiscountRules> BrandingDiscountRules { get; set; }
+		public virtual DbSet<BrandingDiscounts> BrandingDiscounts { get; set; }
+		public virtual DbSet<BrandingExceptions> BrandingExceptions { get; set; }
+		public virtual DbSet<BrandingExcludeStock> BrandingExcludeStock { get; set; }
+		public virtual DbSet<BrandingOptioncolourRestrictions> BrandingOptioncolourRestrictions { get; set; }
+		public virtual DbSet<BrandingPositionDetail> BrandingPositionDetail { get; set; }
+		public virtual DbSet<BrandingPositionOptions> BrandingPositionOptions { get; set; }
+		public virtual DbSet<BrandingPositions> BrandingPositions { get; set; }
+		public virtual DbSet<BrandingTracking> BrandingTracking { get; set; }
+		public virtual DbSet<BsFailedMrntransactions> BsFailedMrntransactions { get; set; }
+		public virtual DbSet<CategoryTypes> CategoryTypes { get; set; }
+		public virtual DbSet<ContinuingProducts2017> ContinuingProducts2017 { get; set; }
+		public virtual DbSet<ExWebCatalogue> ExWebCatalogue { get; set; }
+		public virtual DbSet<ExWebCatalogueHierarchy> ExWebCatalogueHierarchy { get; set; }
+		public virtual DbSet<ExWebCategories> ExWebCategories { get; set; }
+		public virtual DbSet<HighValue> HighValue { get; set; }
+		public virtual DbSet<IncomingEtacache> IncomingEtacache { get; set; }
+		public virtual DbSet<InventoryAdditionalAttributes> InventoryAdditionalAttributes { get; set; }
+		public virtual DbSet<InventoryBrandDepartmentInkAttributes> InventoryBrandDepartmentInkAttributes { get; set; }
+		public virtual DbSet<InventoryClasification> InventoryClasification { get; set; }
+		public virtual DbSet<InventoryColourAttributes> InventoryColourAttributes { get; set; }
+		public virtual DbSet<InventoryPackagingDetail> InventoryPackagingDetail { get; set; }
+		public virtual DbSet<InventoryPart> InventoryPart { get; set; }
+		public virtual DbSet<InventoryPartsMaster> InventoryPartsMaster { get; set; }
+		public virtual DbSet<InventorySet> InventorySet { get; set; }
+		public virtual DbSet<InventorySizeAttributes> InventorySizeAttributes { get; set; }
+		public virtual DbSet<InventorySupplement> InventorySupplement { get; set; }
+		public virtual DbSet<ItemAdditionalInfo> ItemAdditionalInfo { get; set; }
+		public virtual DbSet<KitProducts> KitProducts { get; set; }
+		public virtual DbSet<NonConveyourable> NonConveyourable { get; set; }
+		public virtual DbSet<PickingTracking> PickingTracking { get; set; }
+		public virtual DbSet<ProductBranding> ProductBranding { get; set; }
+		public virtual DbSet<Promotion> Promotion { get; set; }
+		public virtual DbSet<PromotionItems> PromotionItems { get; set; }
+		public virtual DbSet<PsAccountMasterSubLookup> PsAccountMasterSubLookup { get; set; }
+		public virtual DbSet<RackSlotClassification> RackSlotClassification { get; set; }
+		public virtual DbSet<RackSlotClassificationTracking> RackSlotClassificationTracking { get; set; }
+		public virtual DbSet<RackSlotInfo> RackSlotInfo { get; set; }
+		public virtual DbSet<SizeSwatch> SizeSwatch { get; set; }
+		public virtual DbSet<SpecialApplicableProducts> SpecialApplicableProducts { get; set; }
+		public virtual DbSet<SpecialFreeBrandingCodesLookUp> SpecialFreeBrandingCodesLookUp { get; set; }
+		public virtual DbSet<Specials> Specials { get; set; }
+		public virtual DbSet<SpecialsBrandingDetails> SpecialsBrandingDetails { get; set; }
+		public virtual DbSet<SpecialsTypes> SpecialsTypes { get; set; }
+		public virtual DbSet<StockBrands> StockBrands { get; set; }
+		public virtual DbSet<StockCartonAttributes> StockCartonAttributes { get; set; }
+		public virtual DbSet<StockCategoryAttributes> StockCategoryAttributes { get; set; }
+		public virtual DbSet<StockEmbroideryPricing> StockEmbroideryPricing { get; set; }
+		public virtual DbSet<StockInventoryTransactionTypes> StockInventoryTransactionTypes { get; set; }
+		public virtual DbSet<StockItemAttributes> StockItemAttributes { get; set; }
+		public virtual DbSet<StockItemAttributeTemplateOptionValues> StockItemAttributeTemplateOptionValues { get; set; }
+		public virtual DbSet<StockItemAttributeTemplates> StockItemAttributeTemplates { get; set; }
+		public virtual DbSet<StockItemBranchAttributes> StockItemBranchAttributes { get; set; }
+		public virtual DbSet<StockItemBranchShippingMethods> StockItemBranchShippingMethods { get; set; }
+		public virtual DbSet<StockItemBrandMatrix> StockItemBrandMatrix { get; set; }
+		public virtual DbSet<StockItemCosts> StockItemCosts { get; set; }
+		public virtual DbSet<StockItemGroupAttributes> StockItemGroupAttributes { get; set; }
+		public virtual DbSet<StockItemGroupAttributeTemplates> StockItemGroupAttributeTemplates { get; set; }
+		public virtual DbSet<StockItemGroups> StockItemGroups { get; set; }
+		public virtual DbSet<StockItemInventoryTypes> StockItemInventoryTypes { get; set; }
+		public virtual DbSet<StockItemLevel> StockItemLevel { get; set; }
+		public virtual DbSet<StockItemLevelDetail> StockItemLevelDetail { get; set; }
+		public virtual DbSet<StockItemLevelDetailType> StockItemLevelDetailType { get; set; }
+		public virtual DbSet<StockItemLevelIncomingDetails> StockItemLevelIncomingDetails { get; set; }
+		public virtual DbSet<StockItemLevelReserveDetails> StockItemLevelReserveDetails { get; set; }
+		public virtual DbSet<StockItemLevelSource> StockItemLevelSource { get; set; }
+		public virtual DbSet<StockItemLevelTransactions> StockItemLevelTransactions { get; set; }
+		public virtual DbSet<StockItemMaster> StockItemMaster { get; set; }
+		public virtual DbSet<StockItemPriceMatrix> StockItemPriceMatrix { get; set; }
+		public virtual DbSet<StockItemPublication> StockItemPublication { get; set; }
+		public virtual DbSet<StockItemPublicationTransactions> StockItemPublicationTransactions { get; set; }
+		public virtual DbSet<StockItemShippingMethods> StockItemShippingMethods { get; set; }
+		public virtual DbSet<StockItemTransactionResults> StockItemTransactionResults { get; set; }
+		public virtual DbSet<StockItemUom> StockItemUom { get; set; }
+		public virtual DbSet<StockItemUomtemplates> StockItemUomtemplates { get; set; }
+		public virtual DbSet<StockItemUomvalues> StockItemUomvalues { get; set; }
+		public virtual DbSet<StockItemValidation> StockItemValidation { get; set; }
+		public virtual DbSet<StockItemValidationTransactions> StockItemValidationTransactions { get; set; }
+		public virtual DbSet<StockPalletAudit> StockPalletAudit { get; set; }
+		public virtual DbSet<StockPalletAudit1> StockPalletAudit1 { get; set; }
+		public virtual DbSet<StockPallets> StockPallets { get; set; }
+		public virtual DbSet<StockPallets2> StockPallets2 { get; set; }
+		public virtual DbSet<StockPricelists> StockPricelists { get; set; }
+		public virtual DbSet<StockRelatedProducts> StockRelatedProducts { get; set; }
+		public virtual DbSet<StockSetComponents> StockSetComponents { get; set; }
+		public virtual DbSet<StockSetContents> StockSetContents { get; set; }
+		public virtual DbSet<StockSets> StockSets { get; set; }
+		public virtual DbSet<StockSetStockcheck> StockSetStockcheck { get; set; }
+		public virtual DbSet<StockStItemLoadCatalogueCh1> StockStItemLoadCatalogueCh1 { get; set; }
+		public virtual DbSet<StockStockGpe> StockStockGpe { get; set; }
+		public virtual DbSet<StockToDelete> StockToDelete { get; set; }
+		public virtual DbSet<StockVirtualStockLookup> StockVirtualStockLookup { get; set; }
+		public virtual DbSet<StockVolumetric> StockVolumetric { get; set; }
+		public virtual DbSet<StockVolumetricBatches> StockVolumetricBatches { get; set; }
+		public virtual DbSet<StockWmsChange> StockWmsChange { get; set; }
+		public virtual DbSet<TempInclusiveBrandingOptions> TempInclusiveBrandingOptions { get; set; }
+		public virtual DbSet<TStockAttributes> TStockAttributes { get; set; }
+		public virtual DbSet<UtiMrndata> UtiMrndata { get; set; }
+		public virtual DbSet<UtiMrndata1> UtiMrndata1 { get; set; }
+		public virtual DbSet<UtiMrntransactions> UtiMrntransactions { get; set; }
+		public virtual DbSet<UtiMrntransactions1> UtiMrntransactions1 { get; set; }
 
 		// Unable to generate entity type for table 'dbo.UP_BrandingConversionBrandingCredits_NEW'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo.BrandingPrices'. Please see the warning messages.
@@ -130,14 +134,17 @@ namespace Amtrack.StockCheck.Data
 		// Unable to generate entity type for table 'dbo.SizeSort'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo.BrandingClothingLinesTypes'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo.WidgetCH_Accounts'. Please see the warning messages.
+		// Unable to generate entity type for table 'dbo.Stock_wms_BinLocations'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo.UP_BrandingConversionBrandings'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo.UP_BrandingConversionBrandingCredits'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo.stock_Prices'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo.DailyStats_WarehouseStockLevels'. Please see the warning messages.
+		// Unable to generate entity type for table 'dbo.temp_wizardImportBranding'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo.UP_BrandingConversionData'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo.stock_StockItems_2'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo.WidgetCH_JobCards'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo._Sets'. Please see the warning messages.
+		// Unable to generate entity type for table 'dbo.temp_wizarddims'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo.DeleteMe_ItemPages'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo._PageNumbersImport'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo.auGiftsetStockLevel_Trigger'. Please see the warning messages.
@@ -164,7 +171,7 @@ namespace Amtrack.StockCheck.Data
 			if(!optionsBuilder.IsConfigured)
 			{
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-				optionsBuilder.UseSqlServer(@"server=ACG-SERV-TST2\ACTST5;database=Amtrack_StockCheck;uid=sa;pwd=F15HP@15T;");
+				optionsBuilder.UseSqlServer("server=ACG-SERV-TST2\\ACTST5;database=Amtrack_StockCheck;uid=sa;pwd=F15HP@15T;Max Pool Size=300;");
 			}
 		}
 
@@ -174,7 +181,7 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.HasKey(e => e.Guid);
 
-				entity.Property(e => e.Guid).ValueGeneratedNever();
+				entity.Property(e => e.Guid).HasDefaultValueSql("(newid())");
 
 				entity.Property(e => e.AccountManagerCode)
 					.IsRequired()
@@ -241,7 +248,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(10)
 					.IsUnicode(false);
 
-				entity.Property(e => e.ActionDate).HasColumnType("datetime");
+				entity.Property(e => e.ActionDate)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkBranchId).HasColumnName("FK_BranchId");
 
@@ -257,7 +266,9 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.ToTable("aud_stAllocateStock");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.ItemCode)
 					.IsRequired()
@@ -286,12 +297,16 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.ToTable("aud_stGetOrderPickedQuantities");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DocumentNumber)
 					.IsRequired()
 					.HasMaxLength(50)
 					.IsUnicode(false);
+
+				entity.Property(e => e.Flags).HasDefaultValueSql("((0))");
 
 				entity.Property(e => e.ItemCode)
 					.HasMaxLength(400)
@@ -306,7 +321,9 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.ToTable("aud_WmsDocumentFlags");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.WmsDocumentNumber)
 					.IsRequired()
@@ -370,7 +387,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(50)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.ItemCode)
 					.HasMaxLength(255)
@@ -463,9 +482,15 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(500)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkPositionId).HasColumnName("FK_PositionId");
+
+				entity.Property(e => e.MaxBrandQuantity).HasDefaultValueSql("((-1))");
+
+				entity.Property(e => e.MinBrandQuantity).HasDefaultValueSql("((1))");
 
 				entity.HasOne(d => d.FkPosition)
 					.WithMany(p => p.BrandingPositionOptions)
@@ -489,7 +514,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(500)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.ItemCode)
 					.IsRequired()
@@ -530,7 +557,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(30)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Reason)
 					.HasMaxLength(100)
@@ -694,7 +723,9 @@ namespace Amtrack.StockCheck.Data
 
 				entity.Property(e => e.AttributeValueText).IsUnicode(false);
 
-				entity.Property(e => e.SyncDate).HasColumnType("datetime");
+				entity.Property(e => e.SyncDate)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 			});
 
 			modelBuilder.Entity<InventoryBrandDepartmentInkAttributes>(entity =>
@@ -776,7 +807,8 @@ namespace Amtrack.StockCheck.Data
 				entity.Property(e => e.CartonDimension)
 					.IsRequired()
 					.HasMaxLength(50)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('N/a')");
 			});
 
 			modelBuilder.Entity<InventoryPart>(entity =>
@@ -912,7 +944,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(255)
 					.IsUnicode(false);
 
-				entity.Property(e => e.AdtionDate).HasColumnType("datetime");
+				entity.Property(e => e.AdtionDate)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.ItemCode)
 					.IsRequired()
@@ -946,7 +980,8 @@ namespace Amtrack.StockCheck.Data
 
 				entity.Property(e => e.Created)
 					.HasColumnName("created")
-					.HasColumnType("datetime");
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -994,7 +1029,9 @@ namespace Amtrack.StockCheck.Data
 				entity.HasIndex(e => new { e.Type, e.UnitsPerLocation, e.MezzLevel, e.ItemCode })
 					.HasName("IX_RackSlotClassification_ItemCode");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Hi).HasColumnName("HI");
 
@@ -1005,7 +1042,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(50)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Modified).HasColumnType("datetime");
+				entity.Property(e => e.Modified)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Ti).HasColumnName("TI");
 
@@ -1014,7 +1053,9 @@ namespace Amtrack.StockCheck.Data
 
 			modelBuilder.Entity<RackSlotClassificationTracking>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkRackSlotClassificationId).HasColumnName("FK_RackSlotClassificationId");
 
@@ -1025,7 +1066,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(50)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Modified).HasColumnType("datetime");
+				entity.Property(e => e.Modified)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.NewBoxesPerLocation).HasColumnName("New_BoxesPerLocation");
 
@@ -1062,14 +1105,18 @@ namespace Amtrack.StockCheck.Data
 
 			modelBuilder.Entity<RackSlotInfo>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Description)
 					.IsRequired()
 					.HasMaxLength(50)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Modified).HasColumnType("datetime");
+				entity.Property(e => e.Modified)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.PalletHeightCm).HasColumnName("PalletHeight_cm");
 
@@ -1148,7 +1195,9 @@ namespace Amtrack.StockCheck.Data
 
 				entity.Property(e => e.Id).ValueGeneratedNever();
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -1198,6 +1247,20 @@ namespace Amtrack.StockCheck.Data
 				entity.Property(e => e.Name)
 					.IsRequired()
 					.HasMaxLength(50)
+					.IsUnicode(false);
+			});
+
+			modelBuilder.Entity<StockBrands>(entity =>
+			{
+				entity.ToTable("stock_Brands");
+
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
+
+				entity.Property(e => e.Name)
+					.IsRequired()
+					.HasMaxLength(100)
 					.IsUnicode(false);
 			});
 
@@ -1273,7 +1336,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(10)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Description)
 					.IsRequired()
@@ -1288,7 +1353,9 @@ namespace Amtrack.StockCheck.Data
 				entity.HasIndex(e => new { e.FkAttributeTemplateId, e.BoolValue, e.FkItemId })
 					.HasName("ix_stock_ItemAttributes_FK_ItemId_includes");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkAttributeTemplateId).HasColumnName("FK_AttributeTemplateId");
 
@@ -1319,7 +1386,9 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.ToTable("stock_ItemAttributeTemplateOptionValues");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Display)
 					.IsRequired()
@@ -1344,7 +1413,9 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.ToTable("stock_ItemAttributeTemplates");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DataType)
 					.IsRequired()
@@ -1407,6 +1478,29 @@ namespace Amtrack.StockCheck.Data
 					.HasConstraintName("FK_stock_ItemBranchShippingMethods_stock_ItemMaster");
 			});
 
+			modelBuilder.Entity<StockItemBrandMatrix>(entity =>
+			{
+				entity.HasKey(e => new { e.FkItemId, e.FkBrandId });
+
+				entity.ToTable("stock_ItemBrandMatrix");
+
+				entity.Property(e => e.FkItemId).HasColumnName("FK_ItemId");
+
+				entity.Property(e => e.FkBrandId).HasColumnName("FK_BrandId");
+
+				entity.HasOne(d => d.FkBrand)
+					.WithMany(p => p.StockItemBrandMatrix)
+					.HasForeignKey(d => d.FkBrandId)
+					.OnDelete(DeleteBehavior.ClientSetNull)
+					.HasConstraintName("FK_stock_ItemBrandMatrix_stock_Brands");
+
+				entity.HasOne(d => d.FkItem)
+					.WithMany(p => p.StockItemBrandMatrix)
+					.HasForeignKey(d => d.FkItemId)
+					.OnDelete(DeleteBehavior.ClientSetNull)
+					.HasConstraintName("FK_stock_ItemBrandMatrix_stock_ItemMaster");
+			});
+
 			modelBuilder.Entity<StockItemCosts>(entity =>
 			{
 				entity.ToTable("stock_ItemCosts");
@@ -1432,7 +1526,9 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.ToTable("stock_ItemGroupAttributes");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkAttributeTemplateId).HasColumnName("FK_AttributeTemplateId");
 
@@ -1463,7 +1559,9 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.ToTable("stock_ItemGroupAttributeTemplates");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DataType)
 					.IsRequired()
@@ -1490,7 +1588,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(4)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -1502,7 +1602,9 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.ToTable("stock_ItemInventoryTypes");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -1519,7 +1621,9 @@ namespace Amtrack.StockCheck.Data
 
 				entity.Property(e => e.FkItemId).HasColumnName("FK_ItemId");
 
-				entity.Property(e => e.Modified).HasColumnType("datetime");
+				entity.Property(e => e.Modified)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.HasOne(d => d.FkItem)
 					.WithMany(p => p.StockItemLevel)
@@ -1597,7 +1701,9 @@ namespace Amtrack.StockCheck.Data
 				entity.HasIndex(e => new { e.Created, e.Quantity, e.Eta, e.Reference, e.Reference2, e.FkItemLevelId })
 					.HasName("ix_stock_ItemLevelIncomingDetails_FK_ItemLevelId_includes");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Eta)
 					.HasColumnName("ETA")
@@ -1637,7 +1743,9 @@ namespace Amtrack.StockCheck.Data
 				entity.HasIndex(e => new { e.FkItemLevelSourceId, e.Reference, e.Quantity, e.Flags, e.FkItemLevelId })
 					.HasName("ix_stock_ItemLevelReserveDetails_FK_ItemLevelId_includes");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkItemLevelId).HasColumnName("FK_ItemLevelId");
 
@@ -1687,7 +1795,9 @@ namespace Amtrack.StockCheck.Data
 				entity.HasIndex(e => new { e.Id, e.FkLevelDetailId })
 					.HasName("ix_stock_ItemLevelTransactions_FK_LevelDetailId_includes");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkLevelDetailId).HasColumnName("FK_LevelDetailId");
 
@@ -1743,7 +1853,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(20)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Description)
 					.IsRequired()
@@ -1805,7 +1917,9 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.ToTable("stock_ItemPublication");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkDetailLevelSourceId).HasColumnName("FK_DetailLevelSourceId");
 
@@ -1830,7 +1944,9 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.ToTable("stock_ItemPublicationTransactions");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkPublicationId).HasColumnName("FK_PublicationId");
 
@@ -1877,7 +1993,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(3)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Description)
 					.IsRequired()
@@ -1892,7 +2010,9 @@ namespace Amtrack.StockCheck.Data
 				entity.HasIndex(e => e.FkItemId)
 					.HasName("ix_stock_ItemUOM_FK_ItemId");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkItemId).HasColumnName("FK_ItemId");
 
@@ -1914,7 +2034,9 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.ToTable("stock_ItemUOMTemplates");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -1932,7 +2054,9 @@ namespace Amtrack.StockCheck.Data
 				entity.HasIndex(e => new { e.Id, e.FkItemUomtemplateId, e.Quantity, e.DimWidth, e.DimHeight, e.DimLength, e.Weight, e.FkItemUomid })
 					.HasName("ix_stock_ItemUOMValues_FK_ItemUOMId_includes");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DimHeight).HasColumnName("dim_Height");
 
@@ -1983,7 +2107,9 @@ namespace Amtrack.StockCheck.Data
 				entity.HasIndex(e => new { e.FkItemId, e.FkDetailLevelSourceId })
 					.HasName("ix_stock_ItemValidation_FK_ItemId_FK_DetailLevelSourceId");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkDetailLevelSourceId).HasColumnName("FK_DetailLevelSourceId");
 
@@ -2011,7 +2137,9 @@ namespace Amtrack.StockCheck.Data
 				entity.HasIndex(e => new { e.FkValidationId, e.Flags })
 					.HasName("ix_stock_ItemValidationTransactions_FK_ValidationId_Flags");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkValidationId).HasColumnName("FK_ValidationId");
 
@@ -2031,6 +2159,46 @@ namespace Amtrack.StockCheck.Data
 			});
 
 			modelBuilder.Entity<StockPalletAudit>(entity =>
+			{
+				entity.ToTable("_stock_pallet_audit");
+
+				entity.Property(e => e.Id).ValueGeneratedNever();
+
+				entity.Property(e => e.AdjustDocumentNumber)
+					.IsRequired()
+					.HasColumnName("adjust_DocumentNumber")
+					.HasMaxLength(255);
+
+				entity.Property(e => e.AdjustInLocatonLevel).HasColumnName("adjust_InLocatonLevel");
+
+				entity.Property(e => e.AdjustInQclevel).HasColumnName("adjust_InQCLevel");
+
+				entity.Property(e => e.AdjustInTransitFrom).HasColumnName("adjust_InTransitFrom");
+
+				entity.Property(e => e.AdjustInTransitTo).HasColumnName("adjust_InTransitTo");
+
+				entity.Property(e => e.AdjustInWarehouseLevel).HasColumnName("adjust_InWarehouseLevel");
+
+				entity.Property(e => e.AdjustPicking).HasColumnName("adjust_Picking");
+
+				entity.Property(e => e.AdjustToBePlacedLevel).HasColumnName("adjust_ToBePlacedLevel");
+
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
+
+				entity.Property(e => e.ItemCode)
+					.IsRequired()
+					.HasMaxLength(50)
+					.IsUnicode(false);
+
+				entity.Property(e => e.StoreCode)
+					.IsRequired()
+					.HasMaxLength(3)
+					.IsUnicode(false);
+			});
+
+			modelBuilder.Entity<StockPalletAudit1>(entity =>
 			{
 				entity.ToTable("stock_pallet_audit");
 
@@ -2053,7 +2221,9 @@ namespace Amtrack.StockCheck.Data
 
 				entity.Property(e => e.AdjustToBePlacedLevel).HasColumnName("adjust_ToBePlacedLevel");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.ItemCode)
 					.IsRequired()
@@ -2111,7 +2281,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(20)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.CurrencyCode)
 					.IsRequired()
@@ -2128,7 +2300,8 @@ namespace Amtrack.StockCheck.Data
 				entity.Property(e => e.DisplayFormat)
 					.IsRequired()
 					.HasMaxLength(50)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("(' # ##0.00')");
 
 				entity.Property(e => e.DisplayName)
 					.IsRequired()
@@ -2173,7 +2346,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(100)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Description)
 					.IsRequired()
@@ -2213,7 +2388,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(50)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkSetId).HasColumnName("FK_SetId");
 
@@ -2246,7 +2423,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(50)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Description)
 					.HasMaxLength(400)
@@ -2345,10 +2524,10 @@ namespace Amtrack.StockCheck.Data
 
 			modelBuilder.Entity<StockVirtualStockLookup>(entity =>
 			{
-				entity.ToTable("stock_StockLookup");
+				entity.ToTable("stock_VirtualStockLookup");
 
 				entity.HasIndex(e => new { e.VirtualRangeCode, e.ColourCode })
-					.HasName("IX_stock_StockLookup")
+					.HasName("IX_stock_VirtualStockLookup")
 					.IsUnique();
 
 				entity.Property(e => e.ColourCode)
@@ -2435,7 +2614,9 @@ namespace Amtrack.StockCheck.Data
 					.HasMaxLength(50)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 			});
 
 			modelBuilder.Entity<StockWmsChange>(entity =>
@@ -2587,7 +2768,9 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.ToTable("UTI_MRNTransactions");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.MrnId).HasColumnName("MRN_Id");
 
@@ -2607,7 +2790,9 @@ namespace Amtrack.StockCheck.Data
 			{
 				entity.ToTable("_UTI_MRNTransactions");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.MrnId).HasColumnName("MRN_Id");
 

@@ -1,45 +1,3 @@
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.csprojAssemblyReference.cache
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.csproj.CoreCompileInputs.cache
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.AssemblyInfoInputs.cache
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.AssemblyInfo.cs
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.deps.json
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.runtimeconfig.json
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.runtimeconfig.dev.json
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Amtrack_V2.Data.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Cache.Store.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Data.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Repository.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Service.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Core.Repositories.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Core.Services.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Enumeration.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Extensions.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Logger.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Models.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.StockCheck.Data.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.ValueObjects.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Cache.Store.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Service.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Logger.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Amtrack_V2.Data.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Data.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Repository.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Core.Repositories.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Core.Services.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Enumeration.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Extensions.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Models.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.StockCheck.Data.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.ValueObjects.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.csproj.CopyComplete
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.DependencyInjection.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.DependencyInjection.pdb
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.deps.json
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.runtimeconfig.json
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.runtimeconfig.dev.json
@@ -82,7 +40,49 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Servic
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.csproj.CopyComplete
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Cache.Models.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Cache.Models.pdb
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Cache.Models.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Cache.Models.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.csprojAssemblyReference.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.csproj.CoreCompileInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.AssemblyInfoInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.AssemblyInfo.cs
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.deps.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.runtimeconfig.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.runtimeconfig.dev.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Amtrack_V2.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Cache.Models.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Cache.Store.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Repository.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Service.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Core.Repositories.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Core.Services.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.DependencyInjection.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Enumeration.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Extensions.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Logger.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Models.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.StockCheck.Data.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.ValueObjects.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Cache.Models.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Cache.Store.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Service.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.DependencyInjection.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Logger.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Amtrack.Data.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Amtrack_V2.Data.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Data.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Caching.Repository.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Core.Repositories.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Core.Services.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Enumeration.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Extensions.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.Models.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.StockCheck.Data.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\bin\Debug\netcoreapp2.1\Amtrack.ValueObjects.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.csproj.CopyComplete
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Background.Cache.Service\obj\Debug\netcoreapp2.1\Amtrack.Background.Cache.Service.pdb

@@ -5,7 +5,9 @@ using Amtrack.Cache.Store;
 using Amtrack.Caching.Service;
 using Amtrack.DependencyInjection;
 using Amtrack.Logger;
+using Amtrack.ValueObjects.Branding;
 using Amtrack.ValueObjects.Inventory;
+using Amtrack.ValueObjects.OrderEntry;
 
 namespace Amtrack.Background.Cache.Service.AsyncCacheServices
 {
@@ -36,6 +38,11 @@ namespace Amtrack.Background.Cache.Service.AsyncCacheServices
 				.ToDictionary(d => d.CacheKey, d => d);
 
 			cacheStore.SetAll<InventoryItemVO>(inventoryItemValues, new string[] { "BaseItemCode", "ItemCode", "Colour" });
+			cacheStore.SetAll(inventoryCacheModel.Groups);
+			cacheStore.SetAll(inventoryCacheModel.InventoryPricing);
+			cacheStore.SetAll(inventoryCacheModel.InventorySets);
+			cacheStore.SetAll(inventoryCacheModel.PriceLists);
+			cacheStore.SetAll(inventoryCacheModel.EmbroideryPricing);
 
 			logger.LogInfo($"Saving Cache For Service {ServiceName} On Method {"GetInventoryCacheModel"} - Complete");
 
@@ -46,6 +53,12 @@ namespace Amtrack.Background.Cache.Service.AsyncCacheServices
 		{
 			logger.LogInfo($"Deleting Cache For Service {ServiceName} On Method {"GetInventoryCacheModel"} - Start");
 
+			cacheStore.DeleteAll<PriceListVO>();
+			cacheStore.DeleteAll<GroupVO>();
+			cacheStore.DeleteAll<InventoryItemVO>();
+			cacheStore.DeleteAll<InventoryPricingVO>();
+			cacheStore.DeleteAll<InventorySetVO>();
+			cacheStore.DeleteAll<EmbroideryPricingVO>();
 
 			logger.LogInfo($"Deleting Cache For Service {ServiceName} On Method {"GetInventoryCacheModel"} - Complete");
 

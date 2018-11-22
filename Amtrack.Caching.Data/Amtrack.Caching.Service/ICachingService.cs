@@ -6,5 +6,6 @@ namespace Amtrack.Caching.Service
 	{
 		UserCacheModel GetUserCacheModel();
 		InventoryCacheModel GetInventoryCacheModel();
+		AccountCacheModel GetAccountCacheModel();
 	}
 }

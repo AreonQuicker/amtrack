@@ -30,6 +30,7 @@ namespace Amtrack.Amtrack_V2.Data.Data
         public string DiscountProject { get; set; }
         public string ItemCodeOriginal { get; set; }
         public Guid? FkParentLineId { get; set; }
+        public int? FkBrandId { get; set; }
 
         public Documents Document { get; set; }
         public DocumentBoxDetail DocumentBoxDetail { get; set; }

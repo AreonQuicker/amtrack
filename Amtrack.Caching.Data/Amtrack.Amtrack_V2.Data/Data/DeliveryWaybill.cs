@@ -46,6 +46,7 @@ namespace Amtrack.Amtrack_V2.Data.Data
         public DeliveryAddress FkDeliveryWaybillAddress { get; set; }
         public Documents FkDocument { get; set; }
         public DeliveryWaybill FkHistory { get; set; }
+        public DeliveryWaybillCourierDetails FkWaybillCourierDetails { get; set; }
         public ICollection<DeliveryWaybillDetail> DeliveryWaybillDetail { get; set; }
         public ICollection<DeliveryWaybillTracking> DeliveryWaybillTracking { get; set; }
         public ICollection<DeliveryWaybill> InverseFkHistory { get; set; }

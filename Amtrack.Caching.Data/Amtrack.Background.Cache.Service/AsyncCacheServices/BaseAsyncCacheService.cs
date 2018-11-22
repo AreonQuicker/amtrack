@@ -83,14 +83,14 @@ namespace Amtrack.Background.Cache.Service.AsyncCacheServices
 			}
 			catch(OperationCanceledException ex)
 			{
-				logger.LogInfo($"Saving Cache For Service {ServiceName} - Stop");
+				logger.LogWarning(ex, $"Saving Cache For Service {ServiceName} - Stop");
 
 				return (false, ServiceName, ex);
 
 			}
 			catch(Exception ex)
 			{
-				logger.LogInfo($"Saving Cache For Service {ServiceName} - Failed");
+				logger.LogError(ex, $"Saving Cache For Service {ServiceName} - Failed");
 
 				return (false, ServiceName, ex);
 			}

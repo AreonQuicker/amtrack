@@ -12,11 +12,11 @@ namespace Amtrack.Cache.Store
 		private readonly string _redisKey;
 
 		public CacheDictionary(string host)
-		{	
+		{
 
 			string redisConnection = $"{host},ssl=false,allowAdmin=true,ConnectRetry=3,ConnectTimeout=5000,defaultDatabase=1";
 
-			_cnn = ConnectionMultiplexer.Connect(redisConnection);	
+			_cnn = ConnectionMultiplexer.Connect(redisConnection);
 		}
 
 		public CacheDictionary(ConnectionMultiplexer connectionMultiplexer, string redisKey)
@@ -92,7 +92,7 @@ namespace Amtrack.Cache.Store
 				.ToList();
 
 			if(!redisValues.Any())
-				return default(IList<TValue>);
+				return new List<TValue>();
 
 			return redisValues
 				.AsParallel()

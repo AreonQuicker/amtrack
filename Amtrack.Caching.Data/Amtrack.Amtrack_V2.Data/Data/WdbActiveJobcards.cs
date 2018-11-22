@@ -21,6 +21,7 @@ namespace Amtrack.Amtrack_V2.Data.Data
         public int PrintColours { get; set; }
         public string PrintStockItem { get; set; }
         public DateTime? ActionDate { get; set; }
+        public string Brand { get; set; }
         public DateTime? DueDate { get; set; }
         public int? LeadTime { get; set; }
     }

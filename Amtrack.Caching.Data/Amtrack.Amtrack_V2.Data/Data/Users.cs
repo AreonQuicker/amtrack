@@ -7,7 +7,7 @@ namespace Amtrack.Amtrack_V2.Data.Data
     {
         public Users()
         {
-            Accounts = new HashSet<Accounts>();
+            AccountAccountManagers = new HashSet<AccountAccountManagers>();
             AsmDevice = new HashSet<AsmDevice>();
             AsmDeviceOperators = new HashSet<AsmDeviceOperators>();
             BrandingConversionGroups = new HashSet<BrandingConversionGroups>();
@@ -48,7 +48,7 @@ namespace Amtrack.Amtrack_V2.Data.Data
 
         public SecurityLevels SecurityLevelSecurityLevel { get; set; }
         public Users UserUser { get; set; }
-        public ICollection<Accounts> Accounts { get; set; }
+        public ICollection<AccountAccountManagers> AccountAccountManagers { get; set; }
         public ICollection<AsmDevice> AsmDevice { get; set; }
         public ICollection<AsmDeviceOperators> AsmDeviceOperators { get; set; }
         public ICollection<BrandingConversionGroups> BrandingConversionGroups { get; set; }

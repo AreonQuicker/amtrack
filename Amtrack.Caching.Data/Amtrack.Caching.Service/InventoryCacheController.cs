@@ -14,114 +14,15 @@ namespace Amtrack.Caching.Service
 {
 	internal class InventoryCacheController
 	{
-		private class CacheDictionary<TKey, TValue> : Dictionary<TKey, TValue>
-		{
-			public CacheDictionary()
-				: base()
-			{
-
-			}
-
-			public TValue GetValue(TKey key)
-			{
-				if(ContainsKey(key))
-					return this[key];
-
-				return default(TValue);
-			}
-
-			public static CacheDictionary<TKey, TValue> CreateDictionary(IEnumerable<TValue> values, Func<TValue, TKey> getKey, Func<TValue, TValue> getValue)
-			{
-				var cacheDictionary = new CacheDictionary<TKey, TValue>();
-
-				foreach(var value in values)
-				{
-					var key = getKey(value);
-					if(!cacheDictionary.ContainsKey(key))
-						cacheDictionary.Add(key, getValue(value));
-				}
-
-				return cacheDictionary;
-			}
-
-			public static CacheDictionary<TKey, TValue> CreateDictionary(Dictionary<TKey, TValue> keyValuePairs)
-			{
-				var cacheDictionary = new CacheDictionary<TKey, TValue>();
-
-				foreach(var keyValuePair in keyValuePairs)
-					cacheDictionary.Add(keyValuePair.Key, keyValuePair.Value);
-
-				return cacheDictionary;
-			}
-		}
-
 		#region Private Variables
 		private readonly ICachingRepository _cachingRepository;
+		private readonly LazyLoaderController _lazyLoaderController;
 		#endregion
 
-		#region Lazy Variables
-		private Lazy<CacheDictionary<string, stCatalogue>> _catalogueItems = null;
-
-		private Lazy<CacheDictionary<string, List<stInventoryPricing>>> _inventoryPricing = null;
-
-		private Lazy<CacheDictionary<int, StockItemGroups>> _stockItemGroups = null;
-
-		private Lazy<CacheDictionary<int, StockPricelists>> _StockPriceLists = null;
-
-		private Lazy<IEnumerable<StockSets>> _StockSets = null;
-
-		private Lazy<IEnumerable<StockEmbroideryPricing>> _stockEmbroideryPricing = null;
-		#endregion
-
-		public InventoryCacheController(ICachingRepository cachingRepository)
+		public InventoryCacheController(ICachingRepository cachingRepository, LazyLoaderController lazyLoaderController)
 		{
-			this._cachingRepository = cachingRepository;
-
-			_StockPriceLists = new Lazy<CacheDictionary<int, StockPricelists>>(() =>
-			{
-				return CacheDictionary<int, StockPricelists>
-				.CreateDictionary(cachingRepository.GetAllStockPriceLists(), (v) => v.Id, (v) => v);
-
-			});
-
-			_stockItemGroups = new Lazy<CacheDictionary<int, StockItemGroups>>(() =>
-
-			 {
-				 return CacheDictionary<int, StockItemGroups>
-			   .CreateDictionary(cachingRepository.GetAllStockItemGroups(), (v) => v.Id, (v) => v);
-
-			 });
-
-			_catalogueItems = new Lazy<CacheDictionary<string, stCatalogue>>(() =>
-			 {
-
-				 return CacheDictionary<string, stCatalogue>
-			 .CreateDictionary(cachingRepository.stLoadCatalogue(), (v) => v.ItemCode, (v) => v);
-
-			 });
-
-			_inventoryPricing = new Lazy<CacheDictionary<string, List<stInventoryPricing>>>(() =>
-			{
-				var inventoryPricings = cachingRepository.stGetInventoryPricing();
-
-				var values =
-				inventoryPricings
-				.GroupBy(g => new { g.ItemCode })
-				.ToDictionary(d => d.Key.ItemCode, d => d.ToList());
-
-				return CacheDictionary<string, List<stInventoryPricing>>.CreateDictionary(values);
-
-			});
-
-			_StockSets = new Lazy<IEnumerable<StockSets>>(() =>
-			{
-				return cachingRepository.GetAllStockSets()
-				.Where(w => (w.Flags & (int)StockSetFlags.Disabled) == 0)
-				.ToList();
-			});
-
-
-			_stockEmbroideryPricing = new Lazy<IEnumerable<StockEmbroideryPricing>>(() => cachingRepository.GetAllStockEmbroideryPricing());
+			_cachingRepository = cachingRepository;
+			_lazyLoaderController = lazyLoaderController;
 		}
 
 		#region Private Methods
@@ -130,18 +31,18 @@ namespace Amtrack.Caching.Service
 			return new InventoryPricingVO
 			{
 				ItemCode = itemCode,
-				Prices = _inventoryPricing.Value.GetValue(itemCode)?
+				Prices = _lazyLoaderController.InventoryPricing.Value.GetValue(itemCode)?
 				.Select(s => new InventoryPriceVO()
 				{
 					Price = s.Price,
-					PriceList = _StockPriceLists.Value.GetValue(s.PricelistId)?.ToPriceListVo()
+					PriceList = _lazyLoaderController.StockPriceLists.Value.GetValue(s.PricelistId)?.ToPriceListVo()
 				}).ToList() ?? new List<InventoryPriceVO>()
 			};
 		}
 
 		private InventoryItemVO GetInventoryItemVO(string itemCode, bool setStockInfo)
 		{
-			var catalugueItem = _catalogueItems.Value.GetValue(itemCode);
+			var catalugueItem = _lazyLoaderController.CatalogueItems.Value.GetValue(itemCode);
 
 			if(catalugueItem == null)
 				return null;
@@ -151,7 +52,7 @@ namespace Amtrack.Caching.Service
 
 		private InventoryItemVO GetInventoryItemVO(stCatalogue catalugueItem, bool setStockInfo)
 		{
-			var stockItemGroup = _stockItemGroups.Value.GetValue(catalugueItem.InventoryGroupId);
+			var stockItemGroup = _lazyLoaderController.StockItemGroups.Value.GetValue(catalugueItem.InventoryGroupId);
 
 			var inventoryItemVO = catalugueItem.ToInventoryItemVo(stockItemGroup);
 
@@ -171,7 +72,7 @@ namespace Amtrack.Caching.Service
 
 		private InventorySetVO GetInventorySetVO(string itemCode)
 		{
-			var stockSet = _StockSets.Value
+			var stockSet = _lazyLoaderController.StockSets.Value
 				.FirstOrDefault(w => w.ItemCode.Equals(itemCode, StringComparison.CurrentCultureIgnoreCase));
 
 			if(stockSet == null)
@@ -237,7 +138,7 @@ namespace Amtrack.Caching.Service
 					InventoryItems = new List<ValueObjects.Inventory.InventoryItemVO>()
 				};
 
-				inventorySetComponentVO.InventoryItems = _catalogueItems
+				inventorySetComponentVO.InventoryItems = _lazyLoaderController.CatalogueItems
 					.Value.Values
 					.Where(w => w.BaseItemCode == component.BaseCode && w.ItemCode.ToLower().Contains(component.Prefix.ToLower()))
 					.Select(s => GetInventoryItemVO(s, false))
@@ -256,7 +157,7 @@ namespace Amtrack.Caching.Service
 				Id = stockEmbroideryPricing.Id,
 				Price = Math.Round(stockEmbroideryPricing.Price, 2, MidpointRounding.AwayFromZero),
 				PriceCode = stockEmbroideryPricing.PriceCode,
-				PriceList = _StockPriceLists.Value.GetValue(stockEmbroideryPricing.FkPriceListId)?.ToPriceListVo(),
+				PriceList = _lazyLoaderController.StockPriceLists.Value.GetValue(stockEmbroideryPricing.FkPriceListId)?.ToPriceListVo(),
 				QuantityHigh = stockEmbroideryPricing.QuantityHigh,
 				QuantityLow = stockEmbroideryPricing.QuantityLow
 			};
@@ -267,7 +168,7 @@ namespace Amtrack.Caching.Service
 		public List<InventoryItemVO> GetInventoryItemVOs()
 		{
 			//TODO
-			return _catalogueItems.Value
+			return _lazyLoaderController.CatalogueItems.Value
 				.AsParallel()
 				.Select(s =>
 				{
@@ -279,7 +180,7 @@ namespace Amtrack.Caching.Service
 
 		public List<InventoryItemVO> GetInventoryStockSetItemVOs()
 		{
-			return _StockSets.Value
+			return _lazyLoaderController.StockSets.Value
 				.Where(w => (w.Flags & (int)StockSetFlags.VirtualItem) != 0
 			   || (w.Flags & (int)StockSetFlags.MixedParts) != 0
 			   || (w.Flags & (int)StockSetFlags.MixedComponents) != 0)
@@ -309,14 +210,14 @@ namespace Amtrack.Caching.Service
 
 		public List<GroupVO> GetGroupVOs()
 		{
-			return _stockItemGroups.Value.Values
+			return _lazyLoaderController.StockItemGroups.Value.Values
 				.Select(s => s.ToGroupVo())
 				.ToList();
 		}
 
 		public List<InventoryPricingVO> GetInventoryPricingVOs()
 		{
-			return _catalogueItems.Value
+			return _lazyLoaderController.CatalogueItems.Value
 			  .AsParallel()
 			  .Select(s =>
 			  {
@@ -327,27 +228,27 @@ namespace Amtrack.Caching.Service
 
 		public List<PriceListVO> GetPriceListVOs()
 		{
-			return _StockPriceLists.Value.Values
+			return _lazyLoaderController.StockPriceLists.Value.Values
 				.Select(s => s.ToPriceListVo())
 				.ToList();
 		}
 
 		public List<InventorySetVO> GetInventorySetVOs()
 		{
-			return _StockSets.Value
+			return _lazyLoaderController.StockSets.Value
 				.Select(s => GetInventorySetVO(s))
 				.ToList();
 		}
 
 		public List<EmbroideryPricingVO> GetEmbroideryPricingVOs()
 		{
-			return _stockEmbroideryPricing.Value
+			return _lazyLoaderController.StockEmbroideryPricing.Value
 				.Select(s => GetEmbroideryPricingVO(s))
 				.ToList();
 		}
 		#endregion
 
-		public static InventoryCacheController Instance(ICachingRepository cachingRepository)
-		=> new InventoryCacheController(cachingRepository);
+		public static InventoryCacheController Instance(ICachingRepository cachingRepository, LazyLoaderController lazyLoaderController)
+		=> new InventoryCacheController(cachingRepository, lazyLoaderController);
 	}
 }

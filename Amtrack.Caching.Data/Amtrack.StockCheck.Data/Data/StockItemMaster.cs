@@ -10,6 +10,7 @@ namespace Amtrack.StockCheck.Data.Data
             StockItemAttributes = new HashSet<StockItemAttributes>();
             StockItemBranchAttributes = new HashSet<StockItemBranchAttributes>();
             StockItemBranchShippingMethods = new HashSet<StockItemBranchShippingMethods>();
+            StockItemBrandMatrix = new HashSet<StockItemBrandMatrix>();
             StockItemCosts = new HashSet<StockItemCosts>();
             StockItemLevel = new HashSet<StockItemLevel>();
             StockItemPriceMatrix = new HashSet<StockItemPriceMatrix>();
@@ -36,6 +37,7 @@ namespace Amtrack.StockCheck.Data.Data
         public ICollection<StockItemAttributes> StockItemAttributes { get; set; }
         public ICollection<StockItemBranchAttributes> StockItemBranchAttributes { get; set; }
         public ICollection<StockItemBranchShippingMethods> StockItemBranchShippingMethods { get; set; }
+        public ICollection<StockItemBrandMatrix> StockItemBrandMatrix { get; set; }
         public ICollection<StockItemCosts> StockItemCosts { get; set; }
         public ICollection<StockItemLevel> StockItemLevel { get; set; }
         public ICollection<StockItemPriceMatrix> StockItemPriceMatrix { get; set; }

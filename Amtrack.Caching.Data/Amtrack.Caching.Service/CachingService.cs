@@ -10,11 +10,12 @@ namespace Amtrack.Caching.Service
 {
 	public class CachingService : BaseCachingService, ICachingService
 	{
+		private readonly LazyLoaderController lazyLoaderController;
 
 		public CachingService(ICachingRepository cachingRepository)
 			: base(cachingRepository)
 		{
-
+			lazyLoaderController = new LazyLoaderController(cachingRepository);
 		}
 
 		public UserCacheModel GetUserCacheModel()
@@ -43,7 +44,7 @@ namespace Amtrack.Caching.Service
 				EmbroideryPricing = new List<ValueObjects.Branding.EmbroideryPricingVO>()
 			};
 
-			var inventoryCacheController = InventoryCacheController.Instance(cachingRepository);
+			var inventoryCacheController = InventoryCacheController.Instance(cachingRepository, lazyLoaderController);
 
 			inventoryCacheModel.Groups = inventoryCacheController.GetGroupVOs();
 			inventoryCacheModel.PriceLists = inventoryCacheController.GetPriceListVOs();
@@ -54,6 +55,17 @@ namespace Amtrack.Caching.Service
 			inventoryCacheModel.InventorySets = inventoryCacheController.GetInventorySetVOs();
 
 			return inventoryCacheModel;
+		}
+
+		public AccountCacheModel GetAccountCacheModel()
+		{
+			var accountCacheModel = new AccountCacheModel
+			{
+				Accounts = new List<ValueObjects.Accounts.AccountMasterVO>(),
+				TaxRates = new List<ValueObjects.Accounts.TaxRateVO>()
+			};
+
+			return accountCacheModel;
 		}
 	}
 }

@@ -6,19 +6,19 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netsta
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.AssemblyInfo.cs
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Logger.deps.json
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Logger.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Logger.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.csproj.CoreCompileInputs.cache
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.AssemblyInfoInputs.cache
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.AssemblyInfo.cs
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Enumeration.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Enumeration.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.csproj.CopyComplete
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.csprojAssemblyReference.cache
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Enumeration.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Enumeration.pdb
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.csprojAssemblyReference.cache
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.csproj.CopyComplete
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Logger.deps.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Logger.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Logger.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Enumeration.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\bin\Debug\netstandard2.0\Amtrack.Enumeration.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.csprojAssemblyReference.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.csproj.CoreCompileInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.AssemblyInfoInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.AssemblyInfo.cs
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.csproj.CopyComplete
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Logger\obj\Debug\netstandard2.0\Amtrack.Logger.pdb

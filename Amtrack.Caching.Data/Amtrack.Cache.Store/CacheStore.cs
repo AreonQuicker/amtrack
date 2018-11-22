@@ -398,13 +398,13 @@ namespace Amtrack.Cache.Store
 							switch(s.Value.ConnectionValueType)
 							{
 								case ConnectionValueType.Contains:
-									return dKeys.Where(w => w.Contains(LinkKey(s.Value.Field, s.Value.Value)));
+									return dKeys.Where(w => w.Contains(LinkKey(s.Value.Field, s.Value.Value))).ToList();
 								case ConnectionValueType.StartsWith:
-									return dKeys.Where(w => w.StartsWith(LinkKey(s.Value.Field, s.Value.Value)));
+									return dKeys.Where(w => w.StartsWith(LinkKey(s.Value.Field, s.Value.Value))).ToList();
 								case ConnectionValueType.EndWith:
-									return dKeys.Where(w => w.EndsWith(LinkKey(s.Value.Field, s.Value.Value)));
+									return dKeys.Where(w => w.EndsWith(LinkKey(s.Value.Field, s.Value.Value))).ToList();
 								default:
-									return dKeys.Where(w => w.Equals(LinkKey(s.Value.Field, s.Value.Value), StringComparison.CurrentCultureIgnoreCase));
+									return dKeys.Where(w => w.Equals(LinkKey(s.Value.Field, s.Value.Value), StringComparison.CurrentCultureIgnoreCase)).ToList();
 							}
 
 						})

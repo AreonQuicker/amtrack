@@ -13,6 +13,5 @@ namespace Amtrack.Models.Cache
 		public List<InventoryPricingVO> InventoryPricing { get; set; }
 		public List<InventorySetVO> InventorySets { get; set; }
 		public List<EmbroideryPricingVO> EmbroideryPricing { get; set; }
-
 	}
 }

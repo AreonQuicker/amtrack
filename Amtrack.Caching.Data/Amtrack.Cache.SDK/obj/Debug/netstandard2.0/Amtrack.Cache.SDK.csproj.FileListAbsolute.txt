@@ -1,15 +1,3 @@
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.SDK.deps.json
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.SDK.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.SDK.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.Store.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.Store.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.csprojAssemblyReference.cache
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.csproj.CoreCompileInputs.cache
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.AssemblyInfoInputs.cache
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.AssemblyInfo.cs
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.csproj.CopyComplete
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.pdb
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.SDK.deps.json
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.SDK.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.SDK.pdb
@@ -22,7 +10,19 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\net
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.csproj.CopyComplete
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.Models.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.Models.pdb
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.Models.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.Models.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.SDK.deps.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.SDK.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.SDK.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.Models.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.Store.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.Store.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\bin\Debug\netstandard2.0\Amtrack.Cache.Models.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.csprojAssemblyReference.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.csproj.CoreCompileInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.AssemblyInfoInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.AssemblyInfo.cs
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.csproj.CopyComplete
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.SDK\obj\Debug\netstandard2.0\Amtrack.Cache.SDK.pdb

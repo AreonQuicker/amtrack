@@ -1,11 +1,3 @@
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\bin\Debug\netstandard2.0\Amtrack.DependencyInjection.deps.json
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\bin\Debug\netstandard2.0\Amtrack.DependencyInjection.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.csproj.CoreCompileInputs.cache
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.AssemblyInfoInputs.cache
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.AssemblyInfo.cs
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\bin\Debug\netstandard2.0\Amtrack.DependencyInjection.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.dll
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.pdb
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\bin\Debug\netstandard2.0\Amtrack.DependencyInjection.deps.json
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\bin\Debug\netstandard2.0\Amtrack.DependencyInjection.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\bin\Debug\netstandard2.0\Amtrack.DependencyInjection.pdb
@@ -14,5 +6,13 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.AssemblyInfo.cs
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.csprojAssemblyReference.cache
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.csprojAssemblyReference.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\bin\Debug\netstandard2.0\Amtrack.DependencyInjection.deps.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\bin\Debug\netstandard2.0\Amtrack.DependencyInjection.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\bin\Debug\netstandard2.0\Amtrack.DependencyInjection.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.csproj.CoreCompileInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.AssemblyInfoInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.AssemblyInfo.cs
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.DependencyInjection\obj\Debug\netstandard2.0\Amtrack.DependencyInjection.csprojAssemblyReference.cache

@@ -21,5 +21,6 @@ namespace Amtrack.Amtrack_V2.Data.Data
         public int Type { get; set; }
         public int SubType { get; set; }
         public int Flags { get; set; }
+        public int BrandType { get; set; }
     }
 }

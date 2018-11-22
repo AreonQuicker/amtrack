@@ -32,6 +32,7 @@ namespace Amtrack.Amtrack_V2.Data.Data
         public DateTime? Created { get; set; }
         public long Flags { get; set; }
         public long? ExceptionFlags { get; set; }
+        public int? FkBrandId { get; set; }
 
         public ICollection<DeliveryWaybill> DeliveryWaybill { get; set; }
         public ICollection<DeliveryWaybillDetail> DeliveryWaybillDetail { get; set; }

@@ -14,5 +14,6 @@ namespace Amtrack.Amtrack_V2.Data.Data
         public int LineCount { get; set; }
         public double TotalExcl { get; set; }
         public double TotalIncl { get; set; }
+        public string Brand { get; set; }
     }
 }

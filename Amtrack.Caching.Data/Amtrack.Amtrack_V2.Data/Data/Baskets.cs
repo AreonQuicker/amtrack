@@ -21,6 +21,7 @@ namespace Amtrack.Amtrack_V2.Data.Data
         public long Flags { get; set; }
         public DateTime Created { get; set; }
         public int? FkBasketId { get; set; }
+        public string Brand { get; set; }
 
         public Baskets FkBasket { get; set; }
         public ICollection<BasketSessions> BasketSessions { get; set; }

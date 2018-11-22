@@ -29,5 +29,6 @@ namespace Amtrack.Amtrack_V2.Data.Data
         public bool? IsPartOfDelivery { get; set; }
         public int? DeliveryStatus { get; set; }
         public string DeliveryStatusText { get; set; }
+        public string Brand { get; set; }
     }
 }

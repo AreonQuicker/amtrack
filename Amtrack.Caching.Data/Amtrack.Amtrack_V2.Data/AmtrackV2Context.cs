@@ -14,299 +14,300 @@ namespace Amtrack.Amtrack_V2.Data
 		{
 		}
 
-		public DbSet<AccountAddress> AccountAddress { get; set; }
-		public DbSet<AccountAttributes> AccountAttributes { get; set; }
-		public DbSet<AccountAttributeTemplates> AccountAttributeTemplates { get; set; }
-		public DbSet<AccountBalances> AccountBalances { get; set; }
-		public DbSet<AccountContactAddress> AccountContactAddress { get; set; }
-		public DbSet<AccountContactContactNumbers> AccountContactContactNumbers { get; set; }
-		public DbSet<AccountContactNotifications> AccountContactNotifications { get; set; }
-		public DbSet<AccountContactNumbers> AccountContactNumbers { get; set; }
-		public DbSet<AccountContacts> AccountContacts { get; set; }
-		public DbSet<AccountCreditLimitSettings> AccountCreditLimitSettings { get; set; }
-		public DbSet<Accounts> Accounts { get; set; }
-		public DbSet<AccountSystemNotificationTypes> AccountSystemNotificationTypes { get; set; }
-		public DbSet<AdAddressValidationInfo> AdAddressValidationInfo { get; set; }
-		public DbSet<Addresses> Addresses { get; set; }
-		public DbSet<AdLinesUpdated> AdLinesUpdated { get; set; }
-		public DbSet<AdPickingSlipPrintStatus> AdPickingSlipPrintStatus { get; set; }
-		public DbSet<Alpdatas> Alpdatas { get; set; }
-		public DbSet<AlpdocumentAlps> AlpdocumentAlps { get; set; }
-		public DbSet<AlpexportData> AlpexportData { get; set; }
-		public DbSet<AlpexportDataDetail> AlpexportDataDetail { get; set; }
-		public DbSet<AlpmailerCustomerData> AlpmailerCustomerData { get; set; }
-		public DbSet<AlpmailerData> AlpmailerData { get; set; }
-		public DbSet<AlpMailerRecipients> AlpMailerRecipients { get; set; }
-		public DbSet<AlpMailerUpdates> AlpMailerUpdates { get; set; }
-		public DbSet<AlpmidYearDatas> AlpmidYearDatas { get; set; }
-		public DbSet<Alpoverride> Alpoverride { get; set; }
-		public DbSet<AlppointRuleBonusTypes> AlppointRuleBonusTypes { get; set; }
-		public DbSet<AlppointRules> AlppointRules { get; set; }
-		public DbSet<AlppointRuleValues> AlppointRuleValues { get; set; }
-		public DbSet<AlppointsTypes> AlppointsTypes { get; set; }
-		public DbSet<Alppromotion> Alppromotion { get; set; }
-		public DbSet<Alps> Alps { get; set; }
-		public DbSet<Alptargets> Alptargets { get; set; }
-		public DbSet<AlptempData> AlptempData { get; set; }
-		public DbSet<Alptypes> Alptypes { get; set; }
-		public DbSet<Alpvalues> Alpvalues { get; set; }
-		public DbSet<ApiIntegrator> ApiIntegrator { get; set; }
-		public DbSet<ApiIntegratorImpersonations> ApiIntegratorImpersonations { get; set; }
-		public DbSet<ApiIntegratorPermissions> ApiIntegratorPermissions { get; set; }
-		public DbSet<ApiIntegratorRoles> ApiIntegratorRoles { get; set; }
-		public DbSet<ApiLoginTokens> ApiLoginTokens { get; set; }
-		public DbSet<ApiPermissions> ApiPermissions { get; set; }
-		public DbSet<ApiRolePermissions> ApiRolePermissions { get; set; }
-		public DbSet<ApiRoles> ApiRoles { get; set; }
-		public DbSet<AsmDevice> AsmDevice { get; set; }
-		public DbSet<AsmDeviceManufacturer> AsmDeviceManufacturer { get; set; }
-		public DbSet<AsmDeviceModels> AsmDeviceModels { get; set; }
-		public DbSet<AsmDeviceNotes> AsmDeviceNotes { get; set; }
-		public DbSet<AsmDeviceOperators> AsmDeviceOperators { get; set; }
-		public DbSet<AsmLogBook> AsmLogBook { get; set; }
-		public DbSet<AudBrandingConversionDatas> AudBrandingConversionDatas { get; set; }
-		public DbSet<AuditDocuments> AuditDocuments { get; set; }
-		public DbSet<Barcodes> Barcodes { get; set; }
-		public DbSet<Baskets> Baskets { get; set; }
-		public DbSet<BasketSessionItems> BasketSessionItems { get; set; }
-		public DbSet<BasketSessions> BasketSessions { get; set; }
-		public DbSet<BasketSessionTrackings> BasketSessionTrackings { get; set; }
-		public DbSet<BlanketAcceptances> BlanketAcceptances { get; set; }
-		public DbSet<BranchAddresses> BranchAddresses { get; set; }
-		public DbSet<BranchAlps> BranchAlps { get; set; }
-		public DbSet<BranchAttributes> BranchAttributes { get; set; }
-		public DbSet<BranchAttributeTemplateOptionValues> BranchAttributeTemplateOptionValues { get; set; }
-		public DbSet<BranchAttributeTemplates> BranchAttributeTemplates { get; set; }
-		public DbSet<BranchContactNumbers> BranchContactNumbers { get; set; }
-		public DbSet<BranchDelivery> BranchDelivery { get; set; }
-		public DbSet<BranchDeliveryCourierInfoes> BranchDeliveryCourierInfoes { get; set; }
-		public DbSet<BranchDeliveryParcels> BranchDeliveryParcels { get; set; }
-		public DbSet<BranchDeliveryProcesses> BranchDeliveryProcesses { get; set; }
-		public DbSet<BranchDeliveryProcessTracking> BranchDeliveryProcessTracking { get; set; }
-		public DbSet<BranchDeliveryRequestResponses> BranchDeliveryRequestResponses { get; set; }
-		public DbSet<BranchDeliveryRequests> BranchDeliveryRequests { get; set; }
-		public DbSet<Branches> Branches { get; set; }
-		public DbSet<BranchInvoiceType> BranchInvoiceType { get; set; }
-		public DbSet<BranchInvoiceTypeShipment> BranchInvoiceTypeShipment { get; set; }
-		public DbSet<BranchRules> BranchRules { get; set; }
-		public DbSet<BranchRuleValues> BranchRuleValues { get; set; }
-		public DbSet<BranchServers> BranchServers { get; set; }
-		public DbSet<BranchSetting> BranchSetting { get; set; }
-		public DbSet<BranchWarehouse> BranchWarehouse { get; set; }
-		public DbSet<BranchWarehouseLink> BranchWarehouseLink { get; set; }
-		public DbSet<BranchWifi> BranchWifi { get; set; }
-		public DbSet<BrandingConversionAldatas> BrandingConversionAldatas { get; set; }
-		public DbSet<BrandingConversionDatas> BrandingConversionDatas { get; set; }
-		public DbSet<BrandingConversionGroups> BrandingConversionGroups { get; set; }
-		public DbSet<BrandingConversionMembers> BrandingConversionMembers { get; set; }
-		public DbSet<BrandingInfoLine> BrandingInfoLine { get; set; }
-		public DbSet<BrandingLineInfo> BrandingLineInfo { get; set; }
-		public DbSet<BrandingLineInfoAttachments> BrandingLineInfoAttachments { get; set; }
-		public DbSet<BrandingLineInfoContacts> BrandingLineInfoContacts { get; set; }
-		public DbSet<BudgetedTurnover> BudgetedTurnover { get; set; }
-		public DbSet<ClientContact> ClientContact { get; set; }
-		public DbSet<ClientDelivery> ClientDelivery { get; set; }
-		public DbSet<ClientDeliveryAddress> ClientDeliveryAddress { get; set; }
-		public DbSet<ClientDocumentRequests> ClientDocumentRequests { get; set; }
-		public DbSet<ClientDocumentResponses> ClientDocumentResponses { get; set; }
-		public DbSet<CommercialBrandingDocuments> CommercialBrandingDocuments { get; set; }
-		public DbSet<ContactNumbers> ContactNumbers { get; set; }
-		public DbSet<CreateInsuffiecients> CreateInsuffiecients { get; set; }
-		public DbSet<CreditLimitSettings> CreditLimitSettings { get; set; }
-		public DbSet<CreditNoteLogs> CreditNoteLogs { get; set; }
-		public DbSet<CreditNoteProcesses> CreditNoteProcesses { get; set; }
-		public DbSet<CreditNoteRequestLogs> CreditNoteRequestLogs { get; set; }
-		public DbSet<CreditNoteRequestProcesses> CreditNoteRequestProcesses { get; set; }
-		public DbSet<Currency> Currency { get; set; }
-		public DbSet<DeliveryAddress> DeliveryAddress { get; set; }
-		public DbSet<DeliveryProvider> DeliveryProvider { get; set; }
-		public DbSet<DeliveryProviderConfig> DeliveryProviderConfig { get; set; }
-		public DbSet<DeliveryProviderServiceExclusions> DeliveryProviderServiceExclusions { get; set; }
-		public DbSet<DeliveryProviderServiceLeadTimes> DeliveryProviderServiceLeadTimes { get; set; }
-		public DbSet<DeliveryProviderServices> DeliveryProviderServices { get; set; }
-		public DbSet<DeliveryQuote> DeliveryQuote { get; set; }
-		public DbSet<DeliveryQuoteDetail> DeliveryQuoteDetail { get; set; }
-		public DbSet<DeliveryQuoteDocuments> DeliveryQuoteDocuments { get; set; }
-		public DbSet<DeliveryQuoteItems> DeliveryQuoteItems { get; set; }
-		public DbSet<DeliverySuburbLookup> DeliverySuburbLookup { get; set; }
-		public DbSet<DeliveryWaybill> DeliveryWaybill { get; set; }
-		public DbSet<DeliveryWaybillCourierDetails> DeliveryWaybillCourierDetails { get; set; }
-		public DbSet<DeliveryWaybillDetail> DeliveryWaybillDetail { get; set; }
-		public DbSet<DeliveryWaybillTracking> DeliveryWaybillTracking { get; set; }
-		public DbSet<Departments> Departments { get; set; }
-		public DbSet<DestroyedPalletInfo> DestroyedPalletInfo { get; set; }
-		public DbSet<DmDevice> DmDevice { get; set; }
-		public DbSet<DmDeviceHandler> DmDeviceHandler { get; set; }
-		public DbSet<DmDeviceLogBook> DmDeviceLogBook { get; set; }
-		public DbSet<DmDeviceRotation> DmDeviceRotation { get; set; }
-		public DbSet<DmDeviceTracking> DmDeviceTracking { get; set; }
-		public DbSet<DocumentAttachments> DocumentAttachments { get; set; }
-		public DbSet<DocumentBoxDetail> DocumentBoxDetail { get; set; }
-		public DbSet<DocumentBoxes> DocumentBoxes { get; set; }
-		public DbSet<DocumentHistory> DocumentHistory { get; set; }
-		public DbSet<DocumentNotificationInfos> DocumentNotificationInfos { get; set; }
-		public DbSet<DocumentNumbers> DocumentNumbers { get; set; }
-		public DbSet<DocumentPallet> DocumentPallet { get; set; }
-		public DbSet<DocumentPostProcessing> DocumentPostProcessing { get; set; }
-		public DbSet<DocumentPostProcessingInfoes> DocumentPostProcessingInfoes { get; set; }
-		public DbSet<DocumentReservedStocks> DocumentReservedStocks { get; set; }
-		public DbSet<Documents> Documents { get; set; }
-		public DbSet<DocumentsSkippedProcessing> DocumentsSkippedProcessing { get; set; }
-		public DbSet<DocumentSyncStates> DocumentSyncStates { get; set; }
-		public DbSet<DocumentVersionInfoes> DocumentVersionInfoes { get; set; }
-		public DbSet<DocumentVolumetric> DocumentVolumetric { get; set; }
-		public DbSet<EntityAttachmentLinks> EntityAttachmentLinks { get; set; }
-		public DbSet<EntityAttachments> EntityAttachments { get; set; }
-		public DbSet<EntityNotificationRecipients> EntityNotificationRecipients { get; set; }
-		public DbSet<EntityNotificationReferrals> EntityNotificationReferrals { get; set; }
-		public DbSet<EntityNotifications> EntityNotifications { get; set; }
-		public DbSet<EntityProcesses> EntityProcesses { get; set; }
-		public DbSet<GenericTrackings> GenericTrackings { get; set; }
-		public DbSet<HistoryContributor> HistoryContributor { get; set; }
-		public DbSet<ImportStates> ImportStates { get; set; }
-		public DbSet<InvoiceInfoes> InvoiceInfoes { get; set; }
-		public DbSet<InvoicingSpecials> InvoicingSpecials { get; set; }
-		public DbSet<ItemPalletInfo> ItemPalletInfo { get; set; }
-		public DbSet<LineDatas> LineDatas { get; set; }
-		public DbSet<LineDisplay> LineDisplay { get; set; }
-		public DbSet<LineDisplayComponents> LineDisplayComponents { get; set; }
-		public DbSet<LineDisplayPartDetails> LineDisplayPartDetails { get; set; }
-		public DbSet<LineLinks> LineLinks { get; set; }
-		public DbSet<Lines> Lines { get; set; }
-		public DbSet<LookupBrandingConversionIgnoredStocks> LookupBrandingConversionIgnoredStocks { get; set; }
-		public DbSet<LookupClothingMensClothings> LookupClothingMensClothings { get; set; }
-		public DbSet<LookupOrderTypePriorities> LookupOrderTypePriorities { get; set; }
-		public DbSet<MDocuments> MDocuments { get; set; }
-		public DbSet<MessageQueueItems> MessageQueueItems { get; set; }
-		public DbSet<MessageQueueLogs> MessageQueueLogs { get; set; }
-		public DbSet<MMessage> MMessage { get; set; }
-		public DbSet<MRecipientResponses> MRecipientResponses { get; set; }
-		public DbSet<MRecipients> MRecipients { get; set; }
-		public DbSet<MSchedules> MSchedules { get; set; }
-		public DbSet<MStore> MStore { get; set; }
-		public DbSet<MTracking> MTracking { get; set; }
-		public DbSet<OneTimeTokens> OneTimeTokens { get; set; }
-		public DbSet<PalletConfirmLocationBatches> PalletConfirmLocationBatches { get; set; }
-		public DbSet<PalletConfirmLocationExceptions> PalletConfirmLocationExceptions { get; set; }
-		public DbSet<PalletConfirmLocationMovements> PalletConfirmLocationMovements { get; set; }
-		public DbSet<PalletConfirmLocationRaw> PalletConfirmLocationRaw { get; set; }
-		public DbSet<PalletContents> PalletContents { get; set; }
-		public DbSet<PalletMovementErrors> PalletMovementErrors { get; set; }
-		public DbSet<Pallets> Pallets { get; set; }
-		public DbSet<PalletTransferBatchContents> PalletTransferBatchContents { get; set; }
-		public DbSet<PalletTransferBatches> PalletTransferBatches { get; set; }
-		public DbSet<PaymentInfoData> PaymentInfoData { get; set; }
-		public DbSet<PaymentInfoes> PaymentInfoes { get; set; }
-		public DbSet<PaymentInfoProcessResults> PaymentInfoProcessResults { get; set; }
-		public DbSet<PickingInstructions> PickingInstructions { get; set; }
-		public DbSet<PickingSlipMovements> PickingSlipMovements { get; set; }
-		public DbSet<PickingSlipPrintStatus> PickingSlipPrintStatus { get; set; }
-		public DbSet<PickingSlipReservedStocks> PickingSlipReservedStocks { get; set; }
-		public DbSet<PickingSlips> PickingSlips { get; set; }
-		public DbSet<PodCollectionInstructionContainer> PodCollectionInstructionContainer { get; set; }
-		public DbSet<PodCollectionInstructionLocation> PodCollectionInstructionLocation { get; set; }
-		public DbSet<PodCollectionIntruction> PodCollectionIntruction { get; set; }
-		public DbSet<PodCollectionNote> PodCollectionNote { get; set; }
-		public DbSet<PodCollectionNoteBoxInfo> PodCollectionNoteBoxInfo { get; set; }
-		public DbSet<PodCollectionNoteDocument> PodCollectionNoteDocument { get; set; }
-		public DbSet<PodCollectionNoteWaybill> PodCollectionNoteWaybill { get; set; }
-		public DbSet<PodDispatchBuzzer> PodDispatchBuzzer { get; set; }
-		public DbSet<PodDispatchBuzzerAllocation> PodDispatchBuzzerAllocation { get; set; }
-		public DbSet<PodDispatchBuzzerAllocationTracking> PodDispatchBuzzerAllocationTracking { get; set; }
-		public DbSet<PrintDelayedReasons> PrintDelayedReasons { get; set; }
-		public DbSet<Printers> Printers { get; set; }
-		public DbSet<ProductPurchaseRecords> ProductPurchaseRecords { get; set; }
-		public DbSet<QuoteDocuments> QuoteDocuments { get; set; }
-		public DbSet<QuoteLines> QuoteLines { get; set; }
-		public DbSet<ReservationInfoes> ReservationInfoes { get; set; }
-		public DbSet<ReservedStockAdjustmentTransactions> ReservedStockAdjustmentTransactions { get; set; }
-		public DbSet<ReservedStocks> ReservedStocks { get; set; }
-		public DbSet<Rework> Rework { get; set; }
-		public DbSet<ReworkBoxes> ReworkBoxes { get; set; }
-		public DbSet<ReworkDocuments> ReworkDocuments { get; set; }
-		public DbSet<ReworkInstructionBoxes> ReworkInstructionBoxes { get; set; }
-		public DbSet<ReworkInstructionData> ReworkInstructionData { get; set; }
-		public DbSet<ReworkInstructionLines> ReworkInstructionLines { get; set; }
-		public DbSet<ReworkInstructionMasterBoxes> ReworkInstructionMasterBoxes { get; set; }
-		public DbSet<ReworkInstructionMasterLines> ReworkInstructionMasterLines { get; set; }
-		public DbSet<ReworkInstructions> ReworkInstructions { get; set; }
-		public DbSet<ReworkReport> ReworkReport { get; set; }
-		public DbSet<RushDocumentDetail> RushDocumentDetail { get; set; }
-		public DbSet<ScannedConveyerParcels> ScannedConveyerParcels { get; set; }
-		public DbSet<SecurityLevels> SecurityLevels { get; set; }
-		public DbSet<SecurityLevelSecurityPermission> SecurityLevelSecurityPermission { get; set; }
-		public DbSet<SecurityPermissions> SecurityPermissions { get; set; }
-		public DbSet<SentClientNotifications> SentClientNotifications { get; set; }
-		public DbSet<ServerDetails> ServerDetails { get; set; }
-		public DbSet<ShipmentCommercialBrandingDocumentLines> ShipmentCommercialBrandingDocumentLines { get; set; }
-		public DbSet<ShipmentCommercialBrandingDocuments> ShipmentCommercialBrandingDocuments { get; set; }
-		public DbSet<ShipmentDetail> ShipmentDetail { get; set; }
-		public DbSet<ShipmentNumber> ShipmentNumber { get; set; }
-		public DbSet<ShipmentProcessTracking> ShipmentProcessTracking { get; set; }
-		public DbSet<ShipmentReservesRecycle> ShipmentReservesRecycle { get; set; }
-		public DbSet<Shipments> Shipments { get; set; }
-		public DbSet<ShippingDestinations> ShippingDestinations { get; set; }
-		public DbSet<ShippingProviderConfigurations> ShippingProviderConfigurations { get; set; }
-		public DbSet<ShippingProviders> ShippingProviders { get; set; }
-		public DbSet<ShippingRates> ShippingRates { get; set; }
-		public DbSet<ShippingServices> ShippingServices { get; set; }
-		public DbSet<SpecialDates> SpecialDates { get; set; }
-		public DbSet<SrReceiptCompletedLines> SrReceiptCompletedLines { get; set; }
-		public DbSet<SrReceiptLines> SrReceiptLines { get; set; }
-		public DbSet<SrReceipts> SrReceipts { get; set; }
-		public DbSet<SrReceiptTracking> SrReceiptTracking { get; set; }
-		public DbSet<StockTakeBatches> StockTakeBatches { get; set; }
-		public DbSet<StockTakeRecords> StockTakeRecords { get; set; }
-		public DbSet<StockTakeUnProcessedBatchEntries> StockTakeUnProcessedBatchEntries { get; set; }
-		public DbSet<SuggestedReOrderPallets> SuggestedReOrderPallets { get; set; }
-		public DbSet<SwadSummary> SwadSummary { get; set; }
-		public DbSet<SyncDataErrorDetail> SyncDataErrorDetail { get; set; }
-		public DbSet<SyncDataErrorRecipients> SyncDataErrorRecipients { get; set; }
-		public DbSet<SyncDataErrors> SyncDataErrors { get; set; }
-		public DbSet<TaxRates> TaxRates { get; set; }
-		public DbSet<TempNotCreatable> TempNotCreatable { get; set; }
-		public DbSet<TempPalletCodes> TempPalletCodes { get; set; }
-		public DbSet<TempPrices> TempPrices { get; set; }
-		public DbSet<TurnOverTest> TurnOverTest { get; set; }
-		public DbSet<TurnoverTransactionDetails> TurnoverTransactionDetails { get; set; }
-		public DbSet<TurnoverTransactions> TurnoverTransactions { get; set; }
-		public DbSet<TurnoverTransactions1> TurnoverTransactions1 { get; set; }
-		public DbSet<TurnoverTransfers> TurnoverTransfers { get; set; }
-		public DbSet<UserBranches> UserBranches { get; set; }
-		public DbSet<UserDepartment> UserDepartment { get; set; }
-		public DbSet<UserLink> UserLink { get; set; }
-		public DbSet<Users> Users { get; set; }
-		public DbSet<UserSecurityPermission> UserSecurityPermission { get; set; }
-		public DbSet<UtiBondedIntegrationAudit> UtiBondedIntegrationAudit { get; set; }
-		public DbSet<WarehouseEntityMovements> WarehouseEntityMovements { get; set; }
-		public DbSet<WarehouseLocations> WarehouseLocations { get; set; }
-		public DbSet<WarehouseMinimumReorders> WarehouseMinimumReorders { get; set; }
-		public DbSet<WarehouseNotifications> WarehouseNotifications { get; set; }
-		public DbSet<WarehouseReorders> WarehouseReorders { get; set; }
-		public DbSet<WarehouseReplenishments> WarehouseReplenishments { get; set; }
-		public DbSet<Warehouses> Warehouses { get; set; }
-		public DbSet<WarehouseStockStorageMovements> WarehouseStockStorageMovements { get; set; }
-		public DbSet<WarehouseStockStorages> WarehouseStockStorages { get; set; }
-		public DbSet<WdbActiveJobcards> WdbActiveJobcards { get; set; }
-		public DbSet<WdbActiveOrders> WdbActiveOrders { get; set; }
-		public DbSet<WdbRecentCreditNotes> WdbRecentCreditNotes { get; set; }
-		public DbSet<WdbResync> WdbResync { get; set; }
-		public DbSet<WmsDocumentBoxDetail> WmsDocumentBoxDetail { get; set; }
-		public DbSet<WmsDocumentBoxes> WmsDocumentBoxes { get; set; }
-		public DbSet<WmsDocumentBoxInfo> WmsDocumentBoxInfo { get; set; }
-		public DbSet<WmsDocumentBoxLinks> WmsDocumentBoxLinks { get; set; }
-		public DbSet<WmsDocumentBoxMovements> WmsDocumentBoxMovements { get; set; }
-		public DbSet<WmsDocumentBoxTracking> WmsDocumentBoxTracking { get; set; }
-		public DbSet<WmsDocumentImportStatus> WmsDocumentImportStatus { get; set; }
-		public DbSet<WmsDocumentLines> WmsDocumentLines { get; set; }
-		public DbSet<WmsDocumentLinks> WmsDocumentLinks { get; set; }
-		public DbSet<WmsDocuments> WmsDocuments { get; set; }
-		public DbSet<WmsDocumentTracking> WmsDocumentTracking { get; set; }
-		public DbSet<WmsStagingLocations> WmsStagingLocations { get; set; }
-		public DbSet<WmsStagingLocationSessionBoxes> WmsStagingLocationSessionBoxes { get; set; }
-		public DbSet<WmsStagingLocationSessions> WmsStagingLocationSessions { get; set; }
-		public DbSet<WmsStagingLocationSessionTracking> WmsStagingLocationSessionTracking { get; set; }
-		public DbSet<WmsTracking> WmsTracking { get; set; }
+		public virtual DbSet<AccountAccountManagers> AccountAccountManagers { get; set; }
+		public virtual DbSet<AccountAddress> AccountAddress { get; set; }
+		public virtual DbSet<AccountAttributes> AccountAttributes { get; set; }
+		public virtual DbSet<AccountAttributeTemplates> AccountAttributeTemplates { get; set; }
+		public virtual DbSet<AccountBalances> AccountBalances { get; set; }
+		public virtual DbSet<AccountContactAddress> AccountContactAddress { get; set; }
+		public virtual DbSet<AccountContactContactNumbers> AccountContactContactNumbers { get; set; }
+		public virtual DbSet<AccountContactNotifications> AccountContactNotifications { get; set; }
+		public virtual DbSet<AccountContactNumbers> AccountContactNumbers { get; set; }
+		public virtual DbSet<AccountContacts> AccountContacts { get; set; }
+		public virtual DbSet<AccountCreditLimitSettings> AccountCreditLimitSettings { get; set; }
+		public virtual DbSet<Accounts> Accounts { get; set; }
+		public virtual DbSet<AccountSystemNotificationTypes> AccountSystemNotificationTypes { get; set; }
+		public virtual DbSet<AdAddressValidationInfo> AdAddressValidationInfo { get; set; }
+		public virtual DbSet<Addresses> Addresses { get; set; }
+		public virtual DbSet<AdLinesUpdated> AdLinesUpdated { get; set; }
+		public virtual DbSet<AdPickingSlipPrintStatus> AdPickingSlipPrintStatus { get; set; }
+		public virtual DbSet<Alpdatas> Alpdatas { get; set; }
+		public virtual DbSet<AlpdocumentAlps> AlpdocumentAlps { get; set; }
+		public virtual DbSet<AlpexportData> AlpexportData { get; set; }
+		public virtual DbSet<AlpexportDataDetail> AlpexportDataDetail { get; set; }
+		public virtual DbSet<AlpmailerCustomerData> AlpmailerCustomerData { get; set; }
+		public virtual DbSet<AlpmailerData> AlpmailerData { get; set; }
+		public virtual DbSet<AlpMailerRecipients> AlpMailerRecipients { get; set; }
+		public virtual DbSet<AlpMailerUpdates> AlpMailerUpdates { get; set; }
+		public virtual DbSet<AlpmidYearDatas> AlpmidYearDatas { get; set; }
+		public virtual DbSet<Alpoverride> Alpoverride { get; set; }
+		public virtual DbSet<AlppointRuleBonusTypes> AlppointRuleBonusTypes { get; set; }
+		public virtual DbSet<AlppointRules> AlppointRules { get; set; }
+		public virtual DbSet<AlppointRuleValues> AlppointRuleValues { get; set; }
+		public virtual DbSet<AlppointsTypes> AlppointsTypes { get; set; }
+		public virtual DbSet<Alppromotion> Alppromotion { get; set; }
+		public virtual DbSet<Alps> Alps { get; set; }
+		public virtual DbSet<Alptargets> Alptargets { get; set; }
+		public virtual DbSet<AlptempData> AlptempData { get; set; }
+		public virtual DbSet<Alptypes> Alptypes { get; set; }
+		public virtual DbSet<Alpvalues> Alpvalues { get; set; }
+		public virtual DbSet<ApiIntegrator> ApiIntegrator { get; set; }
+		public virtual DbSet<ApiIntegratorImpersonations> ApiIntegratorImpersonations { get; set; }
+		public virtual DbSet<ApiIntegratorPermissions> ApiIntegratorPermissions { get; set; }
+		public virtual DbSet<ApiIntegratorRoles> ApiIntegratorRoles { get; set; }
+		public virtual DbSet<ApiLoginTokens> ApiLoginTokens { get; set; }
+		public virtual DbSet<ApiPermissions> ApiPermissions { get; set; }
+		public virtual DbSet<ApiRolePermissions> ApiRolePermissions { get; set; }
+		public virtual DbSet<ApiRoles> ApiRoles { get; set; }
+		public virtual DbSet<AsmDevice> AsmDevice { get; set; }
+		public virtual DbSet<AsmDeviceManufacturer> AsmDeviceManufacturer { get; set; }
+		public virtual DbSet<AsmDeviceModels> AsmDeviceModels { get; set; }
+		public virtual DbSet<AsmDeviceNotes> AsmDeviceNotes { get; set; }
+		public virtual DbSet<AsmDeviceOperators> AsmDeviceOperators { get; set; }
+		public virtual DbSet<AsmLogBook> AsmLogBook { get; set; }
+		public virtual DbSet<AudBrandingConversionDatas> AudBrandingConversionDatas { get; set; }
+		public virtual DbSet<AuditDocuments> AuditDocuments { get; set; }
+		public virtual DbSet<Barcodes> Barcodes { get; set; }
+		public virtual DbSet<Baskets> Baskets { get; set; }
+		public virtual DbSet<BasketSessionItems> BasketSessionItems { get; set; }
+		public virtual DbSet<BasketSessions> BasketSessions { get; set; }
+		public virtual DbSet<BasketSessionTrackings> BasketSessionTrackings { get; set; }
+		public virtual DbSet<BlanketAcceptances> BlanketAcceptances { get; set; }
+		public virtual DbSet<BranchAddresses> BranchAddresses { get; set; }
+		public virtual DbSet<BranchAlps> BranchAlps { get; set; }
+		public virtual DbSet<BranchAttributes> BranchAttributes { get; set; }
+		public virtual DbSet<BranchAttributeTemplateOptionValues> BranchAttributeTemplateOptionValues { get; set; }
+		public virtual DbSet<BranchAttributeTemplates> BranchAttributeTemplates { get; set; }
+		public virtual DbSet<BranchContactNumbers> BranchContactNumbers { get; set; }
+		public virtual DbSet<BranchDelivery> BranchDelivery { get; set; }
+		public virtual DbSet<BranchDeliveryCourierInfoes> BranchDeliveryCourierInfoes { get; set; }
+		public virtual DbSet<BranchDeliveryParcels> BranchDeliveryParcels { get; set; }
+		public virtual DbSet<BranchDeliveryProcesses> BranchDeliveryProcesses { get; set; }
+		public virtual DbSet<BranchDeliveryProcessTracking> BranchDeliveryProcessTracking { get; set; }
+		public virtual DbSet<BranchDeliveryRequestResponses> BranchDeliveryRequestResponses { get; set; }
+		public virtual DbSet<BranchDeliveryRequests> BranchDeliveryRequests { get; set; }
+		public virtual DbSet<Branches> Branches { get; set; }
+		public virtual DbSet<BranchInvoiceType> BranchInvoiceType { get; set; }
+		public virtual DbSet<BranchInvoiceTypeShipment> BranchInvoiceTypeShipment { get; set; }
+		public virtual DbSet<BranchRules> BranchRules { get; set; }
+		public virtual DbSet<BranchRuleValues> BranchRuleValues { get; set; }
+		public virtual DbSet<BranchServers> BranchServers { get; set; }
+		public virtual DbSet<BranchSetting> BranchSetting { get; set; }
+		public virtual DbSet<BranchWarehouse> BranchWarehouse { get; set; }
+		public virtual DbSet<BranchWarehouseLink> BranchWarehouseLink { get; set; }
+		public virtual DbSet<BranchWifi> BranchWifi { get; set; }
+		public virtual DbSet<BrandingConversionAldatas> BrandingConversionAldatas { get; set; }
+		public virtual DbSet<BrandingConversionDatas> BrandingConversionDatas { get; set; }
+		public virtual DbSet<BrandingConversionGroups> BrandingConversionGroups { get; set; }
+		public virtual DbSet<BrandingConversionMembers> BrandingConversionMembers { get; set; }
+		public virtual DbSet<BrandingInfoLine> BrandingInfoLine { get; set; }
+		public virtual DbSet<BrandingLineInfo> BrandingLineInfo { get; set; }
+		public virtual DbSet<BrandingLineInfoAttachments> BrandingLineInfoAttachments { get; set; }
+		public virtual DbSet<BrandingLineInfoContacts> BrandingLineInfoContacts { get; set; }
+		public virtual DbSet<BudgetedTurnover> BudgetedTurnover { get; set; }
+		public virtual DbSet<ClientContact> ClientContact { get; set; }
+		public virtual DbSet<ClientDelivery> ClientDelivery { get; set; }
+		public virtual DbSet<ClientDeliveryAddress> ClientDeliveryAddress { get; set; }
+		public virtual DbSet<ClientDocumentRequests> ClientDocumentRequests { get; set; }
+		public virtual DbSet<ClientDocumentResponses> ClientDocumentResponses { get; set; }
+		public virtual DbSet<CommercialBrandingDocuments> CommercialBrandingDocuments { get; set; }
+		public virtual DbSet<ContactNumbers> ContactNumbers { get; set; }
+		public virtual DbSet<CreateInsuffiecients> CreateInsuffiecients { get; set; }
+		public virtual DbSet<CreditLimitSettings> CreditLimitSettings { get; set; }
+		public virtual DbSet<CreditNoteLogs> CreditNoteLogs { get; set; }
+		public virtual DbSet<CreditNoteProcesses> CreditNoteProcesses { get; set; }
+		public virtual DbSet<CreditNoteRequestLogs> CreditNoteRequestLogs { get; set; }
+		public virtual DbSet<CreditNoteRequestProcesses> CreditNoteRequestProcesses { get; set; }
+		public virtual DbSet<Currency> Currency { get; set; }
+		public virtual DbSet<DeliveryAddress> DeliveryAddress { get; set; }
+		public virtual DbSet<DeliveryProvider> DeliveryProvider { get; set; }
+		public virtual DbSet<DeliveryProviderConfig> DeliveryProviderConfig { get; set; }
+		public virtual DbSet<DeliveryProviderServiceExclusions> DeliveryProviderServiceExclusions { get; set; }
+		public virtual DbSet<DeliveryProviderServiceLeadTimes> DeliveryProviderServiceLeadTimes { get; set; }
+		public virtual DbSet<DeliveryProviderServices> DeliveryProviderServices { get; set; }
+		public virtual DbSet<DeliveryQuote> DeliveryQuote { get; set; }
+		public virtual DbSet<DeliveryQuoteDetail> DeliveryQuoteDetail { get; set; }
+		public virtual DbSet<DeliveryQuoteDocuments> DeliveryQuoteDocuments { get; set; }
+		public virtual DbSet<DeliveryQuoteItems> DeliveryQuoteItems { get; set; }
+		public virtual DbSet<DeliverySuburbLookup> DeliverySuburbLookup { get; set; }
+		public virtual DbSet<DeliveryWaybill> DeliveryWaybill { get; set; }
+		public virtual DbSet<DeliveryWaybillCourierDetails> DeliveryWaybillCourierDetails { get; set; }
+		public virtual DbSet<DeliveryWaybillDetail> DeliveryWaybillDetail { get; set; }
+		public virtual DbSet<DeliveryWaybillTracking> DeliveryWaybillTracking { get; set; }
+		public virtual DbSet<Departments> Departments { get; set; }
+		public virtual DbSet<DestroyedPalletInfo> DestroyedPalletInfo { get; set; }
+		public virtual DbSet<DmDevice> DmDevice { get; set; }
+		public virtual DbSet<DmDeviceHandler> DmDeviceHandler { get; set; }
+		public virtual DbSet<DmDeviceLogBook> DmDeviceLogBook { get; set; }
+		public virtual DbSet<DmDeviceRotation> DmDeviceRotation { get; set; }
+		public virtual DbSet<DmDeviceTracking> DmDeviceTracking { get; set; }
+		public virtual DbSet<DocumentAttachments> DocumentAttachments { get; set; }
+		public virtual DbSet<DocumentBoxDetail> DocumentBoxDetail { get; set; }
+		public virtual DbSet<DocumentBoxes> DocumentBoxes { get; set; }
+		public virtual DbSet<DocumentHistory> DocumentHistory { get; set; }
+		public virtual DbSet<DocumentNotificationInfos> DocumentNotificationInfos { get; set; }
+		public virtual DbSet<DocumentNumbers> DocumentNumbers { get; set; }
+		public virtual DbSet<DocumentPallet> DocumentPallet { get; set; }
+		public virtual DbSet<DocumentPostProcessing> DocumentPostProcessing { get; set; }
+		public virtual DbSet<DocumentPostProcessingInfoes> DocumentPostProcessingInfoes { get; set; }
+		public virtual DbSet<DocumentReservedStocks> DocumentReservedStocks { get; set; }
+		public virtual DbSet<Documents> Documents { get; set; }
+		public virtual DbSet<DocumentsSkippedProcessing> DocumentsSkippedProcessing { get; set; }
+		public virtual DbSet<DocumentSyncStates> DocumentSyncStates { get; set; }
+		public virtual DbSet<DocumentVersionInfoes> DocumentVersionInfoes { get; set; }
+		public virtual DbSet<DocumentVolumetric> DocumentVolumetric { get; set; }
+		public virtual DbSet<EntityAttachmentLinks> EntityAttachmentLinks { get; set; }
+		public virtual DbSet<EntityAttachments> EntityAttachments { get; set; }
+		public virtual DbSet<EntityNotificationRecipients> EntityNotificationRecipients { get; set; }
+		public virtual DbSet<EntityNotificationReferrals> EntityNotificationReferrals { get; set; }
+		public virtual DbSet<EntityNotifications> EntityNotifications { get; set; }
+		public virtual DbSet<EntityProcesses> EntityProcesses { get; set; }
+		public virtual DbSet<GenericTrackings> GenericTrackings { get; set; }
+		public virtual DbSet<HistoryContributor> HistoryContributor { get; set; }
+		public virtual DbSet<ImportStates> ImportStates { get; set; }
+		public virtual DbSet<InvoiceInfoes> InvoiceInfoes { get; set; }
+		public virtual DbSet<InvoicingSpecials> InvoicingSpecials { get; set; }
+		public virtual DbSet<ItemPalletInfo> ItemPalletInfo { get; set; }
+		public virtual DbSet<LineDatas> LineDatas { get; set; }
+		public virtual DbSet<LineDisplay> LineDisplay { get; set; }
+		public virtual DbSet<LineDisplayComponents> LineDisplayComponents { get; set; }
+		public virtual DbSet<LineDisplayPartDetails> LineDisplayPartDetails { get; set; }
+		public virtual DbSet<LineLinks> LineLinks { get; set; }
+		public virtual DbSet<Lines> Lines { get; set; }
+		public virtual DbSet<LookupBrandingConversionIgnoredStocks> LookupBrandingConversionIgnoredStocks { get; set; }
+		public virtual DbSet<LookupClothingMensClothings> LookupClothingMensClothings { get; set; }
+		public virtual DbSet<LookupOrderTypePriorities> LookupOrderTypePriorities { get; set; }
+		public virtual DbSet<MDocuments> MDocuments { get; set; }
+		public virtual DbSet<MessageQueueItems> MessageQueueItems { get; set; }
+		public virtual DbSet<MessageQueueLogs> MessageQueueLogs { get; set; }
+		public virtual DbSet<MMessage> MMessage { get; set; }
+		public virtual DbSet<MRecipientResponses> MRecipientResponses { get; set; }
+		public virtual DbSet<MRecipients> MRecipients { get; set; }
+		public virtual DbSet<MSchedules> MSchedules { get; set; }
+		public virtual DbSet<MStore> MStore { get; set; }
+		public virtual DbSet<MTracking> MTracking { get; set; }
+		public virtual DbSet<OneTimeTokens> OneTimeTokens { get; set; }
+		public virtual DbSet<PalletConfirmLocationBatches> PalletConfirmLocationBatches { get; set; }
+		public virtual DbSet<PalletConfirmLocationExceptions> PalletConfirmLocationExceptions { get; set; }
+		public virtual DbSet<PalletConfirmLocationMovements> PalletConfirmLocationMovements { get; set; }
+		public virtual DbSet<PalletConfirmLocationRaw> PalletConfirmLocationRaw { get; set; }
+		public virtual DbSet<PalletContents> PalletContents { get; set; }
+		public virtual DbSet<PalletMovementErrors> PalletMovementErrors { get; set; }
+		public virtual DbSet<Pallets> Pallets { get; set; }
+		public virtual DbSet<PalletTransferBatchContents> PalletTransferBatchContents { get; set; }
+		public virtual DbSet<PalletTransferBatches> PalletTransferBatches { get; set; }
+		public virtual DbSet<PaymentInfoData> PaymentInfoData { get; set; }
+		public virtual DbSet<PaymentInfoes> PaymentInfoes { get; set; }
+		public virtual DbSet<PaymentInfoProcessResults> PaymentInfoProcessResults { get; set; }
+		public virtual DbSet<PickingInstructions> PickingInstructions { get; set; }
+		public virtual DbSet<PickingSlipMovements> PickingSlipMovements { get; set; }
+		public virtual DbSet<PickingSlipPrintStatus> PickingSlipPrintStatus { get; set; }
+		public virtual DbSet<PickingSlipReservedStocks> PickingSlipReservedStocks { get; set; }
+		public virtual DbSet<PickingSlips> PickingSlips { get; set; }
+		public virtual DbSet<PodCollectionInstructionContainer> PodCollectionInstructionContainer { get; set; }
+		public virtual DbSet<PodCollectionInstructionLocation> PodCollectionInstructionLocation { get; set; }
+		public virtual DbSet<PodCollectionIntruction> PodCollectionIntruction { get; set; }
+		public virtual DbSet<PodCollectionNote> PodCollectionNote { get; set; }
+		public virtual DbSet<PodCollectionNoteBoxInfo> PodCollectionNoteBoxInfo { get; set; }
+		public virtual DbSet<PodCollectionNoteDocument> PodCollectionNoteDocument { get; set; }
+		public virtual DbSet<PodCollectionNoteWaybill> PodCollectionNoteWaybill { get; set; }
+		public virtual DbSet<PodDispatchBuzzer> PodDispatchBuzzer { get; set; }
+		public virtual DbSet<PodDispatchBuzzerAllocation> PodDispatchBuzzerAllocation { get; set; }
+		public virtual DbSet<PodDispatchBuzzerAllocationTracking> PodDispatchBuzzerAllocationTracking { get; set; }
+		public virtual DbSet<PrintDelayedReasons> PrintDelayedReasons { get; set; }
+		public virtual DbSet<Printers> Printers { get; set; }
+		public virtual DbSet<ProductPurchaseRecords> ProductPurchaseRecords { get; set; }
+		public virtual DbSet<QuoteDocuments> QuoteDocuments { get; set; }
+		public virtual DbSet<QuoteLines> QuoteLines { get; set; }
+		public virtual DbSet<ReservationInfoes> ReservationInfoes { get; set; }
+		public virtual DbSet<ReservedStockAdjustmentTransactions> ReservedStockAdjustmentTransactions { get; set; }
+		public virtual DbSet<ReservedStocks> ReservedStocks { get; set; }
+		public virtual DbSet<Rework> Rework { get; set; }
+		public virtual DbSet<ReworkBoxes> ReworkBoxes { get; set; }
+		public virtual DbSet<ReworkDocuments> ReworkDocuments { get; set; }
+		public virtual DbSet<ReworkInstructionBoxes> ReworkInstructionBoxes { get; set; }
+		public virtual DbSet<ReworkInstructionData> ReworkInstructionData { get; set; }
+		public virtual DbSet<ReworkInstructionLines> ReworkInstructionLines { get; set; }
+		public virtual DbSet<ReworkInstructionMasterBoxes> ReworkInstructionMasterBoxes { get; set; }
+		public virtual DbSet<ReworkInstructionMasterLines> ReworkInstructionMasterLines { get; set; }
+		public virtual DbSet<ReworkInstructions> ReworkInstructions { get; set; }
+		public virtual DbSet<ReworkReport> ReworkReport { get; set; }
+		public virtual DbSet<RushDocumentDetail> RushDocumentDetail { get; set; }
+		public virtual DbSet<ScannedConveyerParcels> ScannedConveyerParcels { get; set; }
+		public virtual DbSet<SecurityLevels> SecurityLevels { get; set; }
+		public virtual DbSet<SecurityLevelSecurityPermission> SecurityLevelSecurityPermission { get; set; }
+		public virtual DbSet<SecurityPermissions> SecurityPermissions { get; set; }
+		public virtual DbSet<SentClientNotifications> SentClientNotifications { get; set; }
+		public virtual DbSet<ServerDetails> ServerDetails { get; set; }
+		public virtual DbSet<ShipmentCommercialBrandingDocumentLines> ShipmentCommercialBrandingDocumentLines { get; set; }
+		public virtual DbSet<ShipmentCommercialBrandingDocuments> ShipmentCommercialBrandingDocuments { get; set; }
+		public virtual DbSet<ShipmentDetail> ShipmentDetail { get; set; }
+		public virtual DbSet<ShipmentNumber> ShipmentNumber { get; set; }
+		public virtual DbSet<ShipmentProcessTracking> ShipmentProcessTracking { get; set; }
+		public virtual DbSet<ShipmentReservesRecycle> ShipmentReservesRecycle { get; set; }
+		public virtual DbSet<Shipments> Shipments { get; set; }
+		public virtual DbSet<ShippingDestinations> ShippingDestinations { get; set; }
+		public virtual DbSet<ShippingProviderConfigurations> ShippingProviderConfigurations { get; set; }
+		public virtual DbSet<ShippingProviders> ShippingProviders { get; set; }
+		public virtual DbSet<ShippingRates> ShippingRates { get; set; }
+		public virtual DbSet<ShippingServices> ShippingServices { get; set; }
+		public virtual DbSet<SpecialDates> SpecialDates { get; set; }
+		public virtual DbSet<SrReceiptCompletedLines> SrReceiptCompletedLines { get; set; }
+		public virtual DbSet<SrReceiptLines> SrReceiptLines { get; set; }
+		public virtual DbSet<SrReceipts> SrReceipts { get; set; }
+		public virtual DbSet<SrReceiptTracking> SrReceiptTracking { get; set; }
+		public virtual DbSet<StockTakeBatches> StockTakeBatches { get; set; }
+		public virtual DbSet<StockTakeRecords> StockTakeRecords { get; set; }
+		public virtual DbSet<StockTakeUnProcessedBatchEntries> StockTakeUnProcessedBatchEntries { get; set; }
+		public virtual DbSet<SuggestedReOrderPallets> SuggestedReOrderPallets { get; set; }
+		public virtual DbSet<SwadSummary> SwadSummary { get; set; }
+		public virtual DbSet<SyncDataErrorDetail> SyncDataErrorDetail { get; set; }
+		public virtual DbSet<SyncDataErrorRecipients> SyncDataErrorRecipients { get; set; }
+		public virtual DbSet<SyncDataErrors> SyncDataErrors { get; set; }
+		public virtual DbSet<TaxRates> TaxRates { get; set; }
+		public virtual DbSet<TempNotCreatable> TempNotCreatable { get; set; }
+		public virtual DbSet<TempPalletCodes> TempPalletCodes { get; set; }
+		public virtual DbSet<TempPrices> TempPrices { get; set; }
+		public virtual DbSet<TurnOverTest> TurnOverTest { get; set; }
+		public virtual DbSet<TurnoverTransactionDetails> TurnoverTransactionDetails { get; set; }
+		public virtual DbSet<TurnoverTransactions> TurnoverTransactions { get; set; }
+		public virtual DbSet<TurnoverTransactions1> TurnoverTransactions1 { get; set; }
+		public virtual DbSet<TurnoverTransfers> TurnoverTransfers { get; set; }
+		public virtual DbSet<UserBranches> UserBranches { get; set; }
+		public virtual DbSet<UserDepartment> UserDepartment { get; set; }
+		public virtual DbSet<UserLink> UserLink { get; set; }
+		public virtual DbSet<Users> Users { get; set; }
+		public virtual DbSet<UserSecurityPermission> UserSecurityPermission { get; set; }
+		public virtual DbSet<UtiBondedIntegrationAudit> UtiBondedIntegrationAudit { get; set; }
+		public virtual DbSet<WarehouseEntityMovements> WarehouseEntityMovements { get; set; }
+		public virtual DbSet<WarehouseLocations> WarehouseLocations { get; set; }
+		public virtual DbSet<WarehouseMinimumReorders> WarehouseMinimumReorders { get; set; }
+		public virtual DbSet<WarehouseNotifications> WarehouseNotifications { get; set; }
+		public virtual DbSet<WarehouseReorders> WarehouseReorders { get; set; }
+		public virtual DbSet<WarehouseReplenishments> WarehouseReplenishments { get; set; }
+		public virtual DbSet<Warehouses> Warehouses { get; set; }
+		public virtual DbSet<WarehouseStockStorageMovements> WarehouseStockStorageMovements { get; set; }
+		public virtual DbSet<WarehouseStockStorages> WarehouseStockStorages { get; set; }
+		public virtual DbSet<WdbActiveJobcards> WdbActiveJobcards { get; set; }
+		public virtual DbSet<WdbActiveOrders> WdbActiveOrders { get; set; }
+		public virtual DbSet<WdbRecentCreditNotes> WdbRecentCreditNotes { get; set; }
+		public virtual DbSet<WdbResync> WdbResync { get; set; }
+		public virtual DbSet<WmsDocumentBoxDetail> WmsDocumentBoxDetail { get; set; }
+		public virtual DbSet<WmsDocumentBoxes> WmsDocumentBoxes { get; set; }
+		public virtual DbSet<WmsDocumentBoxInfo> WmsDocumentBoxInfo { get; set; }
+		public virtual DbSet<WmsDocumentBoxLinks> WmsDocumentBoxLinks { get; set; }
+		public virtual DbSet<WmsDocumentBoxMovements> WmsDocumentBoxMovements { get; set; }
+		public virtual DbSet<WmsDocumentBoxTracking> WmsDocumentBoxTracking { get; set; }
+		public virtual DbSet<WmsDocumentImportStatus> WmsDocumentImportStatus { get; set; }
+		public virtual DbSet<WmsDocumentLines> WmsDocumentLines { get; set; }
+		public virtual DbSet<WmsDocumentLinks> WmsDocumentLinks { get; set; }
+		public virtual DbSet<WmsDocuments> WmsDocuments { get; set; }
+		public virtual DbSet<WmsDocumentTracking> WmsDocumentTracking { get; set; }
+		public virtual DbSet<WmsStagingLocations> WmsStagingLocations { get; set; }
+		public virtual DbSet<WmsStagingLocationSessionBoxes> WmsStagingLocationSessionBoxes { get; set; }
+		public virtual DbSet<WmsStagingLocationSessions> WmsStagingLocationSessions { get; set; }
+		public virtual DbSet<WmsStagingLocationSessionTracking> WmsStagingLocationSessionTracking { get; set; }
+		public virtual DbSet<WmsTracking> WmsTracking { get; set; }
 
 		// Unable to generate entity type for table 'dbo.PriceList_131759565840289205'. Please see the warning messages.
 		// Unable to generate entity type for table 'dbo._TempDiscontinuedALP'. Please see the warning messages.
@@ -341,12 +342,46 @@ namespace Amtrack.Amtrack_V2.Data
 			if(!optionsBuilder.IsConfigured)
 			{
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-				optionsBuilder.UseSqlServer(@"server=ACG-SERV-TST2\ACTST5;database=amtrack_v2;uid=sa;pwd=F15HP@15T;Max Pool Size=300;");
+				optionsBuilder.UseSqlServer("server=ACG-SERV-TST2\\ACTST5;database=amtrack_v2;uid=sa;pwd=F15HP@15T;Max Pool Size=300;");
 			}
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
+			modelBuilder.Entity<AccountAccountManagers>(entity =>
+			{
+				entity.HasIndex(e => new { e.FkAccountId, e.FkBrandId })
+					.HasName("IX_AccountAccountManagers")
+					.IsUnique();
+
+				entity.Property(e => e.Brand)
+					.IsRequired()
+					.HasMaxLength(100)
+					.IsUnicode(false);
+
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
+
+				entity.Property(e => e.FkAccountId).HasColumnName("FK_AccountId");
+
+				entity.Property(e => e.FkBrandId).HasColumnName("FK_BrandId");
+
+				entity.Property(e => e.FkUserId).HasColumnName("FK_UserId");
+
+				entity.HasOne(d => d.FkAccount)
+					.WithMany(p => p.AccountAccountManagers)
+					.HasForeignKey(d => d.FkAccountId)
+					.OnDelete(DeleteBehavior.ClientSetNull)
+					.HasConstraintName("FK_AccountAccountManagers_Accounts");
+
+				entity.HasOne(d => d.User)
+					.WithMany(p => p.AccountAccountManagers)
+					.HasForeignKey(d => d.FkUserId)
+					.OnDelete(DeleteBehavior.ClientSetNull)
+					.HasConstraintName("FK_AccountAccountManagers_Users");
+			});
+
 			modelBuilder.Entity<AccountAddress>(entity =>
 			{
 				entity.HasIndex(e => new { e.FkAccountId, e.FkAddressId })
@@ -417,7 +452,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<AccountAttributeTemplates>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DataType)
 					.IsRequired()
@@ -534,7 +571,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<AccountContacts>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DateOfBirth).HasColumnType("date");
 
@@ -555,7 +594,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(100)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Modified).HasColumnType("datetime");
+				entity.Property(e => e.Modified)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Title)
 					.HasMaxLength(10)
@@ -613,7 +654,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(20)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Email)
 					.IsRequired()
@@ -622,15 +665,15 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.FkAccountBalanceId).HasColumnName("FK_AccountBalanceId");
 
-				entity.Property(e => e.FkAccountManagerId).HasColumnName("FK_AccountManagerId");
-
 				entity.Property(e => e.FkMasterAccountId).HasColumnName("FK_MasterAccountId");
 
 				entity.Property(e => e.FkPricelistId).HasColumnName("FK_PricelistId");
 
 				entity.Property(e => e.FkTaxRateId).HasColumnName("FK_TaxRateId");
 
-				entity.Property(e => e.Modified).HasColumnType("datetime");
+				entity.Property(e => e.Modified)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -654,17 +697,12 @@ namespace Amtrack.Amtrack_V2.Data
 					.OnDelete(DeleteBehavior.ClientSetNull)
 					.HasConstraintName("FK_Accounts_AccountBalances");
 
-				entity.HasOne(d => d.FkAccountManager)
-					.WithMany(p => p.Accounts)
-					.HasForeignKey(d => d.FkAccountManagerId)
-					.HasConstraintName("FK_Accounts_Users");
-
 				entity.HasOne(d => d.FkMasterAccount)
 					.WithMany(p => p.InverseFkMasterAccount)
 					.HasForeignKey(d => d.FkMasterAccountId)
 					.HasConstraintName("FK_Accounts_Accounts");
 
-				entity.HasOne(d => d.FkTaxRate)
+				entity.HasOne(d => d.TaxRate)
 					.WithMany(p => p.Accounts)
 					.HasForeignKey(d => d.FkTaxRateId)
 					.OnDelete(DeleteBehavior.ClientSetNull)
@@ -673,7 +711,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<AccountSystemNotificationTypes>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Description)
 					.IsRequired()
@@ -689,14 +729,18 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.ToTable("AD_AddressValidationInfo");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Locale)
 					.IsRequired()
 					.HasMaxLength(50)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Modified).HasColumnType("datetime");
+				entity.Property(e => e.Modified)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.PostCode)
 					.IsRequired()
@@ -728,16 +772,21 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.Property(e => e.CompanyName)
 					.IsRequired()
 					.HasMaxLength(500)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('')");
 
 				entity.Property(e => e.Country)
 					.IsRequired()
 					.HasMaxLength(500)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
-				entity.Property(e => e.Modified).HasColumnType("datetime");
+				entity.Property(e => e.Modified)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.OfficePark)
 					.HasMaxLength(500)
@@ -746,7 +795,8 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.Property(e => e.PostalCode)
 					.IsRequired()
 					.HasMaxLength(10)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('')");
 
 				entity.Property(e => e.Province)
 					.HasMaxLength(500)
@@ -855,6 +905,8 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.StaticTotalAlp).HasColumnName("StaticTotalALP");
 
+				entity.Property(e => e.SubType).HasDefaultValueSql("((0))");
+
 				entity.Property(e => e.TransferAlp).HasColumnName("TransferALP");
 			});
 
@@ -933,6 +985,8 @@ namespace Amtrack.Amtrack_V2.Data
 					.IsUnicode(false);
 
 				entity.Property(e => e.FkMailerId).HasColumnName("FK_MailerId");
+
+				entity.Property(e => e.GenerationStatus).HasDefaultValueSql("((0))");
 			});
 
 			modelBuilder.Entity<AlpmailerData>(entity =>
@@ -1000,7 +1054,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(255)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Date).HasColumnType("date");
 
@@ -1088,6 +1144,10 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.Property(e => e.FkAlpid).HasColumnName("FK_ALPId");
 
 				entity.Property(e => e.FkAlppointRuleId).HasColumnName("FK_ALPPointRuleId");
+
+				entity.Property(e => e.FkBrandId)
+					.HasColumnName("FK_BrandId")
+					.HasDefaultValueSql("((1))");
 
 				entity.Property(e => e.ValidFrom).HasColumnType("datetime");
 
@@ -1412,7 +1472,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.IsRequired()
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Token)
 					.IsRequired()
@@ -1655,7 +1717,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.AId).HasColumnName("aId");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 			});
 
 			modelBuilder.Entity<Barcodes>(entity =>
@@ -1690,7 +1754,13 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(10)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Brand)
+					.HasMaxLength(255)
+					.IsUnicode(false);
+
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkBasketId).HasColumnName("FK_BasketId");
 
@@ -1725,7 +1795,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.ClosedDate).HasColumnType("datetime");
 
-				entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+				entity.Property(e => e.CreatedDate)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.CreditNumber)
 					.HasMaxLength(100)
@@ -1758,7 +1830,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.ClosedDate).HasColumnType("datetime");
 
-				entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+				entity.Property(e => e.CreatedDate)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkBasketId).HasColumnName("FK_BasketId");
 
@@ -1779,7 +1853,9 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.HasKey(e => e.BasketSessionTrackingId);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Description)
 					.IsRequired()
@@ -1885,7 +1961,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<BranchAttributes>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkAttributeTemplateId).HasColumnName("FK_AttributeTemplateId");
 
@@ -1916,7 +1994,9 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.ToTable("branchAttributeTemplateOptionValues");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Display)
 					.IsRequired()
@@ -1939,7 +2019,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<BranchAttributeTemplates>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DataType)
 					.IsRequired()
@@ -2056,7 +2138,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(50)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DateProcessed).HasColumnType("datetime");
 
@@ -2083,7 +2167,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<BranchDeliveryProcessTracking>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkBranchDeliveryProcessId).HasColumnName("FK_BranchDeliveryProcessId");
 
@@ -2158,7 +2244,8 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.Property(e => e.BranchCode)
 					.HasMaxLength(32)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('')");
 
 				entity.Property(e => e.BranchName)
 					.IsRequired()
@@ -2168,12 +2255,14 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.Property(e => e.CompanyCode)
 					.IsRequired()
 					.HasMaxLength(20)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('EMPTY')");
 
 				entity.Property(e => e.CompanyName)
 					.IsRequired()
 					.HasMaxLength(255)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('EMPTY')");
 
 				entity.Property(e => e.FkCurrencyId).HasColumnName("FK_CurrencyId");
 
@@ -2196,22 +2285,26 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.Property(e => e.RegNumber)
 					.IsRequired()
 					.HasMaxLength(64)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('EMPTY')");
 
 				entity.Property(e => e.Status)
 					.IsRequired()
 					.HasMaxLength(128)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('ACTIVE')");
 
 				entity.Property(e => e.TradingName)
 					.IsRequired()
 					.HasMaxLength(255)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('EMPTY')");
 
 				entity.Property(e => e.VatNumber)
 					.IsRequired()
 					.HasMaxLength(64)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('EMPTY')");
 
 				entity.HasOne(d => d.FkCurrency)
 					.WithMany(p => p.Branches)
@@ -2238,12 +2331,14 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.Property(e => e.PastelDangerousGoodsCode)
 					.IsRequired()
 					.HasMaxLength(10)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('')");
 
 				entity.Property(e => e.PastelInvoiceCode)
 					.IsRequired()
 					.HasMaxLength(10)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('')");
 
 				entity.HasOne(d => d.FkBranch)
 					.WithMany(p => p.BranchInvoiceTypeFkBranch)
@@ -2447,7 +2542,8 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.AudTimestamp)
 					.HasColumnName("audTimestamp")
-					.HasColumnType("datetime");
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.BrandingCode).HasMaxLength(50);
 
@@ -2474,7 +2570,9 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.Property(e => e.BrandingCode).HasMaxLength(50);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DocumentNumber)
 					.IsRequired()
@@ -2499,7 +2597,9 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.HasKey(e => e.GroupId);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkOwnerId).HasColumnName("FK_OwnerId");
 
@@ -2543,7 +2643,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(255)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DownloadLogoPath)
 					.IsRequired()
@@ -2865,9 +2967,13 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(10)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
-				entity.Property(e => e.Modified).HasColumnType("datetime");
+				entity.Property(e => e.Modified)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Name)
 					.HasMaxLength(100)
@@ -2885,7 +2991,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<CreateInsuffiecients>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkUserTracking)
 					.IsRequired()
@@ -2911,7 +3019,8 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.Created)
 					.HasColumnName("created")
-					.HasColumnType("datetime");
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.CreditNoteId).HasColumnName("CreditNoteID");
 
@@ -2964,7 +3073,8 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.Created)
 					.HasColumnName("created")
-					.HasColumnType("datetime");
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.CreditNoteRequestId).HasColumnName("CreditNoteRequestID");
 
@@ -2993,7 +3103,8 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.Property(e => e.DisplayFormat)
 					.IsRequired()
 					.HasMaxLength(50)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('#')");
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -3012,7 +3123,8 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.CompanyName)
 					.HasMaxLength(500)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('')");
 
 				entity.Property(e => e.Country)
 					.HasMaxLength(100)
@@ -3029,7 +3141,8 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.Property(e => e.PostalCode)
 					.IsRequired()
 					.HasMaxLength(10)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('')");
 
 				entity.Property(e => e.Province)
 					.HasMaxLength(100)
@@ -3054,7 +3167,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<DeliveryProvider>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -3118,7 +3233,7 @@ namespace Amtrack.Amtrack_V2.Data
 					.WithMany(p => p.DeliveryProviderServiceLeadTimes)
 					.HasForeignKey(d => d.FkDeliveryProviderId)
 					.OnDelete(DeleteBehavior.ClientSetNull)
-					.HasConstraintName("FK__DeliveryP__FK_De__797EC228");
+					.HasConstraintName("FK__DeliveryP__FK_De__48FB865E");
 			});
 
 			modelBuilder.Entity<DeliveryProviderServices>(entity =>
@@ -3262,7 +3377,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(500)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkProviderId).HasColumnName("FK_ProviderId");
 
@@ -3376,6 +3493,11 @@ namespace Amtrack.Amtrack_V2.Data
 					.WithMany(p => p.InverseFkHistory)
 					.HasForeignKey(d => d.FkHistoryId)
 					.HasConstraintName("FK_DeliveryWaybill_DeliveryWaybill");
+
+				entity.HasOne(d => d.FkWaybillCourierDetails)
+					.WithMany(p => p.DeliveryWaybill)
+					.HasForeignKey(d => d.FkWaybillCourierDetailsId)
+					.HasConstraintName("FK_DeliveryWaybill_DeliveryWaybillCourierDetails");
 			});
 
 			modelBuilder.Entity<DeliveryWaybillCourierDetails>(entity =>
@@ -3440,7 +3562,7 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.HasKey(e => e.DepartmentId);
 
-				entity.Property(e => e.DepartmentId).ValueGeneratedNever();
+				entity.Property(e => e.DepartmentId).HasDefaultValueSql("(newid())");
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -3456,7 +3578,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(50)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("date");
+				entity.Property(e => e.Created)
+					.HasColumnType("date")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkPalletId).HasColumnName("Fk_PalletId");
 
@@ -3471,7 +3595,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.ToTable("dmDevice");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Ipaddress)
 					.HasColumnName("IPAddress")
@@ -3524,7 +3650,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(20)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.EmailAddress)
 					.HasMaxLength(255)
@@ -3553,7 +3681,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.Id).ValueGeneratedNever();
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkDeviceId).HasColumnName("FK_DeviceId");
 
@@ -3711,7 +3841,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.AdditionalInfo).HasMaxLength(1024);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DocumentNumber)
 					.IsRequired()
@@ -3787,7 +3919,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<DocumentPostProcessing>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DocumentNumber)
 					.IsRequired()
@@ -3864,7 +3998,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.DocumentId).ValueGeneratedNever();
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.CustomerCode)
 					.IsRequired()
@@ -3880,7 +4016,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.IsRequired()
 					.HasMaxLength(50);
 
-				entity.Property(e => e.SalesmanCode).HasMaxLength(10);
+				entity.Property(e => e.FkBrandId).HasColumnName("FK_BrandId");
+
+				entity.Property(e => e.SalesmanCode).HasMaxLength(20);
 
 				entity.Property(e => e.Warehouse)
 					.IsRequired()
@@ -3894,7 +4032,9 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.HasIndex(e => new { e.Id, e.DocumentNumber, e.Processed })
 					.HasName("IX_Processed_DocNumber");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DateDashboardProcessed).HasColumnType("datetime");
 
@@ -4023,7 +4163,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<EntityNotificationReferrals>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.EntityKey).HasMaxLength(50);
 
@@ -4067,6 +4209,8 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.Property(e => e.EntityKey)
 					.IsRequired()
 					.HasMaxLength(50);
+
+				entity.Property(e => e.Status).HasDefaultValueSql("((1))");
 			});
 
 			modelBuilder.Entity<GenericTrackings>(entity =>
@@ -4086,7 +4230,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasName("UK_HistoryIdentifier")
 					.IsUnique();
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Identifier)
 					.IsRequired()
@@ -4138,7 +4284,9 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.HasKey(e => e.SpecialId);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.ItemCode)
 					.IsRequired()
@@ -4219,7 +4367,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(50)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkDisplayLineId).HasColumnName("FK_DisplayLineId");
 
@@ -4302,6 +4452,8 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.Property(e => e.DiscountProject)
 					.HasMaxLength(5)
 					.IsUnicode(false);
+
+				entity.Property(e => e.FkBrandId).HasColumnName("FK_BrandId");
 
 				entity.Property(e => e.FkParentLineId).HasColumnName("FK_ParentLineId");
 
@@ -4834,7 +4986,9 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.HasIndex(e => new { e.Id, e.Created, e.ProcessResult, e.ResultMessage, e.FkPaymentId, e.ProcessType })
 					.HasName("ix_PaymentInfoProcessResults_FK_PaymentId_ProcessType_includes");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkPaymentId).HasColumnName("FK_PaymentId");
 
@@ -5072,7 +5226,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.CloseTimestamp).HasColumnType("datetime");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkParentIntructionId).HasColumnName("FK_ParentIntructionId");
 
@@ -5114,7 +5270,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(100)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.CustomerCode)
 					.HasMaxLength(20)
@@ -5151,7 +5309,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(255)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkPodCollectionNoteId).HasColumnName("FK_podCollectionNoteId");
 
@@ -5177,7 +5337,9 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.HasIndex(e => new { e.DocumentNumber, e.Flags, e.FkPodCollectionNoteId })
 					.HasName("ix_podCollectionNoteDocument_FK_podCollectionNoteId_includes");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DocumentNumber)
 					.IsRequired()
@@ -5230,7 +5392,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(255)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Warehouse)
 					.IsRequired()
@@ -5242,7 +5406,9 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.ToTable("podDispatchBuzzerAllocation");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkBuzzerId).HasColumnName("FK_BuzzerId");
 
@@ -5268,7 +5434,9 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.HasIndex(e => new { e.Created, e.FkUserId, e.FkBuzzerAllocationId, e.TypeCode })
 					.HasName("ix_podDispatchBuzzerAllocationTracking_FK_BuzzerAllocationId_TypeCode_includes");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkBuzzerAllocationId).HasColumnName("FK_BuzzerAllocationId");
 
@@ -5322,6 +5490,8 @@ namespace Amtrack.Amtrack_V2.Data
 					.IsRequired()
 					.HasMaxLength(255)
 					.IsUnicode(false);
+
+				entity.Property(e => e.Status).HasDefaultValueSql("((1))");
 
 				entity.HasOne(d => d.FkBranch)
 					.WithMany(p => p.Printers)
@@ -5410,7 +5580,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<ReservedStockAdjustmentTransactions>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FromWarehouse)
 					.IsRequired()
@@ -5462,7 +5634,9 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.HasIndex(e => new { e.DocumentNumber, e.JobCardId, e.Status, e.Type })
 					.HasName("ix_Rework_DocumentNumber_JobCardId_Status_Type");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DocumentNumber)
 					.IsRequired()
@@ -5540,7 +5714,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(255)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkReworkInstructionMasterBoxId).HasColumnName("FK_ReworkInstructionMasterBoxId");
 
@@ -5553,7 +5729,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<ReworkInstructionData>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkReworkInstructionId).HasColumnName("FK_ReworkInstructionId");
 
@@ -5574,7 +5752,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<ReworkInstructionLines>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkReworkInstructionMasterLineId).HasColumnName("FK_ReworkInstructionMasterLineId");
 
@@ -5606,7 +5786,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(255)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkReworkInstructionId).HasColumnName("FK_ReworkInstructionId");
 
@@ -5618,7 +5800,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<ReworkInstructionMasterLines>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkReworkInstructionId).HasColumnName("FK_ReworkInstructionId");
 
@@ -5646,7 +5830,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<ReworkInstructions>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkBusyWithUserId).HasColumnName("FK_BusyWithUserId");
 
@@ -5695,7 +5881,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(255)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DocumentNumber)
 					.IsRequired()
@@ -5722,7 +5910,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(64)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Document)
 					.HasMaxLength(255)
@@ -5786,9 +5976,11 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.HasKey(e => e.NotificationId);
 
-				entity.Property(e => e.NotificationId).ValueGeneratedNever();
+				entity.Property(e => e.NotificationId).HasDefaultValueSql("(newid())");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.EntityIdentifier)
 					.IsRequired()
@@ -5906,7 +6098,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 			modelBuilder.Entity<ShipmentDetail>(entity =>
 			{
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkShipmentId).HasColumnName("FK_ShipmentId");
 
@@ -5979,7 +6173,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(50)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.DestinationBranchCode)
 					.IsRequired()
@@ -6012,7 +6208,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.IsRequired()
 					.HasMaxLength(100);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkShippingServiceId).HasColumnName("FK_ShippingService_Id");
 
@@ -6041,7 +6239,9 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.HasKey(e => e.ConfigurationId);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkShippingProviderId).HasColumnName("FK_ShippingProvider_Id");
 
@@ -6064,7 +6264,9 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.HasKey(e => e.ShippingProviderId);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -6075,7 +6277,9 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.HasKey(e => e.RateId);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkShippingDestinationId).HasColumnName("FK_ShippingDestination_Id");
 
@@ -6090,7 +6294,9 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.HasKey(e => e.ShippingServiceId);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkShippingProviderId).HasColumnName("FK_ShippingProvider_Id");
 
@@ -6367,7 +6573,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(20)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Modified).HasColumnType("datetime");
 
@@ -6471,13 +6679,18 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.AudDate)
 					.HasColumnName("audDate")
-					.HasColumnType("datetime");
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
+
+				entity.Property(e => e.CostHeadwearExcl).HasDefaultValueSql("((0))");
 
 				entity.Property(e => e.DateAdded).HasColumnType("datetime");
 
 				entity.Property(e => e.DocumentNumber)
 					.IsRequired()
 					.HasMaxLength(50);
+
+				entity.Property(e => e.HeadwearExcl).HasDefaultValueSql("((0))");
 			});
 
 			modelBuilder.Entity<TurnoverTransfers>(entity =>
@@ -6580,7 +6793,9 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.PrimaryEmail).HasMaxLength(100);
 
-				entity.Property(e => e.SalesmanCode).HasMaxLength(10);
+				entity.Property(e => e.SalesmanCode)
+					.HasMaxLength(20)
+					.IsUnicode(false);
 
 				entity.Property(e => e.ScaleClientUrl)
 					.HasColumnName("SCALE_ClientUrl")
@@ -6719,7 +6934,7 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.HasKey(e => e.ReorderId);
 
-				entity.Property(e => e.ReorderId).ValueGeneratedNever();
+				entity.Property(e => e.ReorderId).HasDefaultValueSql("(newid())");
 
 				entity.Property(e => e.ItemCode)
 					.IsRequired()
@@ -6730,7 +6945,7 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.HasKey(e => e.NotificationId);
 
-				entity.Property(e => e.NotificationId).ValueGeneratedNever();
+				entity.Property(e => e.NotificationId).HasDefaultValueSql("(newid())");
 
 				entity.Property(e => e.RecipientEmail).HasMaxLength(1024);
 
@@ -6857,6 +7072,11 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.ActionDate).HasColumnType("date");
 
+				entity.Property(e => e.Brand)
+					.IsRequired()
+					.HasMaxLength(100)
+					.IsUnicode(false);
+
 				entity.Property(e => e.CustomerReference)
 					.IsRequired()
 					.HasMaxLength(100)
@@ -6923,6 +7143,11 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(20)
 					.IsUnicode(false);
 
+				entity.Property(e => e.Brand)
+					.IsRequired()
+					.HasMaxLength(100)
+					.IsUnicode(false);
+
 				entity.Property(e => e.CurrentWarehouse)
 					.IsRequired()
 					.HasMaxLength(3)
@@ -6967,6 +7192,8 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.Property(e => e.InvoiceNumber)
 					.HasMaxLength(50)
 					.IsUnicode(false);
+
+				entity.Property(e => e.TotalBoxes).HasDefaultValueSql("((0))");
 			});
 
 			modelBuilder.Entity<WdbRecentCreditNotes>(entity =>
@@ -6983,6 +7210,11 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.Property(e => e.AccountNumber)
 					.IsRequired()
 					.HasMaxLength(20)
+					.IsUnicode(false);
+
+				entity.Property(e => e.Brand)
+					.IsRequired()
+					.HasMaxLength(100)
 					.IsUnicode(false);
 
 				entity.Property(e => e.CustomerReference)
@@ -7025,7 +7257,9 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.HasIndex(e => new { e.Id, e.FkWmsDocumentBoxId, e.Created, e.ItemCode, e.Quantity, e.Type, e.Status, e.Flags, e.FkWmsDocumentBoxMasterDetailId })
 					.HasName("ix_wmsDocumentBoxDetail_FK_WmsDocumentBoxMasterDetailId_includes");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkWmsDocumentBoxId).HasColumnName("FK_wmsDocumentBoxId");
 
@@ -7069,7 +7303,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(255)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkLocationId).HasColumnName("FK_LocationId");
 
@@ -7106,22 +7342,26 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.Property(e => e.HeightUnit)
 					.HasColumnName("Height_Unit")
 					.HasMaxLength(50)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('cm')");
 
 				entity.Property(e => e.LengthUnit)
 					.HasColumnName("Length_Unit")
 					.HasMaxLength(50)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('cm')");
 
 				entity.Property(e => e.WeightUnit)
 					.HasColumnName("Weight_Unit")
 					.HasMaxLength(50)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('kg')");
 
 				entity.Property(e => e.WidthUnit)
 					.HasColumnName("Width_Unit")
 					.HasMaxLength(50)
-					.IsUnicode(false);
+					.IsUnicode(false)
+					.HasDefaultValueSql("('cm')");
 
 				entity.HasOne(d => d.FkWmsDocumentBox)
 					.WithMany(p => p.WmsDocumentBoxInfo)
@@ -7259,7 +7499,8 @@ namespace Amtrack.Amtrack_V2.Data
 
 				entity.Property(e => e.WmsImportDate)
 					.HasColumnName("WMS_ImportDate")
-					.HasColumnType("datetime");
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.WmsPickComplete).HasColumnName("WMS_PickComplete");
 
@@ -7284,7 +7525,9 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.HasIndex(e => new { e.Id, e.FkWmsDocumentId, e.ItemCode, e.Created, e.PickedQuantity, e.Quantity, e.Type, e.Status, e.Flags, e.FkWmsDocumentMasterLineId })
 					.HasName("ix_wmsDocumentLines_FK_wmsDocumentMasterLineId_includes");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkWmsDocumentId).HasColumnName("FK_wmsDocumentId");
 
@@ -7347,7 +7590,9 @@ namespace Amtrack.Amtrack_V2.Data
 				entity.HasIndex(e => new { e.Id, e.FkDocumentId, e.Status, e.Flags, e.Type })
 					.HasName("ix_wmsDocuments_Type_includes");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.CustomerCode)
 					.HasMaxLength(255)
@@ -7406,7 +7651,9 @@ namespace Amtrack.Amtrack_V2.Data
 					.HasMaxLength(255)
 					.IsUnicode(false);
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkLocationId).HasColumnName("FK_LocationId");
 
@@ -7439,7 +7686,9 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.ToTable("wmsStagingLocationSessions");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.FkFromLocationId).HasColumnName("FK_FromLocationId");
 
@@ -7458,7 +7707,9 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.ToTable("wmsStagingLocationSessionTracking");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Description)
 					.IsRequired()
@@ -7487,7 +7738,9 @@ namespace Amtrack.Amtrack_V2.Data
 			{
 				entity.ToTable("wmsTracking");
 
-				entity.Property(e => e.Created).HasColumnType("datetime");
+				entity.Property(e => e.Created)
+					.HasColumnType("datetime")
+					.HasDefaultValueSql("(getdate())");
 
 				entity.Property(e => e.Description)
 					.IsRequired()

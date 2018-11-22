@@ -4,6 +4,7 @@ using Amtrack.Background.Cache.Service.BackgroundCacheServices;
 using Amtrack.Cache.Store;
 using Amtrack.DependencyInjection;
 using Amtrack.Logger;
+using Amtrack.Models.Cache;
 
 namespace Amtrack.Background.Cache.Service
 {
@@ -28,8 +29,7 @@ namespace Amtrack.Background.Cache.Service
 
 			backgroundService.Init(new List<IAsyncCacheService>
 			{
-				//new AsyncCacheService<ICacheModel>(cacheStore,_amtrackLogger, true,"Users", "GetUserCacheModel"),
-			   // new AsyncCacheService<ICacheModel>(cacheStore,_amtrackLogger, true,"Inventory", "GetInventoryCacheModel"),
+			   new AsyncCacheService<ICacheModel>(cacheStore,_amtrackLogger, true,"Users", "GetUserCacheModel"),
 			   new AsyncInventoryCacheService(cacheStore, _amtrackLogger, true, "GetInventoryCacheModel")
 			});
 

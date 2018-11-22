@@ -194,8 +194,14 @@ namespace Amtrack.Cache.SDK
 					})
 					.Where(w =>
 					{
+						if(w.values == null)
+							return false;
+
 						Func<ConnectionValue, bool> predicate = (a) =>
 						{
+							if(w.values[a.Field] == null)
+								return false;
+
 							switch(a.ConnectionValueType)
 							{
 								case ConnectionValueType.Contains:

@@ -35,10 +35,10 @@ namespace Amtrack.Cache.SDK
 				{
 					values = cacheStore.Get<T>(keys);
 
+					RemoveAllExpiredInternal<T>();
+
 					if(values.Any())
 						internalCacheStore.SetAll((IEnumerable<object>)values);
-
-					RemoveAllExpiredInternal<T>();
 				}
 
 				return values;
@@ -59,10 +59,11 @@ namespace Amtrack.Cache.SDK
 				{
 					value = cacheStore.Get<T>(key);
 
+					RemoveAllExpiredInternal<T>();
+
 					if(value != null)
 						internalCacheStore.Set<T>(key, value);
 
-					RemoveAllExpiredInternal<T>();
 				}
 
 				return value;
@@ -83,10 +84,11 @@ namespace Amtrack.Cache.SDK
 				{
 					values = cacheStore.GetAll<T>();
 
+					RemoveAllExpiredInternal<T>();
+
 					if(values.Any())
 						internalCacheStore.SetAll((IEnumerable<object>)values, typeof(T).Name);
 
-					RemoveAllExpiredInternal<T>();
 				}
 
 				return values;
@@ -111,10 +113,11 @@ namespace Amtrack.Cache.SDK
 				{
 					values = cacheStore.Get<T>(keys.ToArray());
 
+					RemoveAllExpiredInternal<T>();
+
 					if(values.Any())
 						internalCacheStore.SetAll((IEnumerable<object>)values, key);
 
-					RemoveAllExpiredInternal<T>();
 				}
 
 				return values;

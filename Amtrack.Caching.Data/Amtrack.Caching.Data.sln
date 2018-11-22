@@ -39,7 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.DependencyInjection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Cache.Test", "Amtrack.Cache.Test\Amtrack.Cache.Test.csproj", "{AEBB8C9C-01EF-47C5-AD9C-3AF114494999}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Cache.Models", "Amtrack.Cache.Models\Amtrack.Cache.Models.csproj", "{74EB5DE1-80BA-4F1C-A56F-10AF587CA5D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Cache.Models", "Amtrack.Cache.Models\Amtrack.Cache.Models.csproj", "{74EB5DE1-80BA-4F1C-A56F-10AF587CA5D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.AddMigration", "Amtrack.AddMigration\Amtrack.AddMigration.csproj", "{3D801981-7774-4CC3-A605-2A0603B951EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -201,6 +203,14 @@ Global
 		{74EB5DE1-80BA-4F1C-A56F-10AF587CA5D6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{74EB5DE1-80BA-4F1C-A56F-10AF587CA5D6}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
 		{74EB5DE1-80BA-4F1C-A56F-10AF587CA5D6}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
+		{3D801981-7774-4CC3-A605-2A0603B951EA}.Debug - Test Servers|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D801981-7774-4CC3-A605-2A0603B951EA}.Debug - Test Servers|Any CPU.Build.0 = Debug|Any CPU
+		{3D801981-7774-4CC3-A605-2A0603B951EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D801981-7774-4CC3-A605-2A0603B951EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D801981-7774-4CC3-A605-2A0603B951EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D801981-7774-4CC3-A605-2A0603B951EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D801981-7774-4CC3-A605-2A0603B951EA}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D801981-7774-4CC3-A605-2A0603B951EA}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
