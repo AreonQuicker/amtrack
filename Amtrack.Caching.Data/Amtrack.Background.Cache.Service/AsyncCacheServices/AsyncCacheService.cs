@@ -12,14 +12,14 @@ namespace Amtrack.Background.Cache.Service.AsyncCacheServices
 {
 	public class AsyncCacheService<T> : BaseAsyncCacheService where T : ICacheModel
 	{
-		private readonly string[] methods;
+		private readonly MethodInfo[] methods;
 
 		public AsyncCacheService(
 		  ICacheStore cacheStore,
 		  IAmtrackLogger logger,
 		  bool synchronous,
 		  string serviceName,
-		  params string[] methods)
+		  params MethodInfo[] methods)
 		   : base(cacheStore, logger, synchronous, serviceName)
 		{
 			this.methods = methods;
@@ -37,7 +37,7 @@ namespace Amtrack.Background.Cache.Service.AsyncCacheServices
 				{
 					logger.LogInfo($"Saving Cache For Service {ServiceName} On Method {method} - Start");
 
-					var methodInfo = type.GetMethod(method);
+					var methodInfo = type.GetMethod(method.MethodName);
 
 					if(methodInfo != null)
 					{
@@ -45,16 +45,37 @@ namespace Amtrack.Background.Cache.Service.AsyncCacheServices
 
 						var propertyTypes = result.GetType().GetProperties();
 
-						foreach(var propertyType in propertyTypes)
+						var propertyInfos = (from p in propertyTypes
+											 from pi in (method.PropertyInfos ?? new List<PropertyInfo>())
+											 .Where(w => w.PropertyName == p.Name).DefaultIfEmpty()
+											 select new
+											 {
+												 Property = p,
+												 PropertyType = p.PropertyType,
+												 PropertyName = p.Name,
+												 ConnectionFields = pi?.ConnectionFields
+											 })
+											 .ToList();
+
+						foreach(var propertyInfo in propertyInfos)
 						{
-							var propertyValue = propertyType.GetValue(result, null);
+							var propertyValue = propertyInfo.Property.GetValue(result, null);
 
 							if(propertyValue != null
 								&& propertyValue is IEnumerable<object>)
 							{
-								var values = ((IEnumerable<object>)propertyValue);						
+								var values = ((IEnumerable<object>)propertyValue);
 
-								cacheStore.SetAll(values);
+								Action<bool> action = (multiple) =>
+								{
+									if(propertyInfo.ConnectionFields != null
+									&& propertyInfo.ConnectionFields.Any())
+										cacheStore.SetAll(values, propertyInfo.ConnectionFields.ToArray(), multiple);
+									else
+										cacheStore.SetAll(values, multiple);
+								};
+
+								RetryAction(action, 2);
 							}
 						}
 					}
@@ -78,7 +99,7 @@ namespace Amtrack.Background.Cache.Service.AsyncCacheServices
 				{
 					logger.LogInfo($"Deleting Cache For Service {ServiceName} On Method {method} - Start");
 
-					var methodInfo = type.GetMethod(method);
+					var methodInfo = type.GetMethod(method.MethodName);
 
 					if(methodInfo != null)
 					{

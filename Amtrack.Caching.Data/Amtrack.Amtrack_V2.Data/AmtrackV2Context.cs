@@ -697,8 +697,8 @@ namespace Amtrack.Amtrack_V2.Data
 					.OnDelete(DeleteBehavior.ClientSetNull)
 					.HasConstraintName("FK_Accounts_AccountBalances");
 
-				entity.HasOne(d => d.FkMasterAccount)
-					.WithMany(p => p.InverseFkMasterAccount)
+				entity.HasOne(d => d.MasterAccount)
+					.WithMany(p => p.SubAccounts)
 					.HasForeignKey(d => d.FkMasterAccountId)
 					.HasConstraintName("FK_Accounts_Accounts");
 

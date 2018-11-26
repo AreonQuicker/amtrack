@@ -14,14 +14,14 @@ namespace Amtrack.Cache.Store
 		void Set(object value);
 		void Set<T>(string key, T value);
 
-		void SetAll(IEnumerable<object> values);
-		void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values);
+		void SetAll(IEnumerable<object> values, bool addMultiple);
+		void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, bool addMultiple);
 
 		void Set(object value, string[] connectionsFields);
 		void Set<T>(string key, T value, string[] connectionsFields);
 
-		void SetAll(IEnumerable<object> values, string[] connectionsFields);
-		void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, string[] connectionsFields);
+		void SetAll(IEnumerable<object> values, string[] connectionsFields, bool addMultiple);
+		void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, string[] connectionsFields, bool addMultiple);
 
 		IList<T> GetAll<T>();
 		IList<T> GetAll<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues);

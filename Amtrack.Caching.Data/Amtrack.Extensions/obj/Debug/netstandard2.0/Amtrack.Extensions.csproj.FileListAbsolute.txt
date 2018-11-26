@@ -20,10 +20,6 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\ne
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.csproj.CopyComplete
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.dll
 C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.csprojAssemblyReference.cache
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.csproj.CoreCompileInputs.cache
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.AssemblyInfoInputs.cache
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.AssemblyInfo.cs
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Debug\netstandard2.0\Amtrack.Extensions.deps.json
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Debug\netstandard2.0\Amtrack.Extensions.dll
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Debug\netstandard2.0\Amtrack.Extensions.pdb
@@ -39,6 +35,10 @@ C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Debug\n
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Debug\netstandard2.0\Amtrack.Caching.Data.pdb
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Debug\netstandard2.0\Amtrack.StockCheck.Data.pdb
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Debug\netstandard2.0\Amtrack.ValueObjects.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.csprojAssemblyReference.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.csproj.CoreCompileInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.AssemblyInfoInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.AssemblyInfo.cs
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.csproj.CopyComplete
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.dll
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Debug\netstandard2.0\Amtrack.Extensions.pdb

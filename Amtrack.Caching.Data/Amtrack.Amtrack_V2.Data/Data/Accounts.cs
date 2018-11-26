@@ -12,7 +12,7 @@ namespace Amtrack.Amtrack_V2.Data.Data
 			AccountAttributes = new HashSet<AccountAttributes>();
 			AccountContactNumbers = new HashSet<AccountContactNumbers>();
 			AccountContacts = new HashSet<AccountContacts>();
-			InverseFkMasterAccount = new HashSet<Accounts>();
+			SubAccounts = new HashSet<Accounts>();
 		}
 
 		public int Id { get; set; }
@@ -33,7 +33,7 @@ namespace Amtrack.Amtrack_V2.Data.Data
 		public int? XfxHostId { get; set; }
 
 		public AccountBalances FkAccountBalance { get; set; }
-		public Accounts FkMasterAccount { get; set; }
+		public Accounts MasterAccount { get; set; }
 		public TaxRates TaxRate { get; set; }
 		public AccountCreditLimitSettings AccountCreditLimitSettings { get; set; }
 		public ICollection<AccountAccountManagers> AccountAccountManagers { get; set; }
@@ -41,6 +41,6 @@ namespace Amtrack.Amtrack_V2.Data.Data
 		public ICollection<AccountAttributes> AccountAttributes { get; set; }
 		public ICollection<AccountContactNumbers> AccountContactNumbers { get; set; }
 		public ICollection<AccountContacts> AccountContacts { get; set; }
-		public ICollection<Accounts> InverseFkMasterAccount { get; set; }
+		public ICollection<Accounts> SubAccounts { get; set; }
 	}
 }

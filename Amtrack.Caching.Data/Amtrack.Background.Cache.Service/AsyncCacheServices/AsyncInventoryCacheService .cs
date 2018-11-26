@@ -36,13 +36,19 @@ namespace Amtrack.Background.Cache.Service.AsyncCacheServices
 
 			var inventoryItemValues = inventoryCacheModel.InventoryItems
 				.ToDictionary(d => d.CacheKey, d => d);
+			RetryAction((multiple) => cacheStore.SetAll<InventoryItemVO>(inventoryItemValues, new string[] { "BaseItemCode", "ItemCode", "Colour" }, multiple),
+				2);
 
-			cacheStore.SetAll<InventoryItemVO>(inventoryItemValues, new string[] { "BaseItemCode", "ItemCode", "Colour" });
-			cacheStore.SetAll(inventoryCacheModel.Groups);
-			cacheStore.SetAll(inventoryCacheModel.InventoryPricing);
-			cacheStore.SetAll(inventoryCacheModel.InventorySets);
-			cacheStore.SetAll(inventoryCacheModel.PriceLists);
-			cacheStore.SetAll(inventoryCacheModel.EmbroideryPricing);
+			RetryAction((multiple) => cacheStore.SetAll(inventoryCacheModel.Groups, multiple), 2);
+
+			RetryAction((multiple) => cacheStore.SetAll(inventoryCacheModel.InventoryPricing, multiple),
+				2);
+
+			RetryAction((multiple) => cacheStore.SetAll(inventoryCacheModel.InventorySets, multiple), 2);
+
+			RetryAction((multiple) => cacheStore.SetAll(inventoryCacheModel.PriceLists, multiple), 2);
+
+			RetryAction((multiple) => cacheStore.SetAll(inventoryCacheModel.EmbroideryPricing, multiple), 2);
 
 			logger.LogInfo($"Saving Cache For Service {ServiceName} On Method {"GetInventoryCacheModel"} - Complete");
 

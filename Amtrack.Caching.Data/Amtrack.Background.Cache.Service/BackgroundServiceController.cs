@@ -29,7 +29,8 @@ namespace Amtrack.Background.Cache.Service
 
 			backgroundService.Init(new List<IAsyncCacheService>
 			{
-			   new AsyncCacheService<ICacheModel>(cacheStore,_amtrackLogger, true,"Users", "GetUserCacheModel"),
+			   new AsyncCacheService<ICacheModel>(cacheStore,_amtrackLogger, true,"Users", new MethodInfo{ MethodName = "GetUserCacheModel" } ),
+			   new AsyncCacheService<ICacheModel>(cacheStore,_amtrackLogger, true,"Accounts", new MethodInfo{ MethodName = "GetAccountCacheModel" }),
 			   new AsyncInventoryCacheService(cacheStore, _amtrackLogger, true, "GetInventoryCacheModel")
 			});
 

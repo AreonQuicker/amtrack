@@ -18,7 +18,7 @@ namespace Amtrack.Cache.Test
 				[ConfigurationType.Host] = "127.0.0.1:6379"
 			};
 
-			ICacheSDK cacheSDK = new CacheSDK(configurations, true, false);
+			ICacheSDK cacheSDK = new CacheSDK(configurations, true, true);
 
 			var NOnitem = cacheSDK.Get<InventoryItemVO>("BAG-30dsda00");
 
@@ -31,11 +31,6 @@ namespace Amtrack.Cache.Test
 				ConnectionValueType = ConnectionValueType.StartsWith,
 				Field = "BaseItemCode",
 				Value = "BAG-612"
-			}, new ConnectionValue
-			{
-				ConnectionValueType = ConnectionValueType.StartsWith,
-				Field = "Colour",
-				Value = "BL"
 			});
 
 			var items2 = cacheSDK.GetAll<InventoryItemVO>(ConnectionType.And, new ConnectionValue
@@ -43,11 +38,6 @@ namespace Amtrack.Cache.Test
 				ConnectionValueType = ConnectionValueType.StartsWith,
 				Field = "BaseItemCode",
 				Value = "BAG-612"
-			}, new ConnectionValue
-			{
-				ConnectionValueType = ConnectionValueType.StartsWith,
-				Field = "Colour",
-				Value = "BL"
 			});
 
 			var items3 = cacheSDK.GetAll<InventoryItemVO>(ConnectionType.And, new ConnectionValue
@@ -55,11 +45,6 @@ namespace Amtrack.Cache.Test
 				ConnectionValueType = ConnectionValueType.StartsWith,
 				Field = "BaseItemCode",
 				Value = "BAG-612fdsadas"
-			}, new ConnectionValue
-			{
-				ConnectionValueType = ConnectionValueType.StartsWith,
-				Field = "Colour",
-				Value = "BLfdas"
 			});
 
 			var items4 = cacheSDK.GetAll<InventoryItemVO>(ConnectionType.And, new ConnectionValue
@@ -68,6 +53,10 @@ namespace Amtrack.Cache.Test
 				Field = "fdfsd",
 				Value = "BAG-612fdsadas"
 			});
+
+			var accounts = cacheSDK.GetAll<ValueObjects.Accounts.AccountMasterVO>();
+
+			var accounts2 = cacheSDK.GetAll<ValueObjects.Accounts.AccountMasterVO>();
 
 		}
 	}

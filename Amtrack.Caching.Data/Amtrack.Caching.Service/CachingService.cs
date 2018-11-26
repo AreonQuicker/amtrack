@@ -51,7 +51,6 @@ namespace Amtrack.Caching.Service
 			inventoryCacheModel.EmbroideryPricing = inventoryCacheController.GetEmbroideryPricingVOs();
 			inventoryCacheModel.InventoryPricing = inventoryCacheController.GetInventoryPricingVOs();
 			inventoryCacheModel.InventoryItems = inventoryCacheController.GetInventoryItemVOs();
-			//inventoryCacheModel.InventoryItems.AddRange(inventoryCacheController.GetInventoryStockSetItemVOs());
 			inventoryCacheModel.InventorySets = inventoryCacheController.GetInventorySetVOs();
 
 			return inventoryCacheModel;
@@ -64,6 +63,11 @@ namespace Amtrack.Caching.Service
 				Accounts = new List<ValueObjects.Accounts.AccountMasterVO>(),
 				TaxRates = new List<ValueObjects.Accounts.TaxRateVO>()
 			};
+
+			var accountCacheController = AccountCacheController.Instance(cachingRepository, lazyLoaderController);
+
+			accountCacheModel.TaxRates = accountCacheController.GetTaxRateVOs();
+			accountCacheModel.Accounts = accountCacheController.GetAccountsVOs();
 
 			return accountCacheModel;
 		}

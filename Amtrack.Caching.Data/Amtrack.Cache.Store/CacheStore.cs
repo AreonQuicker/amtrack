@@ -186,7 +186,7 @@ namespace Amtrack.Cache.Store
 			}
 		}
 
-		public override void SetAll(IEnumerable<object> values)
+		public override void SetAll(IEnumerable<object> values, bool addMultiple)
 		{
 			lock(lockObject)
 			{
@@ -195,27 +195,43 @@ namespace Amtrack.Cache.Store
 				if(!mainCacheDictionary.ContainsKey(TypeKey(type.Name)))
 					mainCacheDictionary.Add(TypeKey(type.Name), type);
 
+				var cacheDictionaryInstance = CacheDictionaryInstance(type);
+
 				var redisValues =
 					 values
 					 .AsParallel()
 					 .Select(s => new KeyValuePair<string, object>(Key(s.GetValue("CacheKey"), type.Name), s));
 
-				CacheDictionaryInstance(type).AddMultiple(redisValues);
+				if(addMultiple)
+					cacheDictionaryInstance.AddMultiple(redisValues);
+				else
+				{
+					foreach(var redisValue in redisValues)
+						cacheDictionaryInstance.Add(redisValue);
+				}
 			}
 		}
 
-		public override void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values)
+		public override void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, bool addMultiple)
 		{
 			lock(lockObject)
 			{
 				if(!mainCacheDictionary.ContainsKey(TypeKey<T>()))
 					mainCacheDictionary.Add(TypeKey<T>(), typeof(T));
 
+				var cacheDictionaryInstance = CacheDictionaryInstance<T>();
+
 				values = values
 					.AsParallel()
 					.Select(s => new KeyValuePair<string, T>(Key<T>(s.Key), s.Value));
 
-				CacheDictionaryInstance<T>().AddMultiple(values);
+				if(addMultiple)
+					cacheDictionaryInstance.AddMultiple(values);
+				else
+				{
+					foreach(var value in values)
+						cacheDictionaryInstance.Add(value);
+				}
 			}
 		}
 
@@ -286,7 +302,7 @@ namespace Amtrack.Cache.Store
 			}
 		}
 
-		public override void SetAll(IEnumerable<object> values, string[] connectionsFields)
+		public override void SetAll(IEnumerable<object> values, string[] connectionsFields, bool addMultiple)
 		{
 			lock(lockObject)
 			{
@@ -297,39 +313,49 @@ namespace Amtrack.Cache.Store
 
 				var connectionCacheDictionary = ConnectionCacheDictionaryInstance(type);
 
-				Parallel.ForEach(connectionsFields.Distinct(), (connectionsField) =>
-				{
-					var gValues = values
-					.GroupBy(g => g.GetValue(connectionsField))
-					.Select(s => new { connectionsFieldValue = s.Key, keys = s.Select(ss => ss.GetValue("CacheKey")) })
+				var cacheDictionaryInstance = CacheDictionaryInstance(type);
+
+				var gValues = connectionsFields
+					.AsParallel()
+					.Select(c =>
+					{
+						return values
+							.GroupBy(g => LinkKey(c, g.GetValue(c)))
+							.Where(w => w.Key != null)
+							.Select(s =>
+							{
+								return new
+								{
+									key = s.Key,
+									values = s.Select(ss => ss.GetValue("CacheKey")).ToList()
+								};
+							})
+							.ToList();
+
+					})
+					.SelectMany(s => s)
+					.GroupBy(g => g.key)
+					.Select(s => new KeyValuePair<string, List<string>>(s.Key, s.SelectMany(ss => ss.values).ToList()))
 					.ToList();
 
-					foreach(var gValue in gValues)
-					{
-						var linkKey = LinkKey(connectionsField, gValue.connectionsFieldValue);
-
-						var redisValue = connectionCacheDictionary.GetValue(linkKey);
-
-						if(redisValue == null)
-							redisValue = new List<string>();
-
-						redisValue.AddRange(gValue.keys);
-
-						connectionCacheDictionary.Add(linkKey, redisValue.Distinct().ToList());
-					}
-
-				});
+				connectionCacheDictionary.AddMultiple(gValues);
 
 				var redisValues =
 					 values
 					 .AsParallel()
 					 .Select(s => new KeyValuePair<string, object>(Key(s.GetValue("CacheKey"), type.Name), s));
 
-				CacheDictionaryInstance(type).AddMultiple(redisValues);
+				if(addMultiple)
+					cacheDictionaryInstance.AddMultiple(redisValues);
+				else
+				{
+					foreach(var redisValue in redisValues)
+						cacheDictionaryInstance.Add(redisValue);
+				}
 			}
 		}
 
-		public override void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, string[] connectionsFields)
+		public override void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, string[] connectionsFields, bool addMultiple)
 		{
 			lock(lockObject)
 			{
@@ -338,33 +364,44 @@ namespace Amtrack.Cache.Store
 
 				var connectionCacheDictionary = ConnectionCacheDictionaryInstance<T>();
 
-				Parallel.ForEach(connectionsFields.Distinct(), (connectionsField) =>
-				{
-					var gValues = values
-					.GroupBy(g => g.Value.GetValue(connectionsField))
-					.Select(s => new { connectionsFieldValue = s.Key, keys = s.Select(ss => ss.Key) })
+				var cacheDictionaryInstance = CacheDictionaryInstance<T>();
+
+				var gValues = connectionsFields
+					.AsParallel()
+					.Select(c =>
+					{
+						return values
+							.GroupBy(g => LinkKey(c, g.Value.GetValue(c)))
+							.Where(w => w.Key != null)
+							.Select(s =>
+							{
+								return new
+								{
+									key = s.Key,
+									values = s.Select(ss => ss.Key).ToList()
+								};
+							})
+							.ToList();
+
+					})
+					.SelectMany(s => s)
+					.GroupBy(g => g.key)
+					.Select(s => new KeyValuePair<string, List<string>>(s.Key, s.SelectMany(ss => ss.values).ToList()))
 					.ToList();
 
-					foreach(var gValue in gValues)
-					{
-						var linkKey = LinkKey(connectionsField, gValue.connectionsFieldValue);
-
-						var redisValue = connectionCacheDictionary.GetValue(linkKey);
-
-						if(redisValue == null)
-							redisValue = new List<string>();
-
-						redisValue.AddRange(gValue.keys);
-
-						connectionCacheDictionary.Add(linkKey, redisValue.Distinct().ToList());
-					}
-				});
+				connectionCacheDictionary.AddMultiple(gValues);
 
 				values = values
 					.AsParallel()
 					.Select(s => new KeyValuePair<string, T>(Key<T>(s.Key), s.Value));
 
-				CacheDictionaryInstance<T>().AddMultiple(values);
+				if(addMultiple)
+					cacheDictionaryInstance.AddMultiple(values);
+				else
+				{
+					foreach(var value in values)
+						cacheDictionaryInstance.Add(value);
+				}
 			}
 		}
 

@@ -45,10 +45,20 @@ namespace Amtrack.Caching.Service
 
 		public List<AccountMasterVO> GetAccountsVOs()
 		{
-			var accounts = _cachingRepository.GetAllAccounts("");
+			var accounts = _cachingRepository.GetAllAccounts("TaxRate", "AccountAccountManagers", "MasterAccount");
 
 			return accounts
-				.Select(s => s.ToAccountMasterVO(lazyLoaderController.StockPriceLists.Value[s.FkPricelistId]))
+				.Select(s =>
+				{
+					var masterAccount = s.MasterAccount;
+					var masterAccountPriceList = masterAccount != null
+					? lazyLoaderController.StockPriceLists.Value[s.MasterAccount.FkPricelistId]
+					: null;
+
+					return s.ToAccountMasterVO(lazyLoaderController.StockPriceLists.Value[s.FkPricelistId], masterAccount
+					 , masterAccountPriceList);
+				}
+				)
 				.ToList();
 		}
 		#endregion

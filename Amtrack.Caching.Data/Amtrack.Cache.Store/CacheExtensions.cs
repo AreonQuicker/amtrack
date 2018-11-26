@@ -46,10 +46,10 @@ namespace Amtrack.Cache.Store
 
 		public static string GetValue(this object value, string property)
 		{
-			var eProperty = value.GetType().GetProperty(property, typeof(string));
+			var eProperty = value.GetType()?.GetProperty(property, typeof(string));
 
 			if(eProperty != null)
-				return eProperty.GetValue(value).ToString();
+				return eProperty.GetValue(value)?.ToString();
 
 			return null;
 		}

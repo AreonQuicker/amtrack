@@ -19,7 +19,8 @@ namespace Amtrack.Caching.Service
 		private readonly LazyLoaderController _lazyLoaderController;
 		#endregion
 
-		public InventoryCacheController(ICachingRepository cachingRepository, LazyLoaderController lazyLoaderController)
+		public InventoryCacheController(ICachingRepository cachingRepository,
+			LazyLoaderController lazyLoaderController)
 		{
 			_cachingRepository = cachingRepository;
 			_lazyLoaderController = lazyLoaderController;
@@ -167,45 +168,53 @@ namespace Amtrack.Caching.Service
 		#region Public Methods
 		public List<InventoryItemVO> GetInventoryItemVOs()
 		{
-			//TODO
-			return _lazyLoaderController.CatalogueItems.Value
-				.AsParallel()
-				.Select(s =>
-				{
-					return GetInventoryItemVO(s.Value, true);
-				})
-				//.Where(s => s.DefaultBrand != null)
-				.ToList();
-		}
+			var inventoryItemDVOs = _lazyLoaderController.CatalogueItems.Value
+			.AsParallel()
+			.Select(s =>
+			{
+				return GetInventoryItemVO(s.Value, true);
+			})
+			.Where(s => s.DefaultBrand != null)
+			.ToDictionary(d => d.ItemCode, d => d);
 
-		public List<InventoryItemVO> GetInventoryStockSetItemVOs()
-		{
-			return _lazyLoaderController.StockSets.Value
-				.Where(w => (w.Flags & (int)StockSetFlags.VirtualItem) != 0
-			   || (w.Flags & (int)StockSetFlags.MixedParts) != 0
-			   || (w.Flags & (int)StockSetFlags.MixedComponents) != 0)
-			   .Select(s => new InventoryItemVO
-			   {
-				   Id = -99,
-				   BaseItemCode = s.BaseCode,
-				   ItemCode = s.ItemCode,
-				   ALPCategory = string.Empty,
-				   Colour = s.Colour,
-				   Size = s.Size,
-				   DangerousGoods = false,
-				   Description = s.Description,
-				   HasSampleQuantityException = false,
-				   HighValue = false,
-				   InventoryType = InventoryType.Gift,
-				   InvoiceVisible = true,
-				   OnPromotion = false,
-				   QuoteVisible = true,
-				   WarehouseItem = true,
-				   Flags = StockInventoryMasterFlags.Active,
-				   Group = null,
-				   SetInfo = GetInventorySetVO(s)
-			   })
-			   .ToList();
+			var setInventoryItemDVOs = _lazyLoaderController.StockSets.Value
+			   .AsParallel()
+			   .Where(w => (w.Flags & (int)StockSetFlags.VirtualItem) != 0
+			  || (w.Flags & (int)StockSetFlags.MixedParts) != 0
+			  || (w.Flags & (int)StockSetFlags.MixedComponents) != 0)
+			  .Select(s => new InventoryItemVO
+			  {
+				  Id = -99,
+				  BaseItemCode = s.BaseCode,
+				  ItemCode = s.ItemCode,
+				  ALPCategory = string.Empty,
+				  Colour = s.Colour,
+				  Size = s.Size,
+				  DangerousGoods = false,
+				  Description = s.Description,
+				  HasSampleQuantityException = false,
+				  HighValue = false,
+				  InventoryType = InventoryType.Gift,
+				  InvoiceVisible = true,
+				  OnPromotion = false,
+				  QuoteVisible = true,
+				  WarehouseItem = true,
+				  Flags = StockInventoryMasterFlags.Active,
+				  Group = null,
+				  SetInfo = GetInventorySetVO(s),
+				  Brands = inventoryItemDVOs.ContainsKey(s.ItemCode)
+				  ? inventoryItemDVOs[s.ItemCode]?.Brands
+				  : inventoryItemDVOs.Values.FirstOrDefault(f => f.BaseItemCode == s.BaseCode)?.Brands
+			  })
+			  .Where(s => s.DefaultBrand != null)
+			  .ToDictionary(d => d.ItemCode, d => d);
+
+			var iventoryItemVOs = inventoryItemDVOs
+				.Where(w => !setInventoryItemDVOs.ContainsKey(w.Key))
+				.Select(s => s.Value)
+				.ToList();
+
+			return iventoryItemVOs;
 		}
 
 		public List<GroupVO> GetGroupVOs()

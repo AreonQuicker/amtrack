@@ -30,6 +30,31 @@ namespace Amtrack.Background.Cache.Service.AsyncCacheServices
 			this.ServiceName = serviceName;
 		}
 
+		#region Protected Methods
+		protected void RetryAction(Action<bool> action, int totalRetryCount)
+		{
+			int retryCount = 0;
+			while(retryCount <= totalRetryCount)
+			{
+				try
+				{
+					if((retryCount + 1) == totalRetryCount)
+						action(false);
+					else
+						action(true);
+
+					break;
+				}
+				catch(Exception ex)
+				{
+					retryCount++;
+					if(retryCount == totalRetryCount)
+						throw;
+				}
+			}
+		}
+		#endregion
+
 		#region Public Methods
 		public async Task<(bool, string, Exception)> DeleteDataAsync(CancellationToken cancellationToken)
 		{

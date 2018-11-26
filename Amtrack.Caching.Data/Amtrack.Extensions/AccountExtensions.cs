@@ -24,7 +24,8 @@ namespace Amtrack.Extensions
 			};
 		}
 
-		public static ValueObjects.Accounts.AccountMasterVO ToAccountMasterVO(this Accounts account, StockPricelists dbPricelist)
+		public static ValueObjects.Accounts.AccountMasterVO ToAccountMasterVO(this Accounts account, StockPricelists priceList,
+			Accounts masterAccount, StockPricelists masterAccountPriceList)
 		{
 			var accountAccountManagers = account.AccountAccountManagers;
 
@@ -46,7 +47,8 @@ namespace Amtrack.Extensions
 				Flags = (Enumeration.AccountFlags)account.Flags,
 				//TaxNumber = dbAccount.VatNumber(),
 				WebUrl = account.WebAddress,
-				AccountAccountManagers = accountAccountManagers.Select(s => s.ToAccountAccountManagerVO()).ToList()
+				AccountAccountManagers = accountAccountManagers.Select(s => s.ToAccountAccountManagerVO()).ToList(),
+				MasterAccount = masterAccount?.ToAccountMasterVO(masterAccountPriceList, null, null)
 			};
 
 			voAccount.TaxRate = new TaxRateVO
@@ -61,22 +63,25 @@ namespace Amtrack.Extensions
 				HostId = account.TaxRate.XfxHostId
 			};
 
-			voAccount.PriceList = new ValueObjects.OrderEntry.PriceListVO
+			if(priceList != null)
 			{
-				CompanyCode = dbPricelist.CompanyCode,
-				CurrencyCode = dbPricelist.CurrencyCode,
-				CurrencyName = dbPricelist.CurrencyName,
-				CurrencySymbol = dbPricelist.CurrencySymbol,
-				DateCreated = dbPricelist.Created,
-				DateLastModified = dbPricelist.Modified ?? dbPricelist.Created,
-				DisplayIndex = dbPricelist.DisplayIndex,
-				DisplayName = dbPricelist.DisplayName,
-				HostId = dbPricelist.XfxHostId,
-				Id = dbPricelist.Id,
-				PastelLookup = dbPricelist.PastelLookup,
-				DisplayFormat = dbPricelist.DisplayFormat,
-				Flags = (PriceListFlags)dbPricelist.Flags
-			};
+				voAccount.PriceList = new ValueObjects.OrderEntry.PriceListVO
+				{
+					CompanyCode = priceList.CompanyCode,
+					CurrencyCode = priceList.CurrencyCode,
+					CurrencyName = priceList.CurrencyName,
+					CurrencySymbol = priceList.CurrencySymbol,
+					DateCreated = priceList.Created,
+					DateLastModified = priceList.Modified ?? priceList.Created,
+					DisplayIndex = priceList.DisplayIndex,
+					DisplayName = priceList.DisplayName,
+					HostId = priceList.XfxHostId,
+					Id = priceList.Id,
+					PastelLookup = priceList.PastelLookup,
+					DisplayFormat = priceList.DisplayFormat,
+					Flags = (PriceListFlags)priceList.Flags
+				};
+			}
 
 			return voAccount;
 		}

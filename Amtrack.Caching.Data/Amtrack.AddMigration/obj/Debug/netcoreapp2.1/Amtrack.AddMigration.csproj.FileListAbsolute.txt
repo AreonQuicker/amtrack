@@ -3,9 +3,9 @@ C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.AddMigration\bin\Debug
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.AddMigration\bin\Debug\netcoreapp2.1\Amtrack.AddMigration.runtimeconfig.dev.json
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.AddMigration\bin\Debug\netcoreapp2.1\Amtrack.AddMigration.dll
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.AddMigration\bin\Debug\netcoreapp2.1\Amtrack.AddMigration.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.AddMigration\obj\Debug\netcoreapp2.1\Amtrack.AddMigration.csprojAssemblyReference.cache
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.AddMigration\obj\Debug\netcoreapp2.1\Amtrack.AddMigration.csproj.CoreCompileInputs.cache
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.AddMigration\obj\Debug\netcoreapp2.1\Amtrack.AddMigration.AssemblyInfoInputs.cache
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.AddMigration\obj\Debug\netcoreapp2.1\Amtrack.AddMigration.AssemblyInfo.cs
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.AddMigration\obj\Debug\netcoreapp2.1\Amtrack.AddMigration.dll
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.AddMigration\obj\Debug\netcoreapp2.1\Amtrack.AddMigration.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.AddMigration\obj\Debug\netcoreapp2.1\Amtrack.AddMigration.csprojAssemblyReference.cache

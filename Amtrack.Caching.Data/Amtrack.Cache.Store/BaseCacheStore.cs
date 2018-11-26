@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using StackExchange.Redis;
 using StackExchange.Redis.Extensions.Core;
@@ -72,6 +73,9 @@ namespace Amtrack.Cache.Store
 		}
 		protected string LinkKey(params string[] names)
 		{
+			if(names.Any(a => a == null))
+				return null;
+
 			return string.Join("-", names);
 		}
 		#endregion
@@ -123,12 +127,12 @@ namespace Amtrack.Cache.Store
 		#region Abstract Methods
 		public abstract void Set(object value);
 		public abstract void Set<T>(string key, T value);
-		public abstract void SetAll(IEnumerable<object> values);
-		public abstract void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values);
+		public abstract void SetAll(IEnumerable<object> values, bool addMultiple);
+		public abstract void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, bool addMultiple);
 		public abstract void Set(object value, string[] connectionsFields);
 		public abstract void Set<T>(string key, T value, string[] connectionsFields);
-		public abstract void SetAll(IEnumerable<object> values, string[] connectionsFields);
-		public abstract void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, string[] connectionsFields);
+		public abstract void SetAll(IEnumerable<object> values, string[] connectionsFields, bool addMultiple);
+		public abstract void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, string[] connectionsFields, bool addMultiple);
 		public abstract IList<T> GetAll<T>();
 		public abstract IList<T> GetAll<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues);
 		public abstract IList<T> Get<T>(string[] keys);
