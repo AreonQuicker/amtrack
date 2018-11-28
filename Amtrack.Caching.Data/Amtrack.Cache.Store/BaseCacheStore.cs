@@ -98,7 +98,11 @@ namespace Amtrack.Cache.Store
 
 			var serializer = new NewtonsoftSerializer(serializerSettings);
 
-			connectionMultiplexer = ConnectionMultiplexer.Connect(redisConnection);
+			ConfigurationOptions configurationOptions = ConfigurationOptions.Parse(host);
+			configurationOptions.SyncTimeout = 30000;
+			configurationOptions.ConnectTimeout = 10;
+
+			connectionMultiplexer = ConnectionMultiplexer.Connect(configurationOptions);
 
 			redisClient = new StackExchangeRedisCacheClient(connectionMultiplexer, serializer);
 
@@ -146,6 +150,7 @@ namespace Amtrack.Cache.Store
 		public abstract void DeleteAll(Type type);
 		public abstract int GetAllCount<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues);
 		public abstract IList<string> GetAllKeys<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues);
+		public abstract IList<T> GetAllMultiple<T>();
 		#endregion
 	}
 }

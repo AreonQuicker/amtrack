@@ -128,6 +128,31 @@ namespace Amtrack.Cache.SDK
 			}
 		}
 
+		public override IList<T> GetAllMultiple<T>()
+		{
+			if(internalCacheStore != null)
+			{
+				var values = internalCacheStore.GetAll<T>(typeof(T).Name);
+
+				if(!values.Any())
+				{
+					values = cacheStore.GetAllMultiple<T>();
+
+					RemoveAllExpiredInternal<T>();
+
+					if(values.Any())
+						internalCacheStore.SetAll((IEnumerable<object>)values, typeof(T).Name);
+
+				}
+
+				return values;
+			}
+			else
+			{
+				return cacheStore.GetAll<T>();
+			}
+		}
+
 		public override void SetInternal(object value)
 		{
 			if(internalCacheStore != null)

@@ -1,0 +1,12 @@
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\bin\Release\netstandard2.0\Amtrack.Cache.Store.deps.json
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\bin\Release\netstandard2.0\Amtrack.Cache.Store.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\bin\Release\netstandard2.0\Amtrack.Cache.Store.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\bin\Release\netstandard2.0\Amtrack.Cache.Models.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\bin\Release\netstandard2.0\Amtrack.Cache.Models.pdb
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Release\netstandard2.0\Amtrack.Cache.Store.csprojAssemblyReference.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Release\netstandard2.0\Amtrack.Cache.Store.csproj.CoreCompileInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Release\netstandard2.0\Amtrack.Cache.Store.AssemblyInfoInputs.cache
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Release\netstandard2.0\Amtrack.Cache.Store.AssemblyInfo.cs
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Release\netstandard2.0\Amtrack.Cache.Store.csproj.CopyComplete
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Release\netstandard2.0\Amtrack.Cache.Store.dll
+C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Cache.Store\obj\Release\netstandard2.0\Amtrack.Cache.Store.pdb

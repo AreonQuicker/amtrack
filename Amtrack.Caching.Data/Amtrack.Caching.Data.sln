@@ -29,8 +29,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Core.Services", "Am
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Cache.Store", "Amtrack.Cache.Store\Amtrack.Cache.Store.csproj", "{7C865F43-5FA3-413D-B787-C7F5F258B26C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Background.Cache.Service", "Amtrack.Background.Cache.Service\Amtrack.Background.Cache.Service.csproj", "{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Logger", "Amtrack.Logger\Amtrack.Logger.csproj", "{F62AABA8-3271-40A3-BE82-6F55D7325489}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Cache.SDK", "Amtrack.Cache.SDK\Amtrack.Cache.SDK.csproj", "{26590778-D9CB-4B42-888C-E7EBDFFC5D0B}"
@@ -41,7 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Cache.Test", "Amtra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Cache.Models", "Amtrack.Cache.Models\Amtrack.Cache.Models.csproj", "{74EB5DE1-80BA-4F1C-A56F-10AF587CA5D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.AddMigration", "Amtrack.AddMigration\Amtrack.AddMigration.csproj", "{3D801981-7774-4CC3-A605-2A0603B951EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.AddMigration", "Amtrack.AddMigration\Amtrack.AddMigration.csproj", "{3D801981-7774-4CC3-A605-2A0603B951EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Caching.Background.Module", "Amtrack.Caching.Background.Module\Amtrack.Caching.Background.Module.csproj", "{1B44734B-4B58-48D8-98F2-97B20CC74956}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Caching.Background.Service", "Amtrack.Caching.Background.Service\Amtrack.Caching.Background.Service.csproj", "{FC19FD80-E3A8-4E56-85BB-8B436623D38D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -155,14 +157,6 @@ Global
 		{7C865F43-5FA3-413D-B787-C7F5F258B26C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7C865F43-5FA3-413D-B787-C7F5F258B26C}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
 		{7C865F43-5FA3-413D-B787-C7F5F258B26C}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
-		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.Debug - Test Servers|Any CPU.ActiveCfg = Debug|Any CPU
-		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.Debug - Test Servers|Any CPU.Build.0 = Debug|Any CPU
-		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
-		{D46E4CCB-9E02-4E7F-BB43-158B509F83B0}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
 		{F62AABA8-3271-40A3-BE82-6F55D7325489}.Debug - Test Servers|Any CPU.ActiveCfg = Debug|Any CPU
 		{F62AABA8-3271-40A3-BE82-6F55D7325489}.Debug - Test Servers|Any CPU.Build.0 = Debug|Any CPU
 		{F62AABA8-3271-40A3-BE82-6F55D7325489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -211,6 +205,22 @@ Global
 		{3D801981-7774-4CC3-A605-2A0603B951EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3D801981-7774-4CC3-A605-2A0603B951EA}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
 		{3D801981-7774-4CC3-A605-2A0603B951EA}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
+		{1B44734B-4B58-48D8-98F2-97B20CC74956}.Debug - Test Servers|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B44734B-4B58-48D8-98F2-97B20CC74956}.Debug - Test Servers|Any CPU.Build.0 = Debug|Any CPU
+		{1B44734B-4B58-48D8-98F2-97B20CC74956}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B44734B-4B58-48D8-98F2-97B20CC74956}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B44734B-4B58-48D8-98F2-97B20CC74956}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B44734B-4B58-48D8-98F2-97B20CC74956}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B44734B-4B58-48D8-98F2-97B20CC74956}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B44734B-4B58-48D8-98F2-97B20CC74956}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
+		{FC19FD80-E3A8-4E56-85BB-8B436623D38D}.Debug - Test Servers|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC19FD80-E3A8-4E56-85BB-8B436623D38D}.Debug - Test Servers|Any CPU.Build.0 = Debug|Any CPU
+		{FC19FD80-E3A8-4E56-85BB-8B436623D38D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC19FD80-E3A8-4E56-85BB-8B436623D38D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC19FD80-E3A8-4E56-85BB-8B436623D38D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC19FD80-E3A8-4E56-85BB-8B436623D38D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC19FD80-E3A8-4E56-85BB-8B436623D38D}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC19FD80-E3A8-4E56-85BB-8B436623D38D}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

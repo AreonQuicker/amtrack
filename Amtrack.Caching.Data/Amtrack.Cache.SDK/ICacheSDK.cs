@@ -15,6 +15,7 @@ namespace Amtrack.Cache.SDK
 		void SetInternalAll<T>(IEnumerable<KeyValuePair<string, T>> values);
 
 		IList<T> GetAll<T>();
+		IList<T> GetAllMultiple<T>();
 		IList<T> GetAll<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues);
 
 		IList<T> Get<T>(string[] keys);

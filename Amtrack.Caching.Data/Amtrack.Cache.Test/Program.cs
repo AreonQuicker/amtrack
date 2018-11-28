@@ -15,7 +15,7 @@ namespace Amtrack.Cache.Test
 				[ConfigurationType.AppKey] = "Amtrack.Cache",
 				[ConfigurationType.DefaultCacheTimeSpan] = new TimeSpan(0, 10, 0),
 				[ConfigurationType.DefaultInternalCacheTimeSpan] = new TimeSpan(0, 0, 20),
-				[ConfigurationType.Host] = "127.0.0.1:6379"
+				[ConfigurationType.Host] = "redisserver"
 			};
 
 			ICacheSDK cacheSDK = new CacheSDK(configurations, true, true);
@@ -54,9 +54,28 @@ namespace Amtrack.Cache.Test
 				Value = "BAG-612fdsadas"
 			});
 
-			var accounts = cacheSDK.GetAll<ValueObjects.Accounts.AccountMasterVO>();
+			var accounts1 = cacheSDK.GetAll<ValueObjects.Accounts.AccountMasterVO>(ConnectionType.And, new ConnectionValue
+			{
+				ConnectionValueType = ConnectionValueType.StartsWith,
+				Field = "CustomerCode",
+				Value = "A"
+			});
 
-			var accounts2 = cacheSDK.GetAll<ValueObjects.Accounts.AccountMasterVO>();
+			var accounts = cacheSDK.GetAll<ValueObjects.Accounts.AccountMasterVO>(ConnectionType.And, new ConnectionValue
+			{
+				ConnectionValueType = ConnectionValueType.StartsWith,
+				Field = "CustomerCode",
+				Value = "B"
+			});
+
+			var accounts3 = cacheSDK.GetAll<ValueObjects.Accounts.AccountMasterVO>(ConnectionType.And, new ConnectionValue
+			{
+				ConnectionValueType = ConnectionValueType.StartsWith,
+				Field = "CustomerCode",
+				Value = "P"
+			});
+
+			var allAccounts = cacheSDK.GetAllMultiple<ValueObjects.Accounts.AccountMasterVO>();
 
 		}
 	}

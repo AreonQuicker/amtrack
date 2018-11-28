@@ -17,11 +17,11 @@ namespace Amtrack.Cache.SDK
 			{
 				defaultInternalCacheTimeSpan = (TimeSpan)configurations[ConfigurationType.DefaultInternalCacheTimeSpan];
 				internalCacheStore = new InternalCacheStore(defaultInternalCacheTimeSpan);
-				date = DateTime.Now; 
+				date = DateTime.Now;
 			}
 
-			cacheStore = new CacheStore(configurations, initCacheStore);	
-	
+			cacheStore = new CacheStore(configurations, initCacheStore);
+
 		}
 
 		#region Protected Methods
@@ -60,6 +60,7 @@ namespace Amtrack.Cache.SDK
 		public abstract void SetInternal<T>(T value);
 		public abstract void SetInternalAll(IEnumerable<object> values);
 		public abstract void SetInternalAll<T>(IEnumerable<KeyValuePair<string, T>> values);
+		public abstract IList<T> GetAllMultiple<T>();
 		#endregion
 	}
 

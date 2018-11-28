@@ -93,13 +93,17 @@ namespace Amtrack.Cache.Store
 
 		public override IList<T> GetAll<T>()
 		{
-			var values = CacheDictionaryInstance<T>()
-				.Values;
+			var keys = CacheDictionaryInstance<T>().Keys;
+
+			if(keys == null)
+				return new List<T>();
+
+			var values = CacheDictionaryInstance<T>().GetValues(keys.ToArray());
 
 			if(values == null)
 				return new List<T>();
 
-			return values.ToList();
+			return values;
 		}
 
 		public override IList<T> GetAll<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues)
@@ -205,10 +209,7 @@ namespace Amtrack.Cache.Store
 				if(addMultiple)
 					cacheDictionaryInstance.AddMultiple(redisValues);
 				else
-				{
-					foreach(var redisValue in redisValues)
-						cacheDictionaryInstance.Add(redisValue);
-				}
+					cacheDictionaryInstance.Add(redisValues);
 			}
 		}
 
@@ -229,8 +230,7 @@ namespace Amtrack.Cache.Store
 					cacheDictionaryInstance.AddMultiple(values);
 				else
 				{
-					foreach(var value in values)
-						cacheDictionaryInstance.Add(value);
+					cacheDictionaryInstance.Add(values);
 				}
 			}
 		}
@@ -349,8 +349,7 @@ namespace Amtrack.Cache.Store
 					cacheDictionaryInstance.AddMultiple(redisValues);
 				else
 				{
-					foreach(var redisValue in redisValues)
-						cacheDictionaryInstance.Add(redisValue);
+					cacheDictionaryInstance.Add(redisValues);
 				}
 			}
 		}
@@ -399,8 +398,7 @@ namespace Amtrack.Cache.Store
 					cacheDictionaryInstance.AddMultiple(values);
 				else
 				{
-					foreach(var value in values)
-						cacheDictionaryInstance.Add(value);
+					cacheDictionaryInstance.Add(values);
 				}
 			}
 		}
@@ -491,6 +489,21 @@ namespace Amtrack.Cache.Store
 			}
 
 			return new List<string>();
+		}
+
+		public override IList<T> GetAllMultiple<T>()
+		{
+			var keys = CacheDictionaryInstance<T>().Keys;
+
+			if(keys == null)
+				return new List<T>();
+
+			var values = CacheDictionaryInstance<T>().GetValuesMultiple(keys.ToArray());
+
+			if(values == null)
+				return new List<T>();
+
+			return values;
 		}
 		#endregion
 	}

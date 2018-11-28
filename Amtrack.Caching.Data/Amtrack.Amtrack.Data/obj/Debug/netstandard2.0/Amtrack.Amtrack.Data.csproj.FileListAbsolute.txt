@@ -9,7 +9,6 @@ C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\bin\Debug\netstandard2.0\Amtrack.Amtrack.Data.deps.json
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\bin\Debug\netstandard2.0\Amtrack.Amtrack.Data.dll
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\bin\Debug\netstandard2.0\Amtrack.Amtrack.Data.pdb
-C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\netstandard2.0\Amtrack.Amtrack.Data.csprojAssemblyReference.cache
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\netstandard2.0\Amtrack.Amtrack.Data.csproj.CoreCompileInputs.cache
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\netstandard2.0\Amtrack.Amtrack.Data.AssemblyInfoInputs.cache
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack.Data\obj\Debug\netstandard2.0\Amtrack.Amtrack.Data.AssemblyInfo.cs

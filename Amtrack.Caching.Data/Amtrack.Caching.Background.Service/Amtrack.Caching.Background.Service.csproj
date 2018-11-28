@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Amtrack.Caching.Background.Module\Amtrack.Caching.Background.Module.csproj">
+      <Private>true</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Amtrack.DependencyInjection\Amtrack.DependencyInjection.csproj">
+      <Private>true</Private>
+    </ProjectReference>
+  </ItemGroup>
+
+</Project>

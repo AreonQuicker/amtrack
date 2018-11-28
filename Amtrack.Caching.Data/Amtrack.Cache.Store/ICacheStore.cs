@@ -24,6 +24,7 @@ namespace Amtrack.Cache.Store
 		void SetAll<T>(IEnumerable<KeyValuePair<string, T>> values, string[] connectionsFields, bool addMultiple);
 
 		IList<T> GetAll<T>();
+		IList<T> GetAllMultiple<T>();
 		IList<T> GetAll<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues);
 		int GetAllCount<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues);
 		IList<string> GetAllKeys<T>(ConnectionType connectionType, params ConnectionValue[] connectionValues);

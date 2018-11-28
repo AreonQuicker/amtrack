@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using StackExchange.Redis;
+using StackExchange.Redis.Extensions.Core.Extensions;
 
 //TODO Set serialize back
 namespace Amtrack.Cache.Store
@@ -16,7 +17,11 @@ namespace Amtrack.Cache.Store
 
 			string redisConnection = $"{host},ssl=false,allowAdmin=true,ConnectRetry=3,ConnectTimeout=5000,defaultDatabase=1";
 
-			_cnn = ConnectionMultiplexer.Connect(redisConnection);
+			ConfigurationOptions configurationOptions = ConfigurationOptions.Parse(redisConnection);
+			configurationOptions.SyncTimeout = 30000;
+			configurationOptions.ConnectTimeout = 10;
+
+			_cnn = ConnectionMultiplexer.Connect(configurationOptions);
 		}
 
 		public CacheDictionary(ConnectionMultiplexer connectionMultiplexer, string redisKey)
@@ -90,6 +95,22 @@ namespace Amtrack.Cache.Store
 				.HashGet(_redisKey, (RedisValue)s))
 				.Where(w => !w.IsNull)
 				.ToList();
+
+			if(!redisValues.Any())
+				return new List<TValue>();
+
+			return redisValues
+				.AsParallel()
+				.Select(s => s.ToString().StringToObject<TValue>())
+				.Where(w => w != null)
+				.ToList();
+		}
+
+		public IList<TValue> GetValuesMultiple(string[] keys)
+		{
+			var redisValues = GetRedisDb()
+				.HashGet(_redisKey,
+				keys.Select(s => (RedisValue)s).ToArray());
 
 			if(!redisValues.Any())
 				return new List<TValue>();
@@ -187,9 +208,17 @@ namespace Amtrack.Cache.Store
 		{
 			GetRedisDb()
 				.HashSet(_redisKey, items
-				.AsParallel()
 				.Select(i => new HashEntry(i.Key, i.Value.ObjectToString()))
 				.ToArray());
+		}
+
+		public void Add(IEnumerable<KeyValuePair<string, TValue>> items)
+		{
+			items.AsParallel()
+				.ForEach(i =>
+				{
+					GetRedisDb().HashSet(_redisKey, i.Key, i.Value.ObjectToString());
+				});
 		}
 		#endregion
 	}
