@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Amtrack.Caching.Background.Module</id>
+    <version>1.0.0</version>
+    <authors>Amtrack.Caching.Background.Module</authors>
+    <owners>Amtrack.Caching.Background.Module</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Amtrack.Cache.Models" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Amtrack.Cache.Store" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Amtrack.Caching.Service" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Amtrack.DependencyInjection" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Amtrack.Logger" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Unity" version="5.8.11" exclude="Build,Analyzers" />
+        <dependency id="Unity.Abstractions" version="3.3.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Caching.Background.Module\bin\Release\netstandard2.0\Amtrack.Caching.Background.Module.dll" target="lib\netstandard2.0\Amtrack.Caching.Background.Module.dll" />
+  </files>
+</package>

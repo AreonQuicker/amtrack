@@ -7,3 +7,12 @@ C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack_V2.Data\obj\Re
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack_V2.Data\obj\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.AssemblyInfo.cs
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack_V2.Data\obj\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.dll
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack_V2.Data\obj\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack_V2.Data\bin\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.deps.json
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack_V2.Data\bin\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack_V2.Data\bin\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack_V2.Data\obj\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.csprojAssemblyReference.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack_V2.Data\obj\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.csproj.CoreCompileInputs.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack_V2.Data\obj\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.AssemblyInfoInputs.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack_V2.Data\obj\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.AssemblyInfo.cs
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack_V2.Data\obj\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Amtrack_V2.Data\obj\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.pdb

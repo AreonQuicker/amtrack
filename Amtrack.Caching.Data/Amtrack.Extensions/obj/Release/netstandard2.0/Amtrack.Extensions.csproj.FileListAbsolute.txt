@@ -20,3 +20,25 @@ C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Release
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Release\netstandard2.0\Amtrack.Extensions.csproj.CopyComplete
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Release\netstandard2.0\Amtrack.Extensions.dll
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Release\netstandard2.0\Amtrack.Extensions.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.Extensions.deps.json
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.Extensions.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.Extensions.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.Amtrack.Data.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.Caching.Data.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.Enumeration.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.StockCheck.Data.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.ValueObjects.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.Enumeration.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.ValueObjects.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.Amtrack.Data.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.Amtrack_V2.Data.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.Caching.Data.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\bin\Release\netstandard2.0\Amtrack.StockCheck.Data.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Release\netstandard2.0\Amtrack.Extensions.csprojAssemblyReference.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Release\netstandard2.0\Amtrack.Extensions.csproj.CoreCompileInputs.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Release\netstandard2.0\Amtrack.Extensions.AssemblyInfoInputs.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Release\netstandard2.0\Amtrack.Extensions.AssemblyInfo.cs
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Release\netstandard2.0\Amtrack.Extensions.csproj.CopyComplete
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Release\netstandard2.0\Amtrack.Extensions.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.Extensions\obj\Release\netstandard2.0\Amtrack.Extensions.pdb

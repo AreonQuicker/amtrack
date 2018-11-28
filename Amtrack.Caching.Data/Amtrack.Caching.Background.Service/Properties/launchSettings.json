@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Amtrack.Caching.Background.Service": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ENVIRONMENT": "development",
+        "host": "127.0.0.1:6379"
+      }
+    }
+  }
+}

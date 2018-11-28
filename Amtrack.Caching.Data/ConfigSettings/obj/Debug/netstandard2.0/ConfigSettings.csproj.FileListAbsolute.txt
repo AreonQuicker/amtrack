@@ -1,0 +1,3 @@
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\ConfigSettings\obj\Debug\netstandard2.0\ConfigSettings.csproj.CoreCompileInputs.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\ConfigSettings\obj\Debug\netstandard2.0\ConfigSettings.AssemblyInfoInputs.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\ConfigSettings\obj\Debug\netstandard2.0\ConfigSettings.AssemblyInfo.cs

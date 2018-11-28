@@ -14,14 +14,13 @@ namespace Amtrack.Cache.Store
 
 		public CacheDictionary(string host)
 		{
-
-			string redisConnection = $"{host},ssl=false,allowAdmin=true,ConnectRetry=3,ConnectTimeout=5000,defaultDatabase=1";
+			string redisConnection = $"{host},allowAdmin=true,SyncTimeout=30000,ConnectTimeout=10";
 
 			ConfigurationOptions configurationOptions = ConfigurationOptions.Parse(redisConnection);
 			configurationOptions.SyncTimeout = 30000;
 			configurationOptions.ConnectTimeout = 10;
 
-			_cnn = ConnectionMultiplexer.Connect(configurationOptions);
+			_cnn = ConnectionMultiplexer.Connect(redisConnection);
 		}
 
 		public CacheDictionary(ConnectionMultiplexer connectionMultiplexer, string redisKey)

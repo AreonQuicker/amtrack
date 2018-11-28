@@ -32,7 +32,7 @@ namespace Amtrack.Caching.Background.Module
 			{
 				[ConfigurationType.AppKey] = "Amtrack.Cache",
 				[ConfigurationType.DefaultCacheTimeSpan] = new TimeSpan(0, 1, 0),
-				[ConfigurationType.Host] = "127.0.0.1:6379"
+				[ConfigurationType.Host] = ConfigSettings.ConfigSettings.Instance.GetValue("host")
 			};
 
 			Container.RegisterType<ICacheStore, CacheStore>

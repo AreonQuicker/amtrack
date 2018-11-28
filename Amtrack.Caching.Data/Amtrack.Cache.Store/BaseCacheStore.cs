@@ -17,7 +17,6 @@ namespace Amtrack.Cache.Store
 
 		#region Protected Variables
 		protected string appKey;
-		protected StackExchangeRedisCacheClient redisClient;
 		protected ConnectionMultiplexer connectionMultiplexer;
 		protected IDatabase database => connectionMultiplexer.GetDatabase();
 		protected bool initialized = false;
@@ -87,24 +86,13 @@ namespace Amtrack.Cache.Store
 				&& _configurations.ContainsKey(ConfigurationType.Host))
 				host = (string)_configurations[ConfigurationType.Host];
 
-			string redisConnection = $"{host},ssl=false,allowAdmin=true,ConnectRetry=3,ConnectTimeout=5000,defaultDatabase=1";
+			string redisConnection = $"{host},allowAdmin=true,SyncTimeout=30000,ConnectTimeout=10";
 
-			//Configure the serializer
-			var serializerSettings = new JsonSerializerSettings
-			{
-				ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
-				PreserveReferencesHandling = PreserveReferencesHandling.Objects
-			};
-
-			var serializer = new NewtonsoftSerializer(serializerSettings);
-
-			ConfigurationOptions configurationOptions = ConfigurationOptions.Parse(host);
+			ConfigurationOptions configurationOptions = new ConfigurationOptions();
 			configurationOptions.SyncTimeout = 30000;
 			configurationOptions.ConnectTimeout = 10;
 
-			connectionMultiplexer = ConnectionMultiplexer.Connect(configurationOptions);
-
-			redisClient = new StackExchangeRedisCacheClient(connectionMultiplexer, serializer);
+			connectionMultiplexer = ConnectionMultiplexer.Connect(redisConnection);
 
 			if(_configurations.ContainsKey(ConfigurationType.DefaultCacheTimeSpan))
 				defaultCacheTimeSpan = (TimeSpan)_configurations[ConfigurationType.DefaultCacheTimeSpan];

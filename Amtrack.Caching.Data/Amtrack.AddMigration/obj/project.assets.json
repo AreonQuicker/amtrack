@@ -3520,11 +3520,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Personal Projects\\amtrack\\Amtrack.Caching.Data\\Amtrack.AddMigration\\Amtrack.AddMigration.csproj",
+      "projectUniqueName": "C:\\PersonalProjects\\amtrack\\Amtrack.Caching.Data\\Amtrack.AddMigration\\Amtrack.AddMigration.csproj",
       "projectName": "Amtrack.AddMigration",
-      "projectPath": "C:\\Personal Projects\\amtrack\\Amtrack.Caching.Data\\Amtrack.AddMigration\\Amtrack.AddMigration.csproj",
+      "projectPath": "C:\\PersonalProjects\\amtrack\\Amtrack.Caching.Data\\Amtrack.AddMigration\\Amtrack.AddMigration.csproj",
       "packagesPath": "C:\\Users\\Gideon\\.nuget\\packages\\",
-      "outputPath": "C:\\Personal Projects\\amtrack\\Amtrack.Caching.Data\\Amtrack.AddMigration\\obj\\",
+      "outputPath": "C:\\PersonalProjects\\amtrack\\Amtrack.Caching.Data\\Amtrack.AddMigration\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Amtrack.Cache.SDK;
 using Amtrack.Cache.Store;
+using Amtrack.ValueObjects.Accounts;
 using Amtrack.ValueObjects.Inventory;
 
 namespace Amtrack.Cache.Test
@@ -15,7 +16,7 @@ namespace Amtrack.Cache.Test
 				[ConfigurationType.AppKey] = "Amtrack.Cache",
 				[ConfigurationType.DefaultCacheTimeSpan] = new TimeSpan(0, 10, 0),
 				[ConfigurationType.DefaultInternalCacheTimeSpan] = new TimeSpan(0, 0, 20),
-				[ConfigurationType.Host] = "redisserver"
+				[ConfigurationType.Host] = "127.0.0.1:6379"
 			};
 
 			ICacheSDK cacheSDK = new CacheSDK(configurations, true, true);
@@ -77,6 +78,7 @@ namespace Amtrack.Cache.Test
 
 			var allAccounts = cacheSDK.GetAllMultiple<ValueObjects.Accounts.AccountMasterVO>();
 
+			var taxRaters = cacheSDK.GetAll<TaxRateVO>();
 		}
 	}
 }

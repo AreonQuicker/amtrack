@@ -41,9 +41,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Cache.Models", "Amt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.AddMigration", "Amtrack.AddMigration\Amtrack.AddMigration.csproj", "{3D801981-7774-4CC3-A605-2A0603B951EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Caching.Background.Module", "Amtrack.Caching.Background.Module\Amtrack.Caching.Background.Module.csproj", "{1B44734B-4B58-48D8-98F2-97B20CC74956}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Caching.Background.Module", "Amtrack.Caching.Background.Module\Amtrack.Caching.Background.Module.csproj", "{1B44734B-4B58-48D8-98F2-97B20CC74956}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amtrack.Caching.Background.Service", "Amtrack.Caching.Background.Service\Amtrack.Caching.Background.Service.csproj", "{FC19FD80-E3A8-4E56-85BB-8B436623D38D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amtrack.Caching.Background.Service", "Amtrack.Caching.Background.Service\Amtrack.Caching.Background.Service.csproj", "{FC19FD80-E3A8-4E56-85BB-8B436623D38D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigSettings", "ConfigSettings\ConfigSettings.csproj", "{56D2E0D6-FB98-46EF-94F7-9DEEC07053FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -221,6 +223,14 @@ Global
 		{FC19FD80-E3A8-4E56-85BB-8B436623D38D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC19FD80-E3A8-4E56-85BB-8B436623D38D}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
 		{FC19FD80-E3A8-4E56-85BB-8B436623D38D}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
+		{56D2E0D6-FB98-46EF-94F7-9DEEC07053FD}.Debug - Test Servers|Any CPU.ActiveCfg = Debug|Any CPU
+		{56D2E0D6-FB98-46EF-94F7-9DEEC07053FD}.Debug - Test Servers|Any CPU.Build.0 = Debug|Any CPU
+		{56D2E0D6-FB98-46EF-94F7-9DEEC07053FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56D2E0D6-FB98-46EF-94F7-9DEEC07053FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56D2E0D6-FB98-46EF-94F7-9DEEC07053FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56D2E0D6-FB98-46EF-94F7-9DEEC07053FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56D2E0D6-FB98-46EF-94F7-9DEEC07053FD}.TSTSERVER|Any CPU.ActiveCfg = Debug|Any CPU
+		{56D2E0D6-FB98-46EF-94F7-9DEEC07053FD}.TSTSERVER|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

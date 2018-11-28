@@ -1,11 +1,3 @@
-C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\bin\Debug\netstandard2.0\Amtrack.StockCheck.Data.deps.json
-C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\bin\Debug\netstandard2.0\Amtrack.StockCheck.Data.dll
-C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\bin\Debug\netstandard2.0\Amtrack.StockCheck.Data.pdb
-C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.csproj.CoreCompileInputs.cache
-C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.AssemblyInfoInputs.cache
-C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.AssemblyInfo.cs
-C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.dll
-C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.pdb
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\bin\Debug\netstandard2.0\Amtrack.StockCheck.Data.deps.json
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\bin\Debug\netstandard2.0\Amtrack.StockCheck.Data.dll
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\bin\Debug\netstandard2.0\Amtrack.StockCheck.Data.pdb
@@ -14,3 +6,12 @@ C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\De
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.AssemblyInfo.cs
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.dll
 C:\Personal Projects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\bin\Debug\netstandard2.0\Amtrack.StockCheck.Data.deps.json
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\bin\Debug\netstandard2.0\Amtrack.StockCheck.Data.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\bin\Debug\netstandard2.0\Amtrack.StockCheck.Data.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.csproj.CoreCompileInputs.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.AssemblyInfoInputs.cache
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.AssemblyInfo.cs
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.dll
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.pdb
+C:\PersonalProjects\amtrack\Amtrack.Caching.Data\Amtrack.StockCheck.Data\obj\Debug\netstandard2.0\Amtrack.StockCheck.Data.csprojAssemblyReference.cache

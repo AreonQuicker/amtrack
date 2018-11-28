@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="bin\Debug\netcoreapp2.1\config.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Amtrack.Caching.Background.Module\Amtrack.Caching.Background.Module.csproj">
       <Private>true</Private>
     </ProjectReference>
